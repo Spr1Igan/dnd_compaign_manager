@@ -232,7 +232,7 @@ class Character extends Model
 
     public function totalAbilityScore(string $ability): int
     {
-        return (int) $this->{$ability} + $this->abilityBonus($ability);
+        return min(30, max(1, (int) $this->{$ability} + $this->abilityBonus($ability)));
     }
 
     public function totalAbilityModifier(string $ability): int

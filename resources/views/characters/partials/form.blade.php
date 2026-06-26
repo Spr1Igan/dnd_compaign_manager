@@ -410,13 +410,14 @@
 
             const modifier = (score) => Math.floor((Number(score || 10) - 10) / 2);
             const signed = (value) => value >= 0 ? `+${value}` : String(value);
+            const clampAbility = (value) => Math.min(30, Math.max(1, Number(value || 10)));
             const baseArmorClass = () => Math.max(1, 10 + modifier(totalAbility('dexterity')));
             const totalAbility = (field) => {
                 const race = rules.races[raceSelect.value];
                 const input = form.querySelector(`[data-ability-input="${field}"]`);
                 const bonus = Number(race?.ability_bonuses?.[field] ?? 0);
 
-                return Number(input?.value || 10) + bonus;
+                return clampAbility(Number(input?.value || 10) + bonus);
             };
 
             const applyChecked = (selector, values) => {

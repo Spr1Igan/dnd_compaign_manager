@@ -199,8 +199,8 @@ class CharacterController extends Controller
             $data['speed'] = $race->speed;
         }
 
-        $constitutionScore = (int) $data['constitution'] + (int) ($race?->ability_bonuses['constitution'] ?? 0);
-        $dexterityScore = (int) $data['dexterity'] + (int) ($race?->ability_bonuses['dexterity'] ?? 0);
+        $constitutionScore = $this->totalAbilityScore((int) $data['constitution'], (int) ($race?->ability_bonuses['constitution'] ?? 0));
+        $dexterityScore = $this->totalAbilityScore((int) $data['dexterity'], (int) ($race?->ability_bonuses['dexterity'] ?? 0));
 
         if ($class && (int) $data['max_hp'] === 0) {
             $data['max_hp'] = max(1, $class->hit_die + $this->abilityModifier($constitutionScore));
@@ -263,6 +263,11 @@ class CharacterController extends Controller
     private function abilityModifier(int $score): int
     {
         return (int) floor(($score - 10) / 2);
+    }
+
+    private function totalAbilityScore(int $score, int $bonus): int
+    {
+        return min(30, max(1, $score + $bonus));
     }
 
     private function baseArmorClass(int $dexterityScore): int
