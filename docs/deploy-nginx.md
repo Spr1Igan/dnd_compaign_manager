@@ -152,7 +152,48 @@ sudo systemctl reload nginx
 sudo systemctl reload php8.3-fpm
 ```
 
-## 8. HTTPS через Certbot
+## 8. Вариант для antiX/Debian без systemd: php-cgi
+
+На antiX/runit PHP-FPM может не установиться из-за зависимостей `systemd`. В этом случае можно использовать `php-cgi` через `spawn-fcgi`.
+
+Пакеты:
+
+```bash
+sudo apt install -y php-cli php-cgi php-common php-mbstring php-xml php-curl php-zip php-sqlite3 php-bcmath php-intl
+sudo apt install -y composer spawn-fcgi
+```
+
+Установка init.d-скрипта из репозитория:
+
+```bash
+cd /var/www/dnd_compaign_manager
+sudo cp deploy/init.d/php-cgi /etc/init.d/php-cgi
+sudo chmod +x /etc/init.d/php-cgi
+sudo update-rc.d php-cgi defaults
+sudo service php-cgi start
+sudo service php-cgi status
+```
+
+Проверка сокета:
+
+```bash
+ls -la /run/php/php-cgi.sock
+```
+
+В Nginx-конфиге для этого варианта используй:
+
+```nginx
+fastcgi_pass unix:/run/php/php-cgi.sock;
+```
+
+Если нужно перезапустить PHP-CGI:
+
+```bash
+sudo service php-cgi restart
+sudo service nginx restart
+```
+
+## 9. HTTPS через Certbot
 
 ```bash
 sudo apt install -y certbot python3-certbot-nginx
@@ -166,7 +207,7 @@ sudo nginx -t
 sudo systemctl reload nginx
 ```
 
-## 9. Обновление проекта с GitHub
+## 10. Обновление проекта с GitHub
 
 Когда в GitHub появятся новые изменения:
 
@@ -182,7 +223,7 @@ sudo systemctl reload php8.3-fpm
 sudo systemctl reload nginx
 ```
 
-## 10. Очереди
+## 11. Очереди
 
 Сейчас приложение не завязано на фоновые задания для основных экранов персонажа. Но так как `QUEUE_CONNECTION=database`, для будущих задач можно добавить worker.
 
@@ -194,7 +235,7 @@ php artisan queue:work --tries=3
 
 Для production лучше оформить worker через `systemd`.
 
-## 11. Быстрая диагностика
+## 12. Быстрая диагностика
 
 Проверка маршрутов:
 
