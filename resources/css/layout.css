@@ -692,6 +692,7 @@
 
 /* D&D sheet layout */
 .dnd-sheet-form {
+    container-type: inline-size;
     color: #111;
     font-family: Georgia, "Times New Roman", serif;
 }
@@ -1361,7 +1362,8 @@
 
     .banner-name {
         grid-column: 1 / -1;
-        grid-row: 1;
+        grid-row: auto;
+        order: -1;
     }
 
     .sheet-abilities-strip {
@@ -1387,6 +1389,48 @@
 
     .banner-name {
         grid-row: auto;
+    }
+}
+
+@container (max-width: 1120px) {
+    .sheet-banner {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .banner-name {
+        grid-column: 1 / -1;
+        grid-row: auto;
+        order: -1;
+    }
+
+    .sheet-banner .banner-field,
+    .sheet-banner .banner-name {
+        min-width: 0;
+    }
+}
+
+@container (max-width: 900px) {
+    .sheet-main-grid,
+    .sheet-quick-row,
+    .rule-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sheet-banner {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sheet-abilities-strip {
+        grid-template-columns: repeat(3, minmax(120px, 1fr));
+        row-gap: 26px;
+    }
+}
+
+@container (max-width: 560px) {
+    .sheet-banner,
+    .sheet-abilities-strip,
+    .combat-stat-grid {
+        grid-template-columns: 1fr;
     }
 }
 
