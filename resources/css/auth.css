@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f4efe4;
+    color: #111;
+    font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+}
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.paper-form {
+    width: 100%;
+    max-width: 430px;
+    padding: 36px;
+    background: #fff;
+    border: 3px solid #111;
+    border-radius: 6px;
+    box-shadow: 8px 8px 0 #111;
+    transform: rotate(-0.5deg);
+}
+
+.paper-form h1 {
+    margin: 0 0 28px;
+    text-align: center;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.paper-form h1::after {
+    content: "";
+    display: block;
+    width: 150px;
+    height: 3px;
+    margin: 10px auto 0;
+    background: #111;
+    border-radius: 50%;
+}
+
+.paper-form label {
+    display: block;
+    margin: 18px 0 7px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.paper-form input[type="text"],
+.paper-form input[type="email"],
+.paper-form input[type="password"] {
+    width: 100%;
+    padding: 14px 16px;
+    background: #fff;
+    border: 2px solid #111;
+    border-radius: 4px;
+    outline: none;
+    font: inherit;
+    font-size: 17px;
+}
+
+.paper-form input:focus {
+    box-shadow: 4px 4px 0 #111;
+    transform: translate(-2px, -2px);
+}
+
+.paper-form button {
+    width: 100%;
+    margin-top: 28px;
+    padding: 14px 18px;
+    background: #fff;
+    color: #111;
+    border: 3px solid #111;
+    border-radius: 4px;
+    font: inherit;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #111;
+}
+
+.paper-form button:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #111;
+}
+
+.auth-link {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 17px;
+}
+
+.auth-link a {
+    color: #111;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid #111;
+}
+
+.error {
+    padding: 10px 12px;
+    border: 2px solid #111;
+    background: #fff;
+    color: #b00000;
+    font-weight: 700;
+}
+
+.checkbox-row {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-row input {
+    width: 18px;
+    height: 18px;
+    accent-color: #111;
+}

@@ -1,0 +1,163 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\CharacterClass;
+use Illuminate\Database\Seeder;
+
+class CharacterClassSeeder extends Seeder
+{
+    public function run(): void
+    {
+        $classes = [
+            [
+                'name' => 'Варвар',
+                'slug' => 'barbarian',
+                'description' => 'Свирепый воин, который полагается на ярость и грубую силу.',
+                'hit_die' => 12,
+                'saving_throws' => ['strength', 'constitution'],
+                'armor_proficiencies' => ['light', 'medium', 'shields'],
+                'weapon_proficiencies' => ['simple', 'martial'],
+                'tool_proficiencies' => [],
+                'skill_choices' => ['choose' => 2, 'from' => ['animal-handling', 'athletics', 'intimidation', 'nature', 'perception', 'survival']],
+                'features' => ['rage', 'unarmored-defense'],
+            ],
+            [
+                'name' => 'Бард',
+                'slug' => 'bard',
+                'description' => 'Вдохновляющий маг, мастер искусства, музыки и слова.',
+                'hit_die' => 8,
+                'saving_throws' => ['dexterity', 'charisma'],
+                'armor_proficiencies' => ['light'],
+                'weapon_proficiencies' => ['simple', 'hand-crossbows', 'longswords', 'rapiers', 'shortswords'],
+                'tool_proficiencies' => ['three-musical-instruments'],
+                'skill_choices' => ['choose' => 3, 'from' => 'any'],
+                'features' => ['spellcasting', 'bardic-inspiration'],
+            ],
+            [
+                'name' => 'Жрец',
+                'slug' => 'cleric',
+                'description' => 'Божественный заклинатель, служащий силе веры.',
+                'hit_die' => 8,
+                'saving_throws' => ['wisdom', 'charisma'],
+                'armor_proficiencies' => ['light', 'medium', 'shields'],
+                'weapon_proficiencies' => ['simple'],
+                'tool_proficiencies' => [],
+                'skill_choices' => ['choose' => 2, 'from' => ['history', 'insight', 'medicine', 'persuasion', 'religion']],
+                'features' => ['spellcasting', 'divine-domain'],
+            ],
+            [
+                'name' => 'Друид',
+                'slug' => 'druid',
+                'description' => 'Заклинатель природы, связанный с дикой магией мира.',
+                'hit_die' => 8,
+                'saving_throws' => ['intelligence', 'wisdom'],
+                'armor_proficiencies' => ['light', 'medium', 'shields'],
+                'weapon_proficiencies' => ['clubs', 'daggers', 'darts', 'javelins', 'maces', 'quarterstaffs', 'scimitars', 'sickles', 'slings', 'spears'],
+                'tool_proficiencies' => ['herbalism-kit'],
+                'skill_choices' => ['choose' => 2, 'from' => ['arcana', 'animal-handling', 'insight', 'medicine', 'nature', 'perception', 'religion', 'survival']],
+                'features' => ['druidic', 'spellcasting'],
+            ],
+            [
+                'name' => 'Воин',
+                'slug' => 'fighter',
+                'description' => 'Мастер оружия и тактики, универсальный боевой специалист.',
+                'hit_die' => 10,
+                'saving_throws' => ['strength', 'constitution'],
+                'armor_proficiencies' => ['all-armor', 'shields'],
+                'weapon_proficiencies' => ['simple', 'martial'],
+                'tool_proficiencies' => [],
+                'skill_choices' => ['choose' => 2, 'from' => ['acrobatics', 'animal-handling', 'athletics', 'history', 'insight', 'intimidation', 'perception', 'survival']],
+                'features' => ['fighting-style', 'second-wind'],
+            ],
+            [
+                'name' => 'Монах',
+                'slug' => 'monk',
+                'description' => 'Воин дисциплины, тела и внутренней энергии.',
+                'hit_die' => 8,
+                'saving_throws' => ['strength', 'dexterity'],
+                'armor_proficiencies' => [],
+                'weapon_proficiencies' => ['simple', 'shortswords'],
+                'tool_proficiencies' => ['one-artisan-tool-or-musical-instrument'],
+                'skill_choices' => ['choose' => 2, 'from' => ['acrobatics', 'athletics', 'history', 'insight', 'religion', 'stealth']],
+                'features' => ['unarmored-defense', 'martial-arts'],
+            ],
+            [
+                'name' => 'Паладин',
+                'slug' => 'paladin',
+                'description' => 'Священный воин, связанный клятвой и божественной силой.',
+                'hit_die' => 10,
+                'saving_throws' => ['wisdom', 'charisma'],
+                'armor_proficiencies' => ['all-armor', 'shields'],
+                'weapon_proficiencies' => ['simple', 'martial'],
+                'tool_proficiencies' => [],
+                'skill_choices' => ['choose' => 2, 'from' => ['athletics', 'insight', 'intimidation', 'medicine', 'persuasion', 'religion']],
+                'features' => ['divine-sense', 'lay-on-hands'],
+            ],
+            [
+                'name' => 'Следопыт',
+                'slug' => 'ranger',
+                'description' => 'Охотник, разведчик и воин диких земель.',
+                'hit_die' => 10,
+                'saving_throws' => ['strength', 'dexterity'],
+                'armor_proficiencies' => ['light', 'medium', 'shields'],
+                'weapon_proficiencies' => ['simple', 'martial'],
+                'tool_proficiencies' => [],
+                'skill_choices' => ['choose' => 3, 'from' => ['animal-handling', 'athletics', 'insight', 'investigation', 'nature', 'perception', 'stealth', 'survival']],
+                'features' => ['favored-enemy', 'natural-explorer'],
+            ],
+            [
+                'name' => 'Плут',
+                'slug' => 'rogue',
+                'description' => 'Ловкий специалист, мастер скрытности, обмана и точных ударов.',
+                'hit_die' => 8,
+                'saving_throws' => ['dexterity', 'intelligence'],
+                'armor_proficiencies' => ['light'],
+                'weapon_proficiencies' => ['simple', 'hand-crossbows', 'longswords', 'rapiers', 'shortswords'],
+                'tool_proficiencies' => ['thieves-tools'],
+                'skill_choices' => ['choose' => 4, 'from' => ['acrobatics', 'athletics', 'deception', 'insight', 'intimidation', 'investigation', 'perception', 'performance', 'persuasion', 'sleight-of-hand', 'stealth']],
+                'features' => ['expertise', 'sneak-attack', 'thieves-cant'],
+            ],
+            [
+                'name' => 'Чародей',
+                'slug' => 'sorcerer',
+                'description' => 'Врождённый маг, чья сила происходит из происхождения или крови.',
+                'hit_die' => 6,
+                'saving_throws' => ['constitution', 'charisma'],
+                'armor_proficiencies' => [],
+                'weapon_proficiencies' => ['daggers', 'darts', 'slings', 'quarterstaffs', 'light-crossbows'],
+                'tool_proficiencies' => [],
+                'skill_choices' => ['choose' => 2, 'from' => ['arcana', 'deception', 'insight', 'intimidation', 'persuasion', 'religion']],
+                'features' => ['spellcasting', 'sorcerous-origin'],
+            ],
+            [
+                'name' => 'Колдун',
+                'slug' => 'warlock',
+                'description' => 'Маг, получивший силу через договор с могущественной сущностью.',
+                'hit_die' => 8,
+                'saving_throws' => ['wisdom', 'charisma'],
+                'armor_proficiencies' => ['light'],
+                'weapon_proficiencies' => ['simple'],
+                'tool_proficiencies' => [],
+                'skill_choices' => ['choose' => 2, 'from' => ['arcana', 'deception', 'history', 'intimidation', 'investigation', 'nature', 'religion']],
+                'features' => ['otherworldly-patron', 'pact-magic'],
+            ],
+            [
+                'name' => 'Волшебник',
+                'slug' => 'wizard',
+                'description' => 'Учёный маг, изучающий законы магии через книги и практику.',
+                'hit_die' => 6,
+                'saving_throws' => ['intelligence', 'wisdom'],
+                'armor_proficiencies' => [],
+                'weapon_proficiencies' => ['daggers', 'darts', 'slings', 'quarterstaffs', 'light-crossbows'],
+                'tool_proficiencies' => [],
+                'skill_choices' => ['choose' => 2, 'from' => ['arcana', 'history', 'insight', 'investigation', 'medicine', 'religion']],
+                'features' => ['spellcasting', 'arcane-recovery'],
+            ],
+        ];
+
+        foreach ($classes as $class) {
+            CharacterClass::updateOrCreate(['slug' => $class['slug']], $class);
+        }
+    }
+}
