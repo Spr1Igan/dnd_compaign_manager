@@ -127,7 +127,7 @@
 
         <div class="banner-field banner-level">
             <label for="level">Уровень</label>
-            <input id="level" type="number" name="level" min="1" max="20" value="{{ old('level', $character?->level ?? 1) }}" required>
+            <input id="level" type="number" name="level" min="1" max="30" value="{{ old('level', $character?->level ?? 1) }}" required>
         </div>
 
         <div class="banner-name">
@@ -303,7 +303,7 @@
                             aria-label="Подсказка: класс доспеха"
                         >?</button>
                         <label for="armor_class">КД</label>
-                        <input id="armor_class" type="number" name="armor_class" min="0" max="40" value="{{ $armorClassValue }}">
+                        <input id="armor_class" type="number" name="armor_class" min="0" max="30" value="{{ $armorClassValue }}">
                         <input type="hidden" name="armor_class_mode" value="{{ $armorClassMode }}" data-armor-class-mode>
                         <label class="stat-auto-toggle">
                             <input type="checkbox" data-armor-auto-toggle @checked($armorClassMode === 'auto')>
@@ -313,17 +313,17 @@
 
                     <div class="circle-stat">
                         <label for="speed">Скорость</label>
-                        <input id="speed" type="number" name="speed" min="0" max="200" value="{{ old('speed', $character?->speed ?? 30) }}">
+                        <input id="speed" type="number" name="speed" min="0" max="100" value="{{ old('speed', $character?->speed ?? 30) }}">
                     </div>
 
                     <div class="hp-box">
                         <label for="max_hp">Максимум HP</label>
-                        <input id="max_hp" type="number" name="max_hp" min="0" value="{{ old('max_hp', $character?->max_hp ?? 0) }}">
+                        <input id="max_hp" type="number" name="max_hp" min="0" max="100" value="{{ old('max_hp', $character?->max_hp ?? 0) }}">
                     </div>
 
                     <div class="hp-box">
                         <label for="current_hp">Текущие HP</label>
-                        <input id="current_hp" type="number" name="current_hp" min="0" value="{{ old('current_hp', $character?->current_hp ?? 0) }}">
+                        <input id="current_hp" type="number" name="current_hp" min="0" max="{{ min(100, old('max_hp', $character?->max_hp ?? 100) ?: 100) }}" value="{{ old('current_hp', $character?->current_hp ?? 0) }}">
                     </div>
                 </div>
             </section>
@@ -410,6 +410,50 @@
 
             const modifier = (score) => Math.floor((Number(score || 10) - 10) / 2);
             const signed = (value) => value >= 0 ? `+${value}` : String(value);
+            const clampNumber = (value, min, max) => {
+                const number = Number(value);
+
+                if (!Number.isFinite(number)) {
+                    return min;
+                }
+
+                return Math.min(max, Math.max(min, number));
+            };
+            const clampInput = (input, min, max) => {
+                if (!input || input.value === '') {
+                    return;
+                }
+
+                const nextValue = clampNumber(input.value, min, max);
+
+                if (Number(input.value) !== nextValue) {
+                    input.value = nextValue;
+                }
+            };
+            const currentHpLimit = () => {
+                if (!maxHpInput || maxHpInput.value === '') {
+                    return 100;
+                }
+
+                return clampNumber(maxHpInput.value, 0, 100);
+            };
+            const clampCharacterNumbers = () => {
+                clampInput(levelInput, 1, 30);
+                clampInput(speedInput, 0, 100);
+                clampInput(maxHpInput, 0, 100);
+                clampInput(armorClassInput, 0, 30);
+
+                form.querySelectorAll('[data-ability-input]').forEach((input) => {
+                    clampInput(input, 1, 30);
+                });
+
+                if (currentHpInput) {
+                    const maxHp = currentHpLimit();
+
+                    currentHpInput.max = String(maxHp);
+                    clampInput(currentHpInput, 0, maxHp);
+                }
+            };
             const clampAbility = (value) => Math.min(30, Math.max(1, Number(value || 10)));
             const baseArmorClass = () => Math.max(1, 10 + modifier(totalAbility('dexterity')));
             const totalAbility = (field) => {
@@ -449,22 +493,24 @@
             };
 
             const updateRules = () => {
+                clampCharacterNumbers();
+
                 const race = rules.races[raceSelect.value];
                 const characterClass = rules.classes[classSelect.value];
                 const background = rules.backgrounds[backgroundSelect.value];
 
                 if (race) {
-                    speedInput.value = race.speed;
+                    speedInput.value = Math.min(100, Number(race.speed || 0));
                 }
 
                 if (characterClass && Number(maxHpInput.value || 0) === 0) {
-                    const hp = Math.max(1, Number(characterClass.hit_die) + modifier(totalAbility('constitution')));
+                    const hp = Math.min(100, Math.max(1, Number(characterClass.hit_die) + modifier(totalAbility('constitution'))));
                     maxHpInput.value = hp;
                     currentHpInput.value = hp;
                 }
 
                 if (armorClassInput && !armorClassIsManual) {
-                    armorClassInput.value = baseArmorClass();
+                    armorClassInput.value = Math.min(30, baseArmorClass());
                 }
 
                 if (race) {
@@ -502,8 +548,16 @@
                     : 'выбери предысторию';
                 form.querySelector('[data-rule-features]').textContent = readable([...new Set(features)]);
 
+                clampCharacterNumbers();
                 updateAbilities();
             };
+
+            form.querySelectorAll('input[type="number"]').forEach((input) => {
+                input.addEventListener('input', clampCharacterNumbers);
+                input.addEventListener('change', clampCharacterNumbers);
+            });
+
+            form.addEventListener('submit', clampCharacterNumbers);
 
             [raceSelect, classSelect, backgroundSelect, levelInput, constitutionInput].forEach((element) => {
                 element?.addEventListener('change', updateRules);

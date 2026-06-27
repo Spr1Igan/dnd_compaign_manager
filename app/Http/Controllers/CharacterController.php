@@ -82,7 +82,7 @@ class CharacterController extends Controller
         $this->authorizeCharacter($character);
 
         $data = $request->validate([
-            'current_hp' => ['required', 'integer', 'min:0'],
+            'current_hp' => ['required', 'integer', 'min:0', 'max:100'],
             'experience' => ['required', 'integer', 'min:0'],
         ]);
 
@@ -151,7 +151,7 @@ class CharacterController extends Controller
             'name' => ['required', 'string', 'max:100'],
             'player_name' => ['nullable', 'string', 'max:100'],
 
-            'level' => ['required', 'integer', 'min:1', 'max:20'],
+            'level' => ['required', 'integer', 'min:1', 'max:30'],
             'experience' => ['nullable', 'integer', 'min:0'],
             'alignment' => ['nullable', 'string', 'max:100'],
 
@@ -162,11 +162,11 @@ class CharacterController extends Controller
             'wisdom' => ['required', 'integer', 'min:1', 'max:30'],
             'charisma' => ['required', 'integer', 'min:1', 'max:30'],
 
-            'max_hp' => ['nullable', 'integer', 'min:0'],
-            'current_hp' => ['nullable', 'integer', 'min:0'],
-            'armor_class' => ['nullable', 'integer', 'min:0', 'max:40'],
+            'max_hp' => ['nullable', 'integer', 'min:0', 'max:100'],
+            'current_hp' => ['nullable', 'integer', 'min:0', 'max:100'],
+            'armor_class' => ['nullable', 'integer', 'min:0', 'max:30'],
             'armor_class_mode' => ['nullable', 'in:auto,manual'],
-            'speed' => ['nullable', 'integer', 'min:0', 'max:200'],
+            'speed' => ['nullable', 'integer', 'min:0', 'max:100'],
 
             'skill_proficiencies' => ['nullable', 'array'],
             'skill_proficiencies.*' => ['string', 'exists:skills,slug'],
@@ -196,14 +196,14 @@ class CharacterController extends Controller
         $background = isset($data['background_id']) ? Background::find($data['background_id']) : null;
 
         if ($race) {
-            $data['speed'] = $race->speed;
+            $data['speed'] = min(100, max(0, (int) $race->speed));
         }
 
         $constitutionScore = $this->totalAbilityScore((int) $data['constitution'], (int) ($race?->ability_bonuses['constitution'] ?? 0));
         $dexterityScore = $this->totalAbilityScore((int) $data['dexterity'], (int) ($race?->ability_bonuses['dexterity'] ?? 0));
 
         if ($class && (int) $data['max_hp'] === 0) {
-            $data['max_hp'] = max(1, $class->hit_die + $this->abilityModifier($constitutionScore));
+            $data['max_hp'] = min(100, max(1, $class->hit_die + $this->abilityModifier($constitutionScore)));
             $data['current_hp'] = $data['max_hp'];
         }
 
@@ -211,7 +211,7 @@ class CharacterController extends Controller
         $armorClassMode = $data['armor_class_mode'] ?? 'auto';
 
         if ($armorClassMode === 'auto' || (int) $data['armor_class'] === 10) {
-            $data['armor_class'] = $baseArmorClass;
+            $data['armor_class'] = min(30, max(0, $baseArmorClass));
         }
 
         if ((int) $data['max_hp'] > 0) {
