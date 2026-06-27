@@ -131,7 +131,25 @@ class Character extends Model
 
     public static function ruleLabels(): array
     {
-        return [
+        $fallback = [
+            'athletics' => 'Атлетика',
+            'acrobatics' => 'Акробатика',
+            'sleight-of-hand' => 'Ловкость рук',
+            'stealth' => 'Скрытность',
+            'arcana' => 'Магия',
+            'history' => 'История',
+            'investigation' => 'Анализ',
+            'nature' => 'Природа',
+            'religion' => 'Религия',
+            'animal-handling' => 'Уход за животными',
+            'insight' => 'Проницательность',
+            'medicine' => 'Медицина',
+            'perception' => 'Внимательность',
+            'survival' => 'Выживание',
+            'deception' => 'Обман',
+            'intimidation' => 'Запугивание',
+            'performance' => 'Выступление',
+            'persuasion' => 'Убеждение',
             'common' => 'Общий',
             'dwarvish' => 'Дварфский',
             'elvish' => 'Эльфийский',
@@ -200,13 +218,6 @@ class Character extends Model
             'ships-passage' => 'Морской проход',
             'military-rank' => 'Воинское звание',
             'city-secrets' => 'Городские тайны',
-            'holy-symbol' => 'Священный символ',
-            'prayer-book' => 'Молитвенник',
-            'incense-sticks' => 'Благовония',
-            'vestments' => 'Облачение',
-            'common-clothes' => 'Обычная одежда',
-            'belt-pouch' => 'Поясной кошель',
-            'fine-clothes' => 'Красивая одежда',
             'disguise-kit' => 'Набор для грима',
             'forgery-kit' => 'Набор фальсификатора',
             'thieves-tools' => 'Воровские инструменты',
@@ -218,6 +229,10 @@ class Character extends Model
             'herbalism-kit' => 'Набор травника',
             'navigator-tools' => 'Инструменты навигатора',
         ];
+
+        $translated = trans('game.labels');
+
+        return is_array($translated) ? array_replace($fallback, $translated) : $fallback;
     }
 
     public static function readableRuleLabel(string $value): string

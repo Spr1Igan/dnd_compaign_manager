@@ -45,6 +45,39 @@
 .profile-menu{
     position:relative;
 }
+
+.header-actions{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.locale-switcher{
+    display:flex;
+    gap:6px;
+    align-items:center;
+}
+
+.locale-button{
+    min-width:42px;
+    padding:8px 10px;
+    border:3px solid #111;
+    background:#fff;
+    color:#111;
+    cursor:pointer;
+    font:inherit;
+    font-size:13px;
+    font-weight:800;
+    box-shadow:3px 3px 0 #111;
+}
+
+.locale-button:hover,
+.locale-button.is-active{
+    transform:translate(1px,1px);
+    background:#fff4d8;
+    box-shadow:2px 2px 0 #111;
+}
+
 .profile-button{
     background:#fff;
     border:3px solid #111;
@@ -187,6 +220,10 @@
         gap: 20px;
     }
     .navigation {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .header-actions {
         flex-wrap: wrap;
         justify-content: center;
     }

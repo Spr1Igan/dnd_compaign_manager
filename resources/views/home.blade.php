@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Главная')
+@section('title', __('ui.home.title'))
 
 @section('content')
 
@@ -9,7 +9,7 @@
     <h1>D&D Campaign Manager</h1>
 
     <p>
-        Управляй персонажами, кампаниями и приключениями в одном месте.
+        {{ __('ui.home.lead') }}
     </p>
 
 </section>
@@ -17,15 +17,15 @@
 <section class="home-cards">
 
     <a href="{{ route('characters.index') }}" class="paper-card">
-        <h2>Персонажи</h2>
-        <p>Создавай героев, храни характеристики, снаряжение и историю.</p>
-        <span>Открыть →</span>
+        <h2>{{ __('ui.characters') }}</h2>
+        <p>{{ __('ui.home.characters_text') }}</p>
+        <span>{{ __('ui.open') }} →</span>
     </a>
 
     <a href="#" class="paper-card">
-        <h2>Кампании</h2>
-        <p>Веди игровые сессии, заметки, NPC и сюжетные линии.</p>
-        <span>Открыть →</span>
+        <h2>{{ __('ui.campaigns') }}</h2>
+        <p>{{ __('ui.home.campaigns_text') }}</p>
+        <span>{{ __('ui.open') }} →</span>
     </a>
 
 </section>

@@ -41,7 +41,7 @@ class CharacterController extends Controller
 
         return redirect()
             ->route('characters.show', $character)
-            ->with('success', 'Персонаж создан');
+            ->with('success', __('ui.messages.character_created'));
     }
 
     public function show(Character $character): View
@@ -74,7 +74,7 @@ class CharacterController extends Controller
 
         return redirect()
             ->route('characters.show', $character)
-            ->with('success', 'Персонаж обновлён');
+            ->with('success', __('ui.messages.character_updated'));
     }
 
     public function updateVitals(Request $request, Character $character): JsonResponse|RedirectResponse
@@ -104,7 +104,7 @@ class CharacterController extends Controller
 
         return redirect()
             ->route('characters.show', $character)
-            ->with('success', 'Текущие значения обновлены');
+            ->with('success', __('ui.messages.vitals_updated'));
     }
 
     public function destroy(Character $character): RedirectResponse
@@ -115,7 +115,7 @@ class CharacterController extends Controller
 
         return redirect()
             ->route('characters.index')
-            ->with('success', 'Персонаж удалён');
+            ->with('success', __('ui.messages.character_deleted'));
     }
 
     /**
@@ -203,7 +203,7 @@ class CharacterController extends Controller
         $dexterityScore = $this->totalAbilityScore((int) $data['dexterity'], (int) ($race?->ability_bonuses['dexterity'] ?? 0));
 
         if ($class && (int) $data['max_hp'] === 0) {
-            $data['max_hp'] = min(100, max(1, $class->hit_die + $this->abilityModifier($constitutionScore)));
+            $data['max_hp'] = $this->maxHitPoints($class->hit_die, (int) $data['level'], $constitutionScore);
             $data['current_hp'] = $data['max_hp'];
         }
 
@@ -242,10 +242,8 @@ class CharacterController extends Controller
             ->all();
 
         $data['equipment'] = collect(preg_split('/\r\n|\r|\n/', $data['equipment_text'] ?? ''))
-            ->merge($background?->equipment ?? [])
-            ->map(fn (string $item): string => Character::readableRuleLabel($item))
+            ->map(fn (string $item): string => trim($item))
             ->filter()
-            ->unique()
             ->values()
             ->all();
 
@@ -273,6 +271,15 @@ class CharacterController extends Controller
     private function baseArmorClass(int $dexterityScore): int
     {
         return max(1, 10 + $this->abilityModifier($dexterityScore));
+    }
+
+    private function maxHitPoints(int $hitDie, int $level, int $constitutionScore): int
+    {
+        $constitutionModifier = $this->abilityModifier($constitutionScore);
+        $firstLevelHp = max(1, $hitDie + $constitutionModifier);
+        $nextLevelHp = max(1, ((int) floor($hitDie / 2) + 1) + $constitutionModifier);
+
+        return min(100, $firstLevelHp + max(0, $level - 1) * $nextLevelHp);
     }
 
 }

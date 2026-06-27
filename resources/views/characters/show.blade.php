@@ -1,19 +1,19 @@
 @php
     $abilities = [
-        'strength' => ['Сила', 'СИЛ', $character->totalAbilityScore('strength'), $character->strength_modifier],
-        'dexterity' => ['Ловкость', 'ЛОВ', $character->totalAbilityScore('dexterity'), $character->dexterity_modifier],
-        'constitution' => ['Телосложение', 'ТЕЛ', $character->totalAbilityScore('constitution'), $character->constitution_modifier],
-        'intelligence' => ['Интеллект', 'ИНТ', $character->totalAbilityScore('intelligence'), $character->intelligence_modifier],
-        'wisdom' => ['Мудрость', 'МДР', $character->totalAbilityScore('wisdom'), $character->wisdom_modifier],
-        'charisma' => ['Харизма', 'ХАР', $character->totalAbilityScore('charisma'), $character->charisma_modifier],
+        'strength' => [__('game.abilities.strength.name'), __('game.abilities.strength.abbr'), $character->totalAbilityScore('strength'), $character->strength_modifier],
+        'dexterity' => [__('game.abilities.dexterity.name'), __('game.abilities.dexterity.abbr'), $character->totalAbilityScore('dexterity'), $character->dexterity_modifier],
+        'constitution' => [__('game.abilities.constitution.name'), __('game.abilities.constitution.abbr'), $character->totalAbilityScore('constitution'), $character->constitution_modifier],
+        'intelligence' => [__('game.abilities.intelligence.name'), __('game.abilities.intelligence.abbr'), $character->totalAbilityScore('intelligence'), $character->intelligence_modifier],
+        'wisdom' => [__('game.abilities.wisdom.name'), __('game.abilities.wisdom.abbr'), $character->totalAbilityScore('wisdom'), $character->wisdom_modifier],
+        'charisma' => [__('game.abilities.charisma.name'), __('game.abilities.charisma.abbr'), $character->totalAbilityScore('charisma'), $character->charisma_modifier],
     ];
 
     $skillNames = collect($character->skill_proficiencies ?? [])
-        ->map(fn (string $slug) => $skillsBySlug[$slug]->name ?? $slug)
+        ->map(fn (string $slug) => \App\Models\Character::readableRuleLabel($slug))
         ->implode(', ');
 
     $languageNames = collect($character->language_proficiencies ?? [])
-        ->map(fn (string $slug) => $languagesBySlug[$slug]->name ?? $slug)
+        ->map(fn (string $slug) => \App\Models\Character::readableRuleLabel($slug))
         ->implode(', ');
 
     $featureNames = collect($character->features ?? [])
@@ -26,17 +26,9 @@
             'modifier' => $character->savingThrowModifier($ability),
         ]);
 
-    $savingThrowHelp = 'Спасбросок используется, когда персонаж пытается избежать опасности: яда, заклинания, ловушки, страха, падения или другого эффекта. Бросается d20, добавляется модификатор нужной характеристики, а если класс владеет этим спасброском — ещё бонус мастерства.';
-    $armorClassHelp = 'Класс Доспеха показывает, насколько трудно попасть по персонажу атакой. Без доспеха и щита базовый КД равен 10 + модификатор Ловкости. Доспехи, щит и отдельные способности могут менять формулу. Если атака врага равна КД или выше, она обычно попадает.';
-
-    $abilityHelp = [
-        'Сила' => 'Сила показывает физическую мощь. Используется для атак и урона оружием ближнего боя, Атлетики, переноски тяжестей, прыжков, лазания, толкания и силовых спасбросков.',
-        'Ловкость' => 'Ловкость отражает реакцию, равновесие и точность. Влияет на инициативу, КД без тяжёлых доспехов, атаки дальнобойным и фехтовальным оружием, Акробатику, Скрытность и ловкостные спасброски.',
-        'Телосложение' => 'Телосложение отвечает за здоровье и выносливость. Модификатор добавляется к хитам за уровень и используется в спасбросках против яда, болезней, истощения и поддержания концентрации.',
-        'Интеллект' => 'Интеллект описывает память, обучение и логику. Используется для Магии, Истории, Анализа, Природы, Религии и часто важен для заклинаний волшебника.',
-        'Мудрость' => 'Мудрость отражает внимательность, интуицию и силу воли. Используется для Внимательности, Проницательности, Выживания, Медицины, ухода за животными и мудростных спасбросков.',
-        'Харизма' => 'Харизма показывает силу личности и влияние. Используется для Обмана, Запугивания, Выступления, Убеждения и часто важна для заклинаний барда, колдуна, паладина и чародея.',
-    ];
+    $savingThrowHelp = __('sheet.help.saving_throws');
+    $armorClassHelp = __('sheet.help.armor_class');
+    $abilityHelp = __('sheet.ability_help');
 @endphp
 
 @extends('layouts.app')
@@ -47,18 +39,18 @@
 
 <div class="page-heading">
     <div>
-        <p class="eyebrow">Лист персонажа</p>
+        <p class="eyebrow">{{ __('ui.show.sheet') }}</p>
         <h1>{{ $character->name }}</h1>
         <p>
-            {{ $character->characterClass?->name ?? 'Без класса' }}
-            · уровень {{ $character->level }}
-            · {{ $character->race?->name ?? 'Без расы' }}
+            {{ $character->characterClass ? \App\Models\Character::readableRuleLabel($character->characterClass->slug) : __('ui.characters_page.no_class') }}
+            &middot; {{ __('ui.show.level') }} {{ $character->level }}
+            &middot; {{ $character->race ? \App\Models\Character::readableRuleLabel($character->race->slug) : __('ui.characters_page.no_race') }}
         </p>
     </div>
 
     <div class="actions-row">
         <a class="paper-button" href="{{ route('characters.edit', $character) }}">
-            Редактировать
+            {{ __('ui.edit') }}
         </a>
 
         <form method="POST" action="{{ route('characters.destroy', $character) }}">
@@ -66,7 +58,7 @@
             @method('DELETE')
 
             <button class="paper-button danger" type="button" data-confirm-target="delete-character-confirm">
-                Удалить
+                {{ __('ui.delete') }}
             </button>
         </form>
     </div>
@@ -86,48 +78,48 @@
 >
     <section class="sheet-banner">
         <div class="banner-field banner-class">
-            <span>Класс</span>
-            <strong>{{ $character->characterClass?->name ?? '—' }}</strong>
+            <span>{{ __('ui.form.class') }}</span>
+            <strong>{{ $character->characterClass ? \App\Models\Character::readableRuleLabel($character->characterClass->slug) : __('ui.dash') }}</strong>
         </div>
 
         <div class="banner-field banner-level">
-            <span>Уровень</span>
+            <span>{{ __('ui.form.level') }}</span>
             <strong>{{ $character->level }}</strong>
         </div>
 
         <div class="banner-name">
-            <span>Имя персонажа</span>
+            <span>{{ __('ui.form.name') }}</span>
             <strong>{{ $character->name }}</strong>
         </div>
 
         <div class="banner-field">
-            <span>Предыстория</span>
-            <strong>{{ $character->background?->name ?? '—' }}</strong>
+            <span>{{ __('ui.form.background') }}</span>
+            <strong>{{ $character->background ? \App\Models\Character::readableRuleLabel($character->background->slug) : __('ui.dash') }}</strong>
         </div>
 
         <div class="banner-field">
-            <span>Мировоззрение</span>
-            <strong>{{ $character->alignment ?: '—' }}</strong>
+            <span>{{ __('ui.form.alignment') }}</span>
+            <strong>{{ $character->alignment ?: __('ui.dash') }}</strong>
         </div>
     </section>
 
     <section class="sheet-quick-row">
-        <div><span>Раса</span><strong>{{ $character->race?->name ?? '—' }}</strong></div>
-        <div><span>Игрок</span><strong>{{ $character->player_name ?: '—' }}</strong></div>
+        <div><span>{{ __('ui.form.race') }}</span><strong>{{ $character->race ? \App\Models\Character::readableRuleLabel($character->race->slug) : __('ui.dash') }}</strong></div>
+        <div><span>{{ __('ui.form.player') }}</span><strong>{{ $character->player_name ?: __('ui.dash') }}</strong></div>
         <div class="experience-field readonly-experience" data-experience-panel>
-            <span>Опыт</span>
+            <span>{{ __('ui.form.experience') }}</span>
             <strong data-experience-value>{{ $character->experience }}</strong>
             <button
                 class="sheet-arrow-button"
                 type="button"
                 data-experience-toggle
                 aria-expanded="false"
-                aria-label="Изменить опыт"
+                aria-label="{{ __('ui.show.change_experience') }}"
             >&rsaquo;</button>
 
             <section class="experience-popover" data-experience-popover hidden>
                 <label>
-                    <span>Количество опыта</span>
+                    <span>{{ __('ui.show.amount_experience') }}</span>
                     <input type="number" min="0" step="1" value="0" data-experience-amount>
                 </label>
                 <div class="experience-actions">
@@ -139,14 +131,14 @@
     </section>
 
     <section class="sheet-abilities-strip">
-        @foreach ($abilities as [$label, $abbr, $score, $modifier])
+        @foreach ($abilities as $field => [$label, $abbr, $score, $modifier])
             <div class="sheet-ability-card readonly">
                 <button
                     class="sheet-help-trigger"
                     type="button"
                     data-help-title="{{ $label }}"
-                    data-help-body="{{ $abilityHelp[$label] }}"
-                    aria-label="Подсказка: {{ $label }}"
+                    data-help-body="{{ $abilityHelp[$field] }}"
+                    aria-label="{{ __('sheet.labels.hint_for', ['name' => $label]) }}"
                 >?</button>
                 <span>{{ $abbr }}</span>
                 <strong>{{ $score }}</strong>
@@ -160,91 +152,91 @@
         <aside class="sheet-sidebar">
             <section class="sheet-panel compact">
                 <h2>
-                    Владения
+                    {{ __('ui.show.proficiencies') }}
                     <button
                         class="sheet-help-trigger section-help"
                         type="button"
-                        data-help-title="Бонус мастерства"
+                        data-help-title="{{ __('ui.show.proficiency_bonus') }}"
                         data-help-template="proficiency-help-template"
-                        aria-label="Подсказка: бонус мастерства"
+                        aria-label="{{ __('sheet.labels.hint_for', ['name' => __('ui.show.proficiency_bonus')]) }}"
                     >?</button>
                 </h2>
-                <p><b>Навыки:</b> {{ $skillNames ?: '—' }}</p>
-                <p><b>Языки:</b> {{ $languageNames ?: '—' }}</p>
+                <p><b>{{ __('ui.form.skills') }}:</b> {{ $skillNames ?: __('ui.dash') }}</p>
+                <p><b>{{ __('ui.form.languages') }}:</b> {{ $languageNames ?: __('ui.dash') }}</p>
             </section>
 
             <section class="sheet-panel compact">
                 <h2>
-                    Спасброски
+                    {{ __('ui.form.saving_throws') }}
                     <button
                         class="sheet-help-trigger section-help"
                         type="button"
-                        data-help-title="Спасброски"
+                        data-help-title="{{ __('ui.form.saving_throws') }}"
                         data-help-body="{{ $savingThrowHelp }}"
-                        aria-label="Подсказка: спасброски"
+                        aria-label="{{ __('sheet.labels.hint_for', ['name' => __('ui.form.saving_throws')]) }}"
                     >?</button>
                 </h2>
                 @forelse ($savingThrows as $save)
                     <p class="sheet-line">{{ $save['name'] }} {{ $save['modifier'] >= 0 ? '+' : '' }}{{ $save['modifier'] }}</p>
                 @empty
-                    <p>Класс не выбран.</p>
+                    <p>{{ __('ui.show.class_not_selected') }}</p>
                 @endforelse
             </section>
 
             <section class="sheet-panel compact">
-                <h2>Снаряжение</h2>
+                <h2>{{ __('ui.form.equipment') }}</h2>
                 @forelse ($character->equipment ?? [] as $item)
                     <p class="sheet-line">{{ $item }}</p>
                 @empty
-                    <p>Пока пусто.</p>
+                    <p>{{ __('ui.show.empty') }}</p>
                 @endforelse
             </section>
         </aside>
 
         <div class="sheet-core">
             <section class="sheet-panel combat-panel">
-                <h2>Бой</h2>
+                <h2>{{ __('ui.form.combat') }}</h2>
                 <div class="combat-stat-grid">
                     <div class="circle-stat readonly">
                         <button
                             class="sheet-help-trigger stat-help"
                             type="button"
-                            data-help-title="Класс Доспеха"
+                            data-help-title="{{ __('ui.form.armor_class') }}"
                             data-help-body="{{ $armorClassHelp }}"
-                            aria-label="Подсказка: класс доспеха"
+                            aria-label="{{ __('sheet.labels.hint_for', ['name' => __('ui.form.armor_class')]) }}"
                         >?</button>
-                        <span>КД</span>
+                        <span>{{ __('ui.form.armor_class') }}</span>
                         <strong>{{ $character->effectiveArmorClass() }}</strong>
                     </div>
-                    <div class="circle-stat readonly"><span>Скорость</span><strong>{{ $character->speed }}</strong></div>
+                    <div class="circle-stat readonly"><span>{{ __('ui.form.speed') }}</span><strong>{{ $character->speed }}</strong></div>
                     <div class="hp-box readonly hit-points-box">
                         <span>HP</span>
                         <div class="hp-control">
-                            <button class="sheet-arrow-button" type="button" data-hp-step="-1" aria-label="Уменьшить текущие HP">-</button>
+                            <button class="sheet-arrow-button" type="button" data-hp-step="-1" aria-label="{{ __('ui.show.decrease_hp') }}">-</button>
                             <strong class="hp-fraction">
                                 <span data-current-hp>{{ $character->current_hp }}</span>
                                 <span class="hp-divider" aria-hidden="true"></span>
                                 <span data-max-hp>{{ $character->max_hp }}</span>
                             </strong>
-                            <button class="sheet-arrow-button" type="button" data-hp-step="1" aria-label="Увеличить текущие HP">+</button>
+                            <button class="sheet-arrow-button" type="button" data-hp-step="1" aria-label="{{ __('ui.show.increase_hp') }}">+</button>
                         </div>
                     </div>
-                    <div class="hp-box readonly"><span>Бонус мастерства</span><strong>+{{ $character->proficiency_bonus }}</strong></div>
+                    <div class="hp-box readonly"><span>{{ __('ui.show.proficiency_bonus') }}</span><strong>+{{ $character->proficiency_bonus }}</strong></div>
                 </div>
             </section>
 
             <section class="sheet-panel lined-panel readonly-notes">
-                <h2>Черты и способности</h2>
-                <p><b>Особенности:</b> {{ $featureNames ?: '—' }}</p>
-                <p><b>Черты:</b> {{ $character->personality_traits ?: '—' }}</p>
-                <p><b>Идеалы:</b> {{ $character->ideals ?: '—' }}</p>
-                <p><b>Привязанности:</b> {{ $character->bonds ?: '—' }}</p>
-                <p><b>Слабости:</b> {{ $character->flaws ?: '—' }}</p>
+                <h2>{{ __('ui.form.traits_and_abilities') }}</h2>
+                <p><b>{{ __('ui.form.features') }}:</b> {{ $featureNames ?: __('ui.dash') }}</p>
+                <p><b>{{ __('ui.form.personality_traits') }}:</b> {{ $character->personality_traits ?: __('ui.dash') }}</p>
+                <p><b>{{ __('ui.form.ideals') }}:</b> {{ $character->ideals ?: __('ui.dash') }}</p>
+                <p><b>{{ __('ui.form.bonds') }}:</b> {{ $character->bonds ?: __('ui.dash') }}</p>
+                <p><b>{{ __('ui.form.flaws') }}:</b> {{ $character->flaws ?: __('ui.dash') }}</p>
             </section>
 
             <section class="sheet-panel lined-panel readonly-notes">
-                <h2>История</h2>
-                <p>{{ $character->backstory ?: 'История пока не заполнена.' }}</p>
+                <h2>{{ __('ui.form.backstory') }}</h2>
+                <p>{{ $character->backstory ?: __('ui.show.story_empty') }}</p>
             </section>
         </div>
     </div>
@@ -252,24 +244,21 @@
 
 <div class="sheet-help-overlay" data-sheet-help-overlay hidden>
     <section class="sheet-help-popover" role="dialog" aria-modal="true" aria-labelledby="sheet-help-title">
-        <button class="sheet-help-close" type="button" data-sheet-help-close aria-label="Закрыть подсказку">×</button>
-        <p class="eyebrow">Подсказка листа</p>
+        <button class="sheet-help-close" type="button" data-sheet-help-close aria-label="{{ __('ui.form.close_hint') }}">×</button>
+        <p class="eyebrow">{{ __('ui.form.sheet_hint') }}</p>
         <h2 id="sheet-help-title" data-sheet-help-title></h2>
         <div class="sheet-help-content" data-sheet-help-body></div>
     </section>
 </div>
 
 <template id="proficiency-help-template">
-    <p>
-        Бонус мастерства зависит от уровня персонажа. Он добавляется к проверкам навыков и спасброскам только тогда,
-        когда персонаж владеет соответствующим навыком или спасброском.
-    </p>
+    <p>{{ __('sheet.proficiency.body') }}</p>
 
     <table class="sheet-help-table">
         <thead>
             <tr>
-                <th>Уровень</th>
-                <th>Бонус</th>
+                <th>{{ __('sheet.proficiency.level') }}</th>
+                <th>{{ __('sheet.proficiency.bonus') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -281,8 +270,8 @@
         </tbody>
     </table>
 
-    <p><b>Навык:</b> d20 + модификатор характеристики + бонус мастерства при владении навыком.</p>
-    <p><b>Спасбросок:</b> d20 + модификатор характеристики + бонус мастерства, если класс владеет этим спасброском.</p>
+    <p><b>{{ __('ui.form.skills') }}:</b> {{ __('sheet.proficiency.skill_formula') }}</p>
+    <p><b>{{ __('ui.form.saving_throws') }}:</b> {{ __('sheet.proficiency.save_formula') }}</p>
 </template>
 
 @endsection
@@ -465,9 +454,9 @@
 @push('modals')
     @include('partials.confirm-dialog', [
         'id' => 'delete-character-confirm',
-        'title' => 'Удалить персонажа?',
-        'message' => 'Лист персонажа «' . $character->name . '» будет удалён без возможности восстановления.',
-        'confirmText' => 'Да, удалить',
-        'cancelText' => 'Оставить',
+        'title' => __('ui.show.delete_title'),
+        'message' => __('ui.show.delete_message', ['name' => $character->name]),
+        'confirmText' => __('ui.show.delete_confirm'),
+        'cancelText' => __('ui.show.delete_cancel'),
     ])
 @endpush

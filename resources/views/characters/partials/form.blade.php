@@ -4,67 +4,32 @@
     $equipment = old('equipment_text', implode("\n", $character?->equipment ?? []));
     $armorClassMode = old('armor_class_mode', $character && ! $character->usesBaseArmorClass() ? 'manual' : 'auto');
     $armorClassValue = old('armor_class', $character?->effectiveArmorClass() ?? 10);
+    $ruleLabel = fn (?string $value): string => $value ? \App\Models\Character::readableRuleLabel($value) : '—';
+    $sizeSlug = fn (?string $value): ?string => match ($value) {
+        'Средний' => 'medium',
+        'Маленький' => 'small',
+        default => $value,
+    };
 
-    $abilities = [
-        'strength' => ['Сила', 'СИЛ'],
-        'dexterity' => ['Ловкость', 'ЛОВ'],
-        'constitution' => ['Телосложение', 'ТЕЛ'],
-        'intelligence' => ['Интеллект', 'ИНТ'],
-        'wisdom' => ['Мудрость', 'МДР'],
-        'charisma' => ['Харизма', 'ХАР'],
-    ];
+    $abilities = collect(__('game.abilities'))
+        ->map(fn (array $ability) => [$ability['name'], $ability['abbr']])
+        ->all();
 
-    $abilityNames = [
-        'strength' => 'Сила',
-        'dexterity' => 'Ловкость',
-        'constitution' => 'Телосложение',
-        'intelligence' => 'Интеллект',
-        'wisdom' => 'Мудрость',
-        'charisma' => 'Харизма',
-    ];
+    $abilityNames = collect(__('game.abilities'))
+        ->map(fn (array $ability) => $ability['name'])
+        ->all();
 
-    $ruleLabels = [
-        ...\App\Models\Character::ruleLabels(),
-        'choose:1' => 'один на выбор',
-        'choose:2' => 'два на выбор',
-    ];
+    $ruleLabels = \App\Models\Character::ruleLabels();
 
-    $abilityHelp = [
-        'strength' => 'Сила показывает физическую мощь. Используется для атак и урона оружием ближнего боя, Атлетики, переноски тяжестей, прыжков, лазания, толкания и силовых спасбросков.',
-        'dexterity' => 'Ловкость отражает реакцию, равновесие и точность. Влияет на инициативу, КД без тяжёлых доспехов, атаки дальнобойным и фехтовальным оружием, Акробатику, Скрытность и ловкостные спасброски.',
-        'constitution' => 'Телосложение отвечает за здоровье и выносливость. Модификатор добавляется к хитам за уровень и используется в спасбросках против яда, болезней, истощения и поддержания концентрации.',
-        'intelligence' => 'Интеллект описывает память, обучение и логику. Используется для Магии, Истории, Анализа, Природы, Религии и часто важен для заклинаний волшебника.',
-        'wisdom' => 'Мудрость отражает внимательность, интуицию и силу воли. Используется для Внимательности, Проницательности, Выживания, Медицины, ухода за животными и мудростных спасбросков.',
-        'charisma' => 'Харизма показывает силу личности и влияние. Используется для Обмана, Запугивания, Выступления, Убеждения и часто важна для заклинаний барда, колдуна, паладина и чародея.',
-    ];
-
-    $skillHelp = [
-        'athletics' => 'Атлетика зависит от Силы. Используется при лазании, прыжках, плавании, борьбе, толкании и других силовых действиях.',
-        'acrobatics' => 'Акробатика зависит от Ловкости. Используется для равновесия, перекатов, ухода от падения и манёвров, где важна гибкость.',
-        'sleight-of-hand' => 'Ловкость рук зависит от Ловкости. Используется для карманных краж, фокусов, скрытого манипулирования предметами.',
-        'stealth' => 'Скрытность зависит от Ловкости. Используется, когда персонаж прячется, двигается тихо или пытается остаться незамеченным.',
-        'arcana' => 'Магия зависит от Интеллекта. Используется для знаний о заклинаниях, магических предметах, планах существования и мистических символах.',
-        'history' => 'История зависит от Интеллекта. Используется для знаний о прошлом, войнах, королевствах, легендах и важных событиях.',
-        'investigation' => 'Анализ зависит от Интеллекта. Используется для поиска выводов по уликам, исследования механизмов, ловушек и скрытых деталей.',
-        'nature' => 'Природа зависит от Интеллекта. Используется для знаний о местности, растениях, животных, погоде и природных циклах.',
-        'religion' => 'Религия зависит от Интеллекта. Используется для знаний о богах, обрядах, святых символах, культах и планах, связанных с верой.',
-        'animal-handling' => 'Уход за животными зависит от Мудрости. Используется для успокоения, контроля, понимания и обучения животных.',
-        'insight' => 'Проницательность зависит от Мудрости. Используется, чтобы понять намерения, ложь, настроение и поведение существ.',
-        'medicine' => 'Медицина зависит от Мудрости. Используется для стабилизации умирающих, диагностики болезней и ухода за ранами.',
-        'perception' => 'Внимательность зависит от Мудрости. Используется для обнаружения скрытого, засад, звуков, запахов и важных деталей окружения.',
-        'survival' => 'Выживание зависит от Мудрости. Используется для следопытства, охоты, поиска пути, предсказания погоды и жизни в дикой местности.',
-        'deception' => 'Обман зависит от Харизмы. Используется для лжи, маскировки намерений, введения в заблуждение и игры роли.',
-        'intimidation' => 'Запугивание зависит от Харизмы. Используется, чтобы давить угрозами, силой личности или демонстрацией опасности.',
-        'performance' => 'Выступление зависит от Харизмы. Используется для музыки, актёрства, танца, рассказов и публичного развлечения.',
-        'persuasion' => 'Убеждение зависит от Харизмы. Используется для переговоров, просьб, дипломатии, вдохновения и честного влияния.',
-    ];
+    $abilityHelp = __('sheet.ability_help');
+    $skillHelp = __('sheet.skill_help');
 
     $ruleData = [
         'races' => $races->mapWithKeys(fn ($race) => [
             $race->id => [
-                'name' => $race->name,
+                'name' => $ruleLabel($race->slug),
                 'speed' => $race->speed,
-                'size' => $race->size,
+                'size' => $ruleLabel($sizeSlug($race->size)),
                 'languages' => $race->languages ?? [],
                 'features' => $race->features ?? [],
                 'ability_bonuses' => $race->ability_bonuses ?? [],
@@ -72,7 +37,7 @@
         ]),
         'classes' => $classes->mapWithKeys(fn ($class) => [
             $class->id => [
-                'name' => $class->name,
+                'name' => $ruleLabel($class->slug),
                 'hit_die' => $class->hit_die,
                 'saving_throws' => $class->saving_throws ?? [],
                 'armor_proficiencies' => $class->armor_proficiencies ?? [],
@@ -84,7 +49,7 @@
         ]),
         'backgrounds' => $backgrounds->mapWithKeys(fn ($background) => [
             $background->id => [
-                'name' => $background->name,
+                'name' => $ruleLabel($background->slug),
                 'skill_proficiencies' => $background->skill_proficiencies ?? [],
                 'tool_proficiencies' => $background->tool_proficiencies ?? [],
                 'languages' => $background->languages ?? [],
@@ -94,6 +59,7 @@
         ]),
         'abilityNames' => $abilityNames,
         'ruleLabels' => $ruleLabels,
+        'text' => __('sheet.js'),
     ];
 @endphp
 
@@ -114,65 +80,65 @@
 
     <section class="sheet-banner">
         <div class="banner-field banner-class">
-            <label for="class_id">Класс</label>
+            <label for="class_id">{{ __('ui.form.class') }}</label>
             <select id="class_id" name="class_id">
-                <option value="">Без класса</option>
+                <option value="">{{ __('ui.form.no_class') }}</option>
                 @foreach ($classes as $class)
                     <option value="{{ $class->id }}" @selected(old('class_id', $character?->class_id) == $class->id)>
-                        {{ $class->name }}
+                        {{ $ruleLabel($class->slug) }}
                     </option>
                 @endforeach
             </select>
         </div>
 
         <div class="banner-field banner-level">
-            <label for="level">Уровень</label>
+            <label for="level">{{ __('ui.form.level') }}</label>
             <input id="level" type="number" name="level" min="1" max="30" value="{{ old('level', $character?->level ?? 1) }}" required>
         </div>
 
         <div class="banner-name">
-            <label for="name">Имя персонажа</label>
+            <label for="name">{{ __('ui.form.name') }}</label>
             <input id="name" type="text" name="name" value="{{ old('name', $character?->name) }}" required>
         </div>
 
         <div class="banner-field">
-            <label for="background_id">Предыстория</label>
+            <label for="background_id">{{ __('ui.form.background') }}</label>
             <select id="background_id" name="background_id">
-                <option value="">Без предыстории</option>
+                <option value="">{{ __('ui.form.no_background') }}</option>
                 @foreach ($backgrounds as $background)
                     <option value="{{ $background->id }}" @selected(old('background_id', $character?->background_id) == $background->id)>
-                        {{ $background->name }}
+                        {{ $ruleLabel($background->slug) }}
                     </option>
                 @endforeach
             </select>
         </div>
 
         <div class="banner-field">
-            <label for="alignment">Мировоззрение</label>
+            <label for="alignment">{{ __('ui.form.alignment') }}</label>
             <input id="alignment" type="text" name="alignment" value="{{ old('alignment', $character?->alignment) }}">
         </div>
     </section>
 
     <section class="sheet-quick-row">
         <div>
-            <label for="race_id">Раса</label>
+            <label for="race_id">{{ __('ui.form.race') }}</label>
             <select id="race_id" name="race_id">
-                <option value="">Без расы</option>
+                <option value="">{{ __('ui.form.no_race') }}</option>
                 @foreach ($races as $race)
                     <option value="{{ $race->id }}" @selected(old('race_id', $character?->race_id) == $race->id)>
-                        {{ $race->name }}
+                        {{ $ruleLabel($race->slug) }}
                     </option>
                 @endforeach
             </select>
         </div>
 
         <div>
-            <label for="player_name">Игрок</label>
+            <label for="player_name">{{ __('ui.form.player') }}</label>
             <input id="player_name" type="text" name="player_name" value="{{ old('player_name', $character?->player_name) }}">
         </div>
 
         <div>
-            <label for="experience">Опыт</label>
+            <label for="experience">{{ __('ui.form.experience') }}</label>
             <input id="experience" type="number" name="experience" min="0" value="{{ old('experience', $character?->experience ?? 0) }}">
         </div>
     </section>
@@ -185,7 +151,7 @@
                     type="button"
                     data-help-title="{{ $label }}"
                     data-help-body="{{ $abilityHelp[$field] }}"
-                    aria-label="Подсказка: {{ $label }}"
+                    aria-label="{{ __('sheet.labels.hint_for', ['name' => $label]) }}"
                 >?</button>
                 <label for="{{ $field }}">
                     <span>{{ $abbr }}</span>
@@ -198,12 +164,12 @@
     </section>
 
     <section class="sheet-panel sheet-rules-panel">
-        <h2>Подтягивается по выбору</h2>
+        <h2>{{ __('ui.form.pulled_by_choice') }}</h2>
         <div class="rule-summary-grid">
-            <p><b>Раса:</b> <span data-rule-race>выбери расу</span></p>
-            <p><b>Класс:</b> <span data-rule-class>выбери класс</span></p>
-            <p><b>Предыстория:</b> <span data-rule-background>выбери предысторию</span></p>
-            <p><b>Особенности:</b> <span data-rule-features>пока нет</span></p>
+            <p><b>{{ __('ui.form.race') }}:</b> <span data-rule-race>{{ __('ui.form.choose_race') }}</span></p>
+            <p><b>{{ __('ui.form.class') }}:</b> <span data-rule-class>{{ __('ui.form.choose_class') }}</span></p>
+            <p><b>{{ __('ui.form.background') }}:</b> <span data-rule-background>{{ __('ui.form.choose_background') }}</span></p>
+            <p><b>{{ __('ui.form.features') }}:</b> <span data-rule-features>{{ __('ui.form.not_yet') }}</span></p>
         </div>
     </section>
 
@@ -211,21 +177,21 @@
         <aside class="sheet-sidebar">
             <section class="sheet-panel compact">
                 <h2>
-                    Спасброски
+                    {{ __('ui.form.saving_throws') }}
                     <button
                         class="sheet-help-trigger section-help"
                         type="button"
-                        data-help-title="Спасброски"
-                        data-help-body="Спасбросок используется, когда персонаж пытается избежать опасности: яда, заклинания, ловушки, страха, падения или другого эффекта. Бросается d20, добавляется модификатор нужной характеристики, а если класс владеет этим спасброском — ещё бонус мастерства. Чем выше итог, тем больше шанс избежать или ослабить последствия."
-                        aria-label="Подсказка: спасброски"
+                        data-help-title="{{ __('ui.form.saving_throws') }}"
+                        data-help-body="{{ __('sheet.help.saving_throws') }}"
+                        aria-label="{{ __('sheet.labels.hint_for', ['name' => __('ui.form.saving_throws')]) }}"
                     >?</button>
                 </h2>
                 <div class="save-list">
                     @foreach ($abilityNames as $field => $label)
                         <label
                             data-save-ability="{{ $field }}"
-                            data-help-title="Спасбросок: {{ $label }}"
-                            data-help-body="Этот спасбросок применяется, когда опасность проверяет характеристику «{{ $label }}». Если выбранный класс владеет этим спасброском, к броску добавляется бонус мастерства."
+                            data-help-title="{{ __('sheet.labels.saving_throw_for', ['name' => $label]) }}"
+                            data-help-body="{{ __('sheet.help.saving_throw_item', ['ability' => $label]) }}"
                         >
                             <span class="sheet-dot"></span>
                             <input type="checkbox" disabled>
@@ -237,13 +203,14 @@
 
             <section class="sheet-panel compact">
                 <h2>
-                    Навыки
+                    {{ __('ui.form.skills') }}
                     <button
                         class="sheet-help-trigger section-help"
                         type="button"
-                        data-help-title="Навыки"
-                        data-help-body="Навык показывает, в каких действиях персонаж обучен. Когда мастер просит проверку навыка, бросается d20, добавляется модификатор связанной характеристики, а при владении навыком — бонус мастерства. Навыки помогают решать сцены исследования, общения, скрытности, знаний и выживания."
-                        aria-label="Подсказка: навыки"
+                        data-help-title="{{ __('ui.form.skills') }}"
+                        data-help-body="{{ __('sheet.help.skills_section') }}"
+                        data-skill-section-help
+                        aria-label="{{ __('sheet.labels.hint_for', ['name' => __('ui.form.skills')]) }}"
                     >?</button>
                 </h2>
                 <div class="skill-list">
@@ -256,14 +223,14 @@
                                 @checked(in_array($skill->slug, $selectedSkills, true))
                                 data-skill-input="{{ $skill->slug }}"
                             >
-                            <span>{{ $skill->name }}</span>
+                            <span>{{ $ruleLabel($skill->slug) }}</span>
                             <small>{{ $abilityNames[$skill->ability] ?? $skill->ability }}</small>
                             <button
                                 class="sheet-help-trigger skill-help"
                                 type="button"
-                                data-help-title="{{ $skill->name }}"
-                                data-help-body="{{ $skillHelp[$skill->slug] ?? 'Навык применяется по решению мастера, когда действие персонажа требует проверки.' }}"
-                                aria-label="Подсказка: {{ $skill->name }}"
+                                data-help-title="{{ $ruleLabel($skill->slug) }}"
+                                data-help-body="{{ $skillHelp[$skill->slug] ?? __('sheet.help.skill_default') }}"
+                                aria-label="{{ __('sheet.labels.hint_for', ['name' => $ruleLabel($skill->slug)]) }}"
                             >?</button>
                         </label>
                     @endforeach
@@ -271,7 +238,7 @@
             </section>
 
             <section class="sheet-panel compact">
-                <h2>Языки</h2>
+                <h2>{{ __('ui.form.languages') }}</h2>
                 <div class="language-list">
                     @foreach ($languages as $language)
                         <label>
@@ -282,8 +249,8 @@
                                 @checked(in_array($language->slug, $selectedLanguages, true))
                                 data-language-input="{{ $language->slug }}"
                             >
-                            <span>{{ $language->name }}</span>
-                            <small>{{ $language->type }}</small>
+                            <span>{{ $ruleLabel($language->slug) }}</span>
+                            <small>{{ $ruleLabel($language->type) }}</small>
                         </label>
                     @endforeach
                 </div>
@@ -292,57 +259,65 @@
 
         <div class="sheet-core">
             <section class="sheet-panel combat-panel">
-                <h2>Бой</h2>
+                <h2>{{ __('ui.form.combat') }}</h2>
                 <div class="combat-stat-grid">
                     <div class="circle-stat">
                         <button
                             class="sheet-help-trigger stat-help"
                             type="button"
-                            data-help-title="Класс Доспеха"
-                            data-help-body="КД показывает, насколько трудно попасть по персонажу атакой. Без доспеха и щита базовый КД равен 10 + модификатор Ловкости. Доспехи, щит и некоторые способности могут менять формулу. Если атака врага равна КД или выше, она обычно попадает."
-                            aria-label="Подсказка: класс доспеха"
+                            data-help-title="{{ __('ui.form.armor_class') }}"
+                            data-help-body="{{ __('sheet.help.armor_class') }}"
+                            aria-label="{{ __('sheet.labels.hint_for', ['name' => __('ui.form.armor_class')]) }}"
                         >?</button>
-                        <label for="armor_class">КД</label>
+                        <label for="armor_class">{{ __('ui.form.armor_class') }}</label>
                         <input id="armor_class" type="number" name="armor_class" min="0" max="30" value="{{ $armorClassValue }}">
                         <input type="hidden" name="armor_class_mode" value="{{ $armorClassMode }}" data-armor-class-mode>
                         <label class="stat-auto-toggle">
                             <input type="checkbox" data-armor-auto-toggle @checked($armorClassMode === 'auto')>
-                            авто
+                            {{ __('ui.form.auto') }}
                         </label>
                     </div>
 
                     <div class="circle-stat">
-                        <label for="speed">Скорость</label>
+                        <label for="speed">{{ __('ui.form.speed') }}</label>
                         <input id="speed" type="number" name="speed" min="0" max="100" value="{{ old('speed', $character?->speed ?? 30) }}">
                     </div>
 
                     <div class="hp-box">
-                        <label for="max_hp">Максимум HP</label>
+                        <button
+                            class="sheet-help-trigger stat-help"
+                            type="button"
+                            data-help-title="{{ __('ui.form.max_hp') }}"
+                            data-help-body="{{ __('ui.form.max_hp') }}"
+                            data-max-hp-help
+                            aria-label="{{ __('ui.form.max_hp') }}"
+                        >?</button>
+                        <label for="max_hp">{{ __('ui.form.max_hp') }}</label>
                         <input id="max_hp" type="number" name="max_hp" min="0" max="100" value="{{ old('max_hp', $character?->max_hp ?? 0) }}">
                     </div>
 
                     <div class="hp-box">
-                        <label for="current_hp">Текущие HP</label>
+                        <label for="current_hp">{{ __('ui.form.current_hp') }}</label>
                         <input id="current_hp" type="number" name="current_hp" min="0" max="{{ min(100, old('max_hp', $character?->max_hp ?? 100) ?: 100) }}" value="{{ old('current_hp', $character?->current_hp ?? 0) }}">
                     </div>
                 </div>
             </section>
 
             <section class="sheet-panel lined-panel">
-                <h2>Черты и способности</h2>
-                <textarea name="personality_traits" rows="4" placeholder="Черты характера">{{ old('personality_traits', $character?->personality_traits) }}</textarea>
-                <textarea name="ideals" rows="3" placeholder="Идеалы">{{ old('ideals', $character?->ideals) }}</textarea>
-                <textarea name="bonds" rows="3" placeholder="Привязанности">{{ old('bonds', $character?->bonds) }}</textarea>
-                <textarea name="flaws" rows="3" placeholder="Слабости">{{ old('flaws', $character?->flaws) }}</textarea>
+                <h2>{{ __('ui.form.traits_and_abilities') }}</h2>
+                <textarea name="personality_traits" rows="4" placeholder="{{ __('ui.form.personality_traits') }}">{{ old('personality_traits', $character?->personality_traits) }}</textarea>
+                <textarea name="ideals" rows="3" placeholder="{{ __('ui.form.ideals') }}">{{ old('ideals', $character?->ideals) }}</textarea>
+                <textarea name="bonds" rows="3" placeholder="{{ __('ui.form.bonds') }}">{{ old('bonds', $character?->bonds) }}</textarea>
+                <textarea name="flaws" rows="3" placeholder="{{ __('ui.form.flaws') }}">{{ old('flaws', $character?->flaws) }}</textarea>
             </section>
 
             <section class="sheet-panel lined-panel">
-                <h2>Снаряжение</h2>
-                <textarea name="equipment_text" rows="8" placeholder="Каждый предмет с новой строки">{{ $equipment }}</textarea>
+                <h2>{{ __('ui.form.equipment') }}</h2>
+                <textarea name="equipment_text" rows="8" placeholder="{{ __('ui.form.equipment_placeholder') }}">{{ $equipment }}</textarea>
             </section>
 
             <section class="sheet-panel lined-panel">
-                <h2>История</h2>
+                <h2>{{ __('ui.form.backstory') }}</h2>
                 <textarea name="backstory" rows="10">{{ old('backstory', $character?->backstory) }}</textarea>
             </section>
         </div>
@@ -350,19 +325,19 @@
 
     <div class="form-actions sheet-actions">
         <button class="paper-button" type="submit">
-            Сохранить лист
+            {{ __('ui.save_sheet') }}
         </button>
 
         <a class="paper-button secondary" href="{{ route('characters.index') }}">
-            Назад
+            {{ __('ui.back') }}
         </a>
     </div>
 </form>
 
 <div class="sheet-help-overlay" data-sheet-help-overlay hidden>
     <section class="sheet-help-popover" role="dialog" aria-modal="true" aria-labelledby="sheet-help-title">
-        <button class="sheet-help-close" type="button" data-sheet-help-close aria-label="Закрыть подсказку">×</button>
-        <p class="eyebrow">Подсказка листа</p>
+        <button class="sheet-help-close" type="button" data-sheet-help-close aria-label="{{ __('ui.form.close_hint') }}">×</button>
+        <p class="eyebrow">{{ __('ui.form.sheet_hint') }}</p>
         <h2 id="sheet-help-title" data-sheet-help-title></h2>
         <p data-sheet-help-body></p>
     </section>
@@ -381,6 +356,11 @@
             }
 
             const rules = window.characterSheetRules;
+            const text = rules.text || {};
+            const formatText = (template, replacements = {}) => Object.entries(replacements).reduce(
+                (value, [key, replacement]) => value.replaceAll(`:${key}`, String(replacement)),
+                String(template || ''),
+            );
             const raceSelect = form.querySelector('#race_id');
             const classSelect = form.querySelector('#class_id');
             const backgroundSelect = form.querySelector('#background_id');
@@ -393,19 +373,36 @@
             const armorClassModeInput = form.querySelector('[data-armor-class-mode]');
             const armorAutoToggle = form.querySelector('[data-armor-auto-toggle]');
             const equipmentText = form.querySelector('[name="equipment_text"]');
+            const skillSectionHelp = form.querySelector('[data-skill-section-help]');
+            const maxHpHelp = form.querySelector('[data-max-hp-help]');
             let armorClassIsManual = armorClassModeInput?.value === 'manual';
 
             const labelize = (item) => String(item).replaceAll('-', ' ');
             const translate = (item) => rules.abilityNames[item] ?? rules.ruleLabels[item] ?? labelize(item);
+            const plural = (count, one, few, many) => {
+                const abs = Math.abs(Number(count));
+                const mod10 = abs % 10;
+                const mod100 = abs % 100;
+
+                if (mod10 === 1 && mod100 !== 11) {
+                    return one;
+                }
+
+                if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) {
+                    return few;
+                }
+
+                return many;
+            };
 
             const readable = (items) => {
                 if (!items || items.length === 0) {
-                    return 'нет';
+                    return text.none || 'none';
                 }
 
                 return items
                     .map(translate)
-                    .join(', ') || 'на выбор';
+                    .join(', ') || (text.choose || 'choose');
             };
 
             const modifier = (score) => Math.floor((Number(score || 10) - 10) / 2);
@@ -475,6 +472,99 @@
                     });
             };
 
+            const maxHpParts = (characterClass) => {
+                const level = clampNumber(levelInput?.value || 1, 1, 30);
+                const hitDie = Number(characterClass?.hit_die || 0);
+                const constitutionModifier = modifier(totalAbility('constitution'));
+                const averageHitDie = Math.floor(hitDie / 2) + 1;
+                const firstLevelHp = Math.max(1, hitDie + constitutionModifier);
+                const nextLevelHp = Math.max(1, averageHitDie + constitutionModifier);
+                const expectedHp = Math.min(100, firstLevelHp + Math.max(0, level - 1) * nextLevelHp);
+
+                return {
+                    level,
+                    hitDie,
+                    constitutionModifier,
+                    averageHitDie,
+                    firstLevelHp,
+                    nextLevelHp,
+                    expectedHp,
+                };
+            };
+
+            const classSkillChoiceSummary = (characterClass) => {
+                const classChoices = characterClass?.skill_choices;
+
+                if (!classChoices) {
+                    return text.no_skill_choice_data || 'no skill choice data';
+                }
+
+                const count = Number(classChoices.choose || 0);
+                const skillWords = text.skill_words || ['skill', 'skills', 'skills'];
+                const countText = `${count} ${plural(count, skillWords[0], skillWords[1], skillWords[2])}`;
+
+                return classChoices.from === 'any'
+                    ? formatText(text.any_skills, { countText })
+                    : formatText(text.from_list, { countText, list: readable(classChoices.from ?? []) });
+            };
+
+            const updateSkillHelp = (characterClass, background) => {
+                if (!skillSectionHelp) {
+                    return;
+                }
+
+                const base = text.skill_help_base;
+                const classText = characterClass
+                    ? formatText(text.class_skills, {
+                        class: characterClass.name,
+                        summary: classSkillChoiceSummary(characterClass),
+                    })
+                    : text.class_not_selected;
+                const backgroundSkills = background?.skill_proficiencies ?? [];
+                const backgroundText = background
+                    ? formatText(text.background_skills, {
+                        background: background.name,
+                        skills: readable(backgroundSkills),
+                    })
+                    : text.background_not_selected;
+
+                skillSectionHelp.dataset.helpBody = `${base} ${classText} ${backgroundText}`;
+            };
+
+            const updateMaxHpHelp = (characterClass) => {
+                if (!maxHpHelp) {
+                    return;
+                }
+
+                if (!characterClass) {
+                    maxHpHelp.dataset.helpBody = text.max_hp_without_class;
+                    return;
+                }
+
+                const {
+                    level,
+                    hitDie,
+                    constitutionModifier,
+                    averageHitDie,
+                    firstLevelHp,
+                    nextLevelHp,
+                    expectedHp,
+                } = maxHpParts(characterClass);
+                const cappedText = expectedHp >= 100 ? text.max_hp_capped : '';
+
+                maxHpHelp.dataset.helpBody = formatText(text.max_hp_formula, {
+                    class: characterClass.name,
+                    hitDie,
+                    constitutionModifier: signed(constitutionModifier),
+                    firstLevelHp,
+                    averageHitDie,
+                    nextLevelHp,
+                    level,
+                    expectedHp,
+                    cappedText,
+                });
+            };
+
             const updateAbilities = () => {
                 const race = rules.races[raceSelect.value];
                 const bonuses = race?.ability_bonuses ?? {};
@@ -487,7 +577,15 @@
 
                     if (target) {
                         target.textContent = signed(modifier(total));
-                        target.title = `${bonus ? `Бонус расы ${signed(bonus)}. ` : ''}Итоговое значение ${total}, модификатор ${signed(modifier(total))}.`;
+                        const bonusText = bonus
+                            ? formatText(text.race_bonus_title, { bonus: signed(bonus) })
+                            : '';
+
+                        target.title = formatText(text.ability_title, {
+                            bonusText,
+                            total,
+                            modifier: signed(modifier(total)),
+                        });
                     }
                 });
             };
@@ -504,7 +602,7 @@
                 }
 
                 if (characterClass && Number(maxHpInput.value || 0) === 0) {
-                    const hp = Math.min(100, Math.max(1, Number(characterClass.hit_die) + modifier(totalAbility('constitution'))));
+                    const hp = maxHpParts(characterClass).expectedHp;
                     maxHpInput.value = hp;
                     currentHpInput.value = hp;
                 }
@@ -522,7 +620,7 @@
                     applyChecked('[data-language-input', background.languages ?? []);
 
                     if (equipmentText && equipmentText.value.trim() === '' && background.equipment?.length) {
-                        equipmentText.value = background.equipment.map(translate).join("\n");
+                        equipmentText.value = background.equipment.join("\n");
                     }
                 }
 
@@ -538,16 +636,32 @@
                 ];
 
                 form.querySelector('[data-rule-race]').textContent = race
-                    ? `${race.name}, скорость ${race.speed}, размер ${race.size ?? '—'}, языки: ${readable(race.languages)}`
-                    : 'выбери расу';
+                    ? formatText(text.race_summary, {
+                        name: race.name,
+                        speed: race.speed,
+                        size: race.size ?? '—',
+                        languages: readable(race.languages),
+                    })
+                    : text.choose_race;
                 form.querySelector('[data-rule-class]').textContent = characterClass
-                    ? `${characterClass.name}, кость хитов d${characterClass.hit_die}, спасброски: ${readable(characterClass.saving_throws)}`
-                    : 'выбери класс';
+                    ? formatText(text.class_summary, {
+                        name: characterClass.name,
+                        hitDie: characterClass.hit_die,
+                        savingThrows: readable(characterClass.saving_throws),
+                        skills: classSkillChoiceSummary(characterClass),
+                    })
+                    : text.choose_class;
                 form.querySelector('[data-rule-background]').textContent = background
-                    ? `${background.name}, навыки: ${readable(background.skill_proficiencies)}, языки: ${readable(background.languages)}`
-                    : 'выбери предысторию';
+                    ? formatText(text.background_summary, {
+                        name: background.name,
+                        skills: readable(background.skill_proficiencies),
+                        languages: readable(background.languages),
+                    })
+                    : text.choose_background;
                 form.querySelector('[data-rule-features]').textContent = readable([...new Set(features)]);
 
+                updateSkillHelp(characterClass, background);
+                updateMaxHpHelp(characterClass);
                 clampCharacterNumbers();
                 updateAbilities();
             };

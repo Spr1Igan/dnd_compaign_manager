@@ -1,17 +1,17 @@
 @extends('layouts.app')
 
-@section('title', 'Персонажи')
+@section('title', __('ui.characters_page.title'))
 
 @section('content')
 
 <div class="page-heading">
     <div>
-        <h1>Персонажи</h1>
-        <p>Список твоих героев и NPC.</p>
+        <h1>{{ __('ui.characters_page.title') }}</h1>
+        <p>{{ __('ui.characters_page.subtitle') }}</p>
     </div>
 
     <a class="paper-button" href="{{ route('characters.create') }}">
-        + Создать персонажа
+        + {{ __('ui.characters_page.create') }}
     </a>
 </div>
 
@@ -22,8 +22,8 @@
 @if ($characters->isEmpty())
 
     <div class="paper-panel">
-        <h2>Пока нет персонажей</h2>
-        <p>Создай первого героя для своей кампании.</p>
+        <h2>{{ __('ui.characters_page.empty_title') }}</h2>
+        <p>{{ __('ui.characters_page.empty_text') }}</p>
     </div>
 
 @else
@@ -36,15 +36,15 @@
                 <h2>{{ $character->name }}</h2>
 
                 <p>
-                    {{ $character->race?->name ?? 'Без расы' }}
+                    {{ $character->race ? \App\Models\Character::readableRuleLabel($character->race->slug) : __('ui.characters_page.no_race') }}
                     /
-                    {{ $character->characterClass?->name ?? 'Без класса' }}
+                    {{ $character->characterClass ? \App\Models\Character::readableRuleLabel($character->characterClass->slug) : __('ui.characters_page.no_class') }}
                 </p>
 
                 <div class="character-stats">
-                    <span>Ур. {{ $character->level }}</span>
-                    <span>КД {{ $character->effectiveArmorClass() }}</span>
-                    <span>ХП {{ $character->current_hp }}/{{ $character->max_hp }}</span>
+                    <span>{{ __('ui.characters_page.level_short') }} {{ $character->level }}</span>
+                    <span>{{ __('ui.characters_page.armor_short') }} {{ $character->effectiveArmorClass() }}</span>
+                    <span>{{ __('ui.characters_page.hp_short') }} {{ $character->current_hp }}/{{ $character->max_hp }}</span>
                 </div>
             </a>
 

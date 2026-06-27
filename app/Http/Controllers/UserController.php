@@ -26,7 +26,7 @@ class UserController extends Controller
 
         return redirect()
             ->route('home')
-            ->with('success', 'Регистрация успешна');
+            ->with('success', __('ui.messages.register_success'));
     }
 
     public function showLogin(): View
@@ -44,12 +44,12 @@ class UserController extends Controller
 
             return redirect()
                 ->intended(route('home'))
-                ->with('success', 'Вы вошли');
+                ->with('success', __('ui.messages.login_success'));
         }
 
         return back()
             ->withErrors([
-                'login' => 'Неверный логин или пароль',
+                'login' => __('ui.messages.invalid_login'),
             ])
             ->onlyInput('login');
     }
@@ -63,7 +63,7 @@ class UserController extends Controller
 
         return redirect()
             ->route('login')
-            ->with('success', 'Вы вышли из аккаунта');
+            ->with('success', __('ui.messages.logout_success'));
     }
 
     public function profile(): View

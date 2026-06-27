@@ -1,0 +1,79 @@
+<?php
+
+return [
+    'labels' => [
+        'hint_for' => 'Hint: :name',
+        'saving_throw_for' => 'Saving throw: :name',
+    ],
+
+    'ability_help' => [
+        'strength' => 'Strength measures physical power. It is used for melee weapon attacks and damage, Athletics, carrying weight, jumping, climbing, shoving, and Strength saving throws.',
+        'dexterity' => 'Dexterity measures reflexes, balance, and precision. It affects initiative, AC without heavy armor, ranged and finesse weapon attacks, Acrobatics, Stealth, and Dexterity saving throws.',
+        'constitution' => 'Constitution measures health and stamina. Its modifier is added to hit points per level and is used for saving throws against poison, disease, exhaustion, and maintaining concentration.',
+        'intelligence' => 'Intelligence covers memory, learning, and logic. It is used for Arcana, History, Investigation, Nature, Religion, and is often important for wizard spellcasting.',
+        'wisdom' => 'Wisdom reflects awareness, intuition, and willpower. It is used for Perception, Insight, Survival, Medicine, Animal Handling, and Wisdom saving throws.',
+        'charisma' => 'Charisma measures force of personality and influence. It is used for Deception, Intimidation, Performance, Persuasion, and is often important for bard, warlock, paladin, and sorcerer spellcasting.',
+    ],
+
+    'skill_help' => [
+        'athletics' => 'Athletics uses Strength. It applies to climbing, jumping, swimming, grappling, shoving, and other physical feats.',
+        'acrobatics' => 'Acrobatics uses Dexterity. It applies to balance, rolls, avoiding falls, and agile movement.',
+        'sleight-of-hand' => 'Sleight of Hand uses Dexterity. It applies to pickpocketing, tricks, and subtle object manipulation.',
+        'stealth' => 'Stealth uses Dexterity. It applies when a character hides, moves quietly, or tries to remain unnoticed.',
+        'arcana' => 'Arcana uses Intelligence. It covers knowledge of spells, magic items, planes, and mystical symbols.',
+        'history' => 'History uses Intelligence. It covers knowledge of the past, wars, kingdoms, legends, and major events.',
+        'investigation' => 'Investigation uses Intelligence. It applies to drawing conclusions from clues, studying mechanisms, traps, and hidden details.',
+        'nature' => 'Nature uses Intelligence. It covers terrain, plants, animals, weather, and natural cycles.',
+        'religion' => 'Religion uses Intelligence. It covers gods, rites, holy symbols, cults, and faith-related planes.',
+        'animal-handling' => 'Animal Handling uses Wisdom. It applies to calming, controlling, understanding, and training animals.',
+        'insight' => 'Insight uses Wisdom. It helps read intentions, lies, moods, and behavior.',
+        'medicine' => 'Medicine uses Wisdom. It applies to stabilizing dying creatures, diagnosing disease, and tending wounds.',
+        'perception' => 'Perception uses Wisdom. It helps notice hidden things, ambushes, sounds, smells, and important details.',
+        'survival' => 'Survival uses Wisdom. It applies to tracking, hunting, navigation, weather reading, and wilderness travel.',
+        'deception' => 'Deception uses Charisma. It applies to lying, disguising intent, misleading others, and acting a part.',
+        'intimidation' => 'Intimidation uses Charisma. It applies when using threats, presence, or a display of danger.',
+        'performance' => 'Performance uses Charisma. It applies to music, acting, dance, storytelling, and public entertainment.',
+        'persuasion' => 'Persuasion uses Charisma. It applies to negotiation, requests, diplomacy, inspiration, and honest influence.',
+    ],
+
+    'help' => [
+        'saving_throws' => 'A saving throw is used when a character tries to avoid danger: poison, a spell, a trap, fear, falling, or another effect. Roll d20, add the relevant ability modifier, and if the class is proficient in that saving throw, add the proficiency bonus. A higher result gives a better chance to avoid or reduce the effect.',
+        'saving_throw_item' => 'This saving throw is used when danger tests :ability. If the selected class is proficient in this saving throw, the proficiency bonus is added to the roll.',
+        'skills_section' => 'A skill shows what actions the character is trained in. When the DM asks for a skill check, roll d20, add the linked ability modifier, and if proficient, add the proficiency bonus. The number of selectable skills comes from the class, while the background adds fixed proficiencies.',
+        'skill_default' => 'This skill is used when the DM decides the character action requires a check.',
+        'armor_class' => 'Armor Class shows how hard it is to hit the character with an attack. Without armor or a shield, base AC is 10 + Dexterity modifier. Armor, shields, and some abilities can change the formula. If an enemy attack equals or exceeds AC, it usually hits.',
+    ],
+
+    'proficiency' => [
+        'body' => 'Proficiency bonus depends on character level. It is added to skill checks and saving throws only when the character is proficient with that skill or saving throw.',
+        'level' => 'Level',
+        'bonus' => 'Bonus',
+        'skill_formula' => 'Skill: d20 + ability modifier + proficiency bonus if proficient.',
+        'save_formula' => 'Saving throw: d20 + ability modifier + proficiency bonus if the class is proficient in that saving throw.',
+    ],
+
+    'js' => [
+        'none' => 'none',
+        'choose' => 'choose',
+        'no_skill_choice_data' => 'no skill choice data',
+        'skill_words' => ['skill', 'skills', 'skills'],
+        'any_skills' => ':countText from any skills',
+        'from_list' => ':countText from the list: :list',
+        'skill_help_base' => 'A skill shows what actions the character is trained in. When the DM asks for a skill check, roll d20, add the linked ability modifier, and if proficient, add the proficiency bonus.',
+        'class_skills' => 'Class :class lets you choose :summary.',
+        'class_not_selected' => 'Class is not selected yet: the number of class skills will appear after you choose a class.',
+        'background_skills' => 'Background :background adds fixed proficiencies: :skills. These skills are checked automatically and do not spend class choices.',
+        'background_not_selected' => 'Background is not selected yet: its fixed skills will appear after you choose a background.',
+        'max_hp_without_class' => 'Max HP depends on class, level, and Constitution modifier. Choose a class first: it sets the hit die, such as d8 or d10.',
+        'max_hp_capped' => ' The form has an upper limit of 100 HP, so the calculation is capped at that value.',
+        'max_hp_formula' => 'Max HP comes from class and Constitution. Class :class has a d:hitDie hit die. At level 1: :hitDie + Constitution modifier :constitutionModifier = :firstLevelHp. For each later level using the average value: :averageHitDie + :constitutionModifier = :nextLevelHp. For level :level, expected max HP is :expectedHp.:cappedText If hit dice were rolled manually, this field can be adjusted to the actual result.',
+        'race_bonus_title' => 'Race bonus :bonus. ',
+        'ability_title' => ':bonusTextTotal score :total, modifier :modifier.',
+        'race_summary' => ':name, speed :speed, size :size, languages: :languages',
+        'class_summary' => ':name, hit die d:hitDie, saving throws: :savingThrows, skills: :skills',
+        'background_summary' => ':name, skills: :skills, languages: :languages',
+        'choose_race' => 'choose race',
+        'choose_class' => 'choose class',
+        'choose_background' => 'choose background',
+    ],
+];

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
-    <title>Регистрация</title>
+    <title>{{ __('ui.auth.register_title') }}</title>
     @vite('resources/css/app.css')
 </head>
 <body>
@@ -11,29 +11,29 @@
     <form class="paper-form" method="POST" action="{{ route('register') }}">
         @csrf
 
-        <h1>Регистрация</h1>
+        <h1>{{ __('ui.auth.register_title') }}</h1>
 
         @foreach ($errors->all() as $error)
             <p class="error">{{ $error }}</p>
         @endforeach
 
-        <label for="name">Имя</label>
-        <input id="name" type="text" name="name" value="{{ old('name') }}" placeholder="Введите имя">
+        <label for="name">{{ __('ui.auth.name') }}</label>
+        <input id="name" type="text" name="name" value="{{ old('name') }}" placeholder="{{ __('ui.auth.enter_name') }}">
 
-        <label for="login">Логин</label>
-        <input id="login" type="text" name="login" value="{{ old('login') }}" placeholder="Введите логин">
+        <label for="login">{{ __('ui.auth.login') }}</label>
+        <input id="login" type="text" name="login" value="{{ old('login') }}" placeholder="{{ __('ui.auth.enter_login') }}">
 
-        <label for="password">Пароль</label>
-        <input id="password" type="password" name="password" placeholder="Введите пароль">
+        <label for="password">{{ __('ui.auth.password') }}</label>
+        <input id="password" type="password" name="password" placeholder="{{ __('ui.auth.enter_password') }}">
 
-        <label for="password_confirmation">Повторите пароль</label>
-        <input id="password_confirmation" type="password" name="password_confirmation" placeholder="Повторите пароль">
+        <label for="password_confirmation">{{ __('ui.auth.password_confirmation') }}</label>
+        <input id="password_confirmation" type="password" name="password_confirmation" placeholder="{{ __('ui.auth.password_confirmation') }}">
 
-        <button type="submit">Зарегистрироваться</button>
+        <button type="submit">{{ __('ui.register') }}</button>
 
         <p class="auth-link">
-            Уже есть аккаунт?
-            <a href="{{ route('login') }}">Войти</a>
+            {{ __('ui.auth.has_account') }}
+            <a href="{{ route('login') }}">{{ __('ui.login') }}</a>
         </p>
     </form>
 </div>
