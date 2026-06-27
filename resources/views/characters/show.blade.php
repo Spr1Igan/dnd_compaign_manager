@@ -85,7 +85,7 @@
     data-experience="{{ $character->experience }}"
 >
     <section class="sheet-banner">
-        <div class="banner-field banner-side">
+        <div class="banner-field banner-class">
             <span>Класс</span>
             <strong>{{ $character->characterClass?->name ?? '—' }}</strong>
         </div>

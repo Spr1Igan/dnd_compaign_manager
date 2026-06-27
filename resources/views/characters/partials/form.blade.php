@@ -113,7 +113,7 @@
     @endif
 
     <section class="sheet-banner">
-        <div class="banner-field banner-side">
+        <div class="banner-field banner-class">
             <label for="class_id">Класс</label>
             <select id="class_id" name="class_id">
                 <option value="">Без класса</option>
