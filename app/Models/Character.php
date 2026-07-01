@@ -10,7 +10,9 @@ class Character extends Model
     protected $fillable = [
         'user_id',
         'race_id',
+        'subrace_id',
         'class_id',
+        'subclass_id',
         'background_id',
         'name',
         'player_name',
@@ -29,6 +31,9 @@ class Character extends Model
         'speed',
         'skill_proficiencies',
         'language_proficiencies',
+        'custom_armor_proficiencies',
+        'custom_weapon_proficiencies',
+        'custom_tool_proficiencies',
         'equipment',
         'features',
         'personality_traits',
@@ -44,6 +49,9 @@ class Character extends Model
         return [
             'skill_proficiencies' => 'array',
             'language_proficiencies' => 'array',
+            'custom_armor_proficiencies' => 'array',
+            'custom_weapon_proficiencies' => 'array',
+            'custom_tool_proficiencies' => 'array',
             'equipment' => 'array',
             'features' => 'array',
         ];
@@ -59,9 +67,19 @@ class Character extends Model
         return $this->belongsTo(Race::class);
     }
 
+    public function subrace(): BelongsTo
+    {
+        return $this->belongsTo(RaceSubrace::class, 'subrace_id');
+    }
+
     public function characterClass(): BelongsTo
     {
         return $this->belongsTo(CharacterClass::class, 'class_id');
+    }
+
+    public function characterSubclass(): BelongsTo
+    {
+        return $this->belongsTo(CharacterSubclass::class, 'subclass_id');
     }
 
     public function background(): BelongsTo
@@ -242,7 +260,8 @@ class Character extends Model
 
     public function abilityBonus(string $ability): int
     {
-        return (int) ($this->race?->ability_bonuses[$ability] ?? 0);
+        return (int) ($this->race?->ability_bonuses[$ability] ?? 0)
+            + (int) ($this->subrace?->ability_bonuses[$ability] ?? 0);
     }
 
     public function totalAbilityScore(string $ability): int

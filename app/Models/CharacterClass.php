@@ -36,4 +36,9 @@ class CharacterClass extends Model
     {
         return $this->hasMany(Character::class, 'class_id');
     }
+
+    public function subclasses(): HasMany
+    {
+        return $this->hasMany(CharacterSubclass::class, 'class_id');
+    }
 }

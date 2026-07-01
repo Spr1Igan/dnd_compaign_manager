@@ -16,8 +16,36 @@
         ->map(fn (string $slug) => \App\Models\Character::readableRuleLabel($slug))
         ->implode(', ');
 
-    $featureNames = collect($character->features ?? [])
+    $featureItems = collect($character->features ?? [])
+        ->unique()
+        ->values();
+    $featureHelp = __('game.feature_help');
+    $featureHelpFallback = __('sheet.js.feature_help_fallback');
+
+    $choiceOnlyProficiencies = [
+        'three-musical-instruments',
+        'one-artisan-tool-or-musical-instrument',
+    ];
+
+    $armorProficiencyNames = collect($character->characterClass?->armor_proficiencies ?? [])
+        ->map(fn (string $slug) => \App\Models\Character::readableRuleLabel("armor:{$slug}"))
+        ->merge($character->custom_armor_proficiencies ?? [])
+        ->unique()
+        ->implode(', ');
+
+    $weaponProficiencyNames = collect($character->characterClass?->weapon_proficiencies ?? [])
         ->map(fn (string $slug) => \App\Models\Character::readableRuleLabel($slug))
+        ->merge($character->custom_weapon_proficiencies ?? [])
+        ->unique()
+        ->implode(', ');
+
+    $toolProficiencyNames = collect()
+        ->merge($character->characterClass?->tool_proficiencies ?? [])
+        ->merge($character->background?->tool_proficiencies ?? [])
+        ->filter(fn (string $slug): bool => ! str_starts_with($slug, 'choose:') && ! in_array($slug, $choiceOnlyProficiencies, true))
+        ->map(fn (string $slug) => \App\Models\Character::readableRuleLabel($slug))
+        ->merge($character->custom_tool_proficiencies ?? [])
+        ->unique()
         ->implode(', ');
 
     $savingThrows = collect($character->characterClass?->saving_throws ?? [])
@@ -43,8 +71,14 @@
         <h1>{{ $character->name }}</h1>
         <p>
             {{ $character->characterClass ? \App\Models\Character::readableRuleLabel($character->characterClass->slug) : __('ui.characters_page.no_class') }}
+            @if ($character->characterSubclass)
+                / {{ \App\Models\Character::readableRuleLabel($character->characterSubclass->slug) }}
+            @endif
             &middot; {{ __('ui.show.level') }} {{ $character->level }}
             &middot; {{ $character->race ? \App\Models\Character::readableRuleLabel($character->race->slug) : __('ui.characters_page.no_race') }}
+            @if ($character->subrace)
+                / {{ \App\Models\Character::readableRuleLabel($character->subrace->slug) }}
+            @endif
         </p>
     </div>
 
@@ -82,6 +116,11 @@
             <strong>{{ $character->characterClass ? \App\Models\Character::readableRuleLabel($character->characterClass->slug) : __('ui.dash') }}</strong>
         </div>
 
+        <div class="banner-field">
+            <span>{{ __('ui.form.subclass') }}</span>
+            <strong>{{ $character->characterSubclass ? \App\Models\Character::readableRuleLabel($character->characterSubclass->slug) : __('ui.dash') }}</strong>
+        </div>
+
         <div class="banner-field banner-level">
             <span>{{ __('ui.form.level') }}</span>
             <strong>{{ $character->level }}</strong>
@@ -105,6 +144,7 @@
 
     <section class="sheet-quick-row">
         <div><span>{{ __('ui.form.race') }}</span><strong>{{ $character->race ? \App\Models\Character::readableRuleLabel($character->race->slug) : __('ui.dash') }}</strong></div>
+        <div><span>{{ __('ui.form.subrace') }}</span><strong>{{ $character->subrace ? \App\Models\Character::readableRuleLabel($character->subrace->slug) : __('ui.dash') }}</strong></div>
         <div><span>{{ __('ui.form.player') }}</span><strong>{{ $character->player_name ?: __('ui.dash') }}</strong></div>
         <div class="experience-field readonly-experience" data-experience-panel>
             <span>{{ __('ui.form.experience') }}</span>
@@ -163,6 +203,9 @@
                 </h2>
                 <p><b>{{ __('ui.form.skills') }}:</b> {{ $skillNames ?: __('ui.dash') }}</p>
                 <p><b>{{ __('ui.form.languages') }}:</b> {{ $languageNames ?: __('ui.dash') }}</p>
+                <p><b>{{ __('ui.form.armor_proficiencies') }}:</b> {{ $armorProficiencyNames ?: __('ui.dash') }}</p>
+                <p><b>{{ __('ui.form.weapon_proficiencies') }}:</b> {{ $weaponProficiencyNames ?: __('ui.dash') }}</p>
+                <p><b>{{ __('ui.form.tool_proficiencies') }}:</b> {{ $toolProficiencyNames ?: __('ui.dash') }}</p>
             </section>
 
             <section class="sheet-panel compact">
@@ -227,7 +270,28 @@
 
             <section class="sheet-panel lined-panel readonly-notes">
                 <h2>{{ __('ui.form.traits_and_abilities') }}</h2>
-                <p><b>{{ __('ui.form.features') }}:</b> {{ $featureNames ?: __('ui.dash') }}</p>
+                <p>
+                    <b>{{ __('ui.form.features') }}:</b>
+                    @if ($featureItems->isEmpty())
+                        {{ __('ui.dash') }}
+                    @else
+                        <span class="feature-chip-list">
+                            @foreach ($featureItems as $feature)
+                                @php
+                                    $featureName = \App\Models\Character::readableRuleLabel($feature);
+                                    $featureBody = $featureHelp[$feature] ?? str_replace(':feature', $featureName, $featureHelpFallback);
+                                @endphp
+                                <button
+                                    class="feature-chip"
+                                    type="button"
+                                    data-help-title="{{ $featureName }}"
+                                    data-help-body="{{ $featureBody }}"
+                                    aria-label="{{ __('sheet.labels.hint_for', ['name' => $featureName]) }}"
+                                >{{ $featureName }}</button>
+                            @endforeach
+                        </span>
+                    @endif
+                </p>
                 <p><b>{{ __('ui.form.personality_traits') }}:</b> {{ $character->personality_traits ?: __('ui.dash') }}</p>
                 <p><b>{{ __('ui.form.ideals') }}:</b> {{ $character->ideals ?: __('ui.dash') }}</p>
                 <p><b>{{ __('ui.form.bonds') }}:</b> {{ $character->bonds ?: __('ui.dash') }}</p>

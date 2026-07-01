@@ -1,6 +1,9 @@
 @php
     $selectedSkills = old('skill_proficiencies', $character?->skill_proficiencies ?? []);
     $selectedLanguages = old('language_proficiencies', $character?->language_proficiencies ?? []);
+    $customArmorProficiencies = old('custom_armor_proficiencies_text', implode("\n", $character?->custom_armor_proficiencies ?? []));
+    $customWeaponProficiencies = old('custom_weapon_proficiencies_text', implode("\n", $character?->custom_weapon_proficiencies ?? []));
+    $customToolProficiencies = old('custom_tool_proficiencies_text', implode("\n", $character?->custom_tool_proficiencies ?? []));
     $equipment = old('equipment_text', implode("\n", $character?->equipment ?? []));
     $armorClassMode = old('armor_class_mode', $character && ! $character->usesBaseArmorClass() ? 'manual' : 'auto');
     $armorClassValue = old('armor_class', $character?->effectiveArmorClass() ?? 10);
@@ -35,6 +38,17 @@
                 'ability_bonuses' => $race->ability_bonuses ?? [],
             ],
         ]),
+        'subraces' => $subraces->mapWithKeys(fn ($subrace) => [
+            $subrace->id => [
+                'id' => $subrace->id,
+                'race_id' => $subrace->race_id,
+                'name' => $ruleLabel($subrace->slug),
+                'speed' => $subrace->speed,
+                'languages' => $subrace->languages ?? [],
+                'features' => $subrace->features ?? [],
+                'ability_bonuses' => $subrace->ability_bonuses ?? [],
+            ],
+        ]),
         'classes' => $classes->mapWithKeys(fn ($class) => [
             $class->id => [
                 'name' => $ruleLabel($class->slug),
@@ -45,6 +59,14 @@
                 'tool_proficiencies' => $class->tool_proficiencies ?? [],
                 'skill_choices' => $class->skill_choices ?? [],
                 'features' => $class->features ?? [],
+            ],
+        ]),
+        'subclasses' => $subclasses->mapWithKeys(fn ($subclass) => [
+            $subclass->id => [
+                'id' => $subclass->id,
+                'class_id' => $subclass->class_id,
+                'name' => $ruleLabel($subclass->slug),
+                'features_by_level' => $subclass->features_by_level ?? [],
             ],
         ]),
         'backgrounds' => $backgrounds->mapWithKeys(fn ($background) => [
@@ -59,6 +81,7 @@
         ]),
         'abilityNames' => $abilityNames,
         'ruleLabels' => $ruleLabels,
+        'featureHelp' => __('game.feature_help'),
         'text' => __('sheet.js'),
     ];
 @endphp
@@ -86,6 +109,18 @@
                 @foreach ($classes as $class)
                     <option value="{{ $class->id }}" @selected(old('class_id', $character?->class_id) == $class->id)>
                         {{ $ruleLabel($class->slug) }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="banner-field">
+            <label for="subclass_id">{{ __('ui.form.subclass') }}</label>
+            <select id="subclass_id" name="subclass_id">
+                <option value="">{{ __('ui.form.no_subclass') }}</option>
+                @foreach ($subclasses as $subclass)
+                    <option value="{{ $subclass->id }}" data-class-id="{{ $subclass->class_id }}" @selected(old('subclass_id', $character?->subclass_id) == $subclass->id)>
+                        {{ $ruleLabel($subclass->slug) }}
                     </option>
                 @endforeach
             </select>
@@ -133,6 +168,18 @@
         </div>
 
         <div>
+            <label for="subrace_id">{{ __('ui.form.subrace') }}</label>
+            <select id="subrace_id" name="subrace_id">
+                <option value="">{{ __('ui.form.no_subrace') }}</option>
+                @foreach ($subraces as $subrace)
+                    <option value="{{ $subrace->id }}" data-race-id="{{ $subrace->race_id }}" @selected(old('subrace_id', $character?->subrace_id) == $subrace->id)>
+                        {{ $ruleLabel($subrace->slug) }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
+        <div>
             <label for="player_name">{{ __('ui.form.player') }}</label>
             <input id="player_name" type="text" name="player_name" value="{{ old('player_name', $character?->player_name) }}">
         </div>
@@ -167,9 +214,36 @@
         <h2>{{ __('ui.form.pulled_by_choice') }}</h2>
         <div class="rule-summary-grid">
             <p><b>{{ __('ui.form.race') }}:</b> <span data-rule-race>{{ __('ui.form.choose_race') }}</span></p>
+            <p><b>{{ __('ui.form.subrace') }}:</b> <span data-rule-subrace>{{ __('ui.form.choose_subrace') }}</span></p>
             <p><b>{{ __('ui.form.class') }}:</b> <span data-rule-class>{{ __('ui.form.choose_class') }}</span></p>
+            <p><b>{{ __('ui.form.subclass') }}:</b> <span data-rule-subclass>{{ __('ui.form.choose_subclass') }}</span></p>
             <p><b>{{ __('ui.form.background') }}:</b> <span data-rule-background>{{ __('ui.form.choose_background') }}</span></p>
-            <p><b>{{ __('ui.form.features') }}:</b> <span data-rule-features>{{ __('ui.form.not_yet') }}</span></p>
+            <p><b>{{ __('ui.form.armor_proficiencies') }}:</b> <span data-rule-armor>{{ __('ui.dash') }}</span></p>
+            <p><b>{{ __('ui.form.weapon_proficiencies') }}:</b> <span data-rule-weapons>{{ __('ui.dash') }}</span></p>
+            <p><b>{{ __('ui.form.tool_proficiencies') }}:</b> <span data-rule-tools>{{ __('ui.dash') }}</span></p>
+            <p><b>{{ __('ui.form.features') }}:</b> <span class="feature-chip-list" data-rule-features>{{ __('ui.form.not_yet') }}</span></p>
+        </div>
+    </section>
+
+    <section class="sheet-panel lined-panel custom-proficiencies-panel">
+        <h2>{{ __('ui.form.additional_proficiencies') }}</h2>
+        <p class="sheet-note">{{ __('ui.form.fixed_proficiencies_note') }}</p>
+
+        <div class="custom-proficiency-grid">
+            <label>
+                <span>{{ __('ui.form.custom_armor_proficiencies') }}</span>
+                <textarea name="custom_armor_proficiencies_text" rows="4" placeholder="{{ __('ui.form.custom_proficiency_placeholder') }}">{{ $customArmorProficiencies }}</textarea>
+            </label>
+
+            <label>
+                <span>{{ __('ui.form.custom_weapon_proficiencies') }}</span>
+                <textarea name="custom_weapon_proficiencies_text" rows="4" placeholder="{{ __('ui.form.custom_proficiency_placeholder') }}">{{ $customWeaponProficiencies }}</textarea>
+            </label>
+
+            <label>
+                <span>{{ __('ui.form.custom_tool_proficiencies') }}</span>
+                <textarea name="custom_tool_proficiencies_text" rows="4" placeholder="{{ __('ui.form.custom_proficiency_placeholder') }}">{{ $customToolProficiencies }}</textarea>
+            </label>
         </div>
     </section>
 
@@ -362,7 +436,9 @@
                 String(template || ''),
             );
             const raceSelect = form.querySelector('#race_id');
+            const subraceSelect = form.querySelector('#subrace_id');
             const classSelect = form.querySelector('#class_id');
+            const subclassSelect = form.querySelector('#subclass_id');
             const backgroundSelect = form.querySelector('#background_id');
             const levelInput = form.querySelector('#level');
             const constitutionInput = form.querySelector('#constitution');
@@ -378,7 +454,8 @@
             let armorClassIsManual = armorClassModeInput?.value === 'manual';
 
             const labelize = (item) => String(item).replaceAll('-', ' ');
-            const translate = (item) => rules.abilityNames[item] ?? rules.ruleLabels[item] ?? labelize(item);
+            const translate = (item) => String(item).startsWith('choose:') ? (text.choose || 'choose') : rules.abilityNames[item] ?? rules.ruleLabels[item] ?? labelize(item);
+            const translateInContext = (item, context) => rules.ruleLabels[`${context}:${item}`] ?? translate(item);
             const plural = (count, one, few, many) => {
                 const abs = Math.abs(Number(count));
                 const mod10 = abs % 10;
@@ -403,6 +480,88 @@
                 return items
                     .map(translate)
                     .join(', ') || (text.choose || 'choose');
+            };
+            const readableInContext = (items, context) => {
+                if (!items || items.length === 0) {
+                    return text.none || 'none';
+                }
+
+                return items
+                    .map((item) => translateInContext(item, context))
+                    .join(', ') || (text.choose || 'choose');
+            };
+            const featureHelpBody = (feature) => rules.featureHelp?.[feature]
+                || formatText(text.feature_help_fallback, { feature: translate(feature) });
+            const renderFeatureButtons = (target, items) => {
+                if (!target) {
+                    return;
+                }
+
+                const features = [...new Set(items ?? [])];
+
+                if (features.length === 0) {
+                    target.textContent = text.none || 'none';
+                    return;
+                }
+
+                const fragment = document.createDocumentFragment();
+
+                features.forEach((feature) => {
+                    const button = document.createElement('button');
+                    button.className = 'feature-chip';
+                    button.type = 'button';
+                    button.dataset.helpTitle = translate(feature);
+                    button.dataset.helpBody = featureHelpBody(feature);
+                    button.textContent = translate(feature);
+                    fragment.append(button);
+                });
+
+                target.replaceChildren(fragment);
+            };
+            const mergedAbilityBonuses = (race, subrace) => {
+                const bonuses = { ...(race?.ability_bonuses ?? {}) };
+
+                Object.entries(subrace?.ability_bonuses ?? {}).forEach(([ability, bonus]) => {
+                    bonuses[ability] = Number(bonuses[ability] ?? 0) + Number(bonus ?? 0);
+                });
+
+                return bonuses;
+            };
+            const activeSubrace = () => rules.subraces[subraceSelect?.value];
+            const activeSubclass = () => rules.subclasses[subclassSelect?.value];
+            const levelFeatures = (featuresByLevel) => {
+                const level = clampNumber(levelInput?.value || 1, 1, 30);
+
+                return Object.entries(featuresByLevel ?? {})
+                    .filter(([requiredLevel]) => Number(requiredLevel) <= level)
+                    .flatMap(([, features]) => features);
+            };
+            const syncDependentSelect = (select, parentValue, parentKey) => {
+                if (!select) {
+                    return;
+                }
+
+                let selectedAllowed = false;
+
+                Array.from(select.options).forEach((option) => {
+                    if (!option.value) {
+                        option.hidden = false;
+                        option.disabled = false;
+                        return;
+                    }
+
+                    const allowed = option.dataset[parentKey] === parentValue;
+                    option.hidden = !allowed;
+                    option.disabled = !allowed;
+
+                    if (option.selected && allowed) {
+                        selectedAllowed = true;
+                    }
+                });
+
+                if (!selectedAllowed) {
+                    select.value = '';
+                }
             };
 
             const modifier = (score) => Math.floor((Number(score || 10) - 10) / 2);
@@ -455,8 +614,10 @@
             const baseArmorClass = () => Math.max(1, 10 + modifier(totalAbility('dexterity')));
             const totalAbility = (field) => {
                 const race = rules.races[raceSelect.value];
+                const subrace = activeSubrace();
                 const input = form.querySelector(`[data-ability-input="${field}"]`);
-                const bonus = Number(race?.ability_bonuses?.[field] ?? 0);
+                const bonuses = mergedAbilityBonuses(race, subrace);
+                const bonus = Number(bonuses[field] ?? 0);
 
                 return clampAbility(Number(input?.value || 10) + bonus);
             };
@@ -567,7 +728,8 @@
 
             const updateAbilities = () => {
                 const race = rules.races[raceSelect.value];
-                const bonuses = race?.ability_bonuses ?? {};
+                const subrace = activeSubrace();
+                const bonuses = mergedAbilityBonuses(race, subrace);
 
                 form.querySelectorAll('[data-ability-input]').forEach((input) => {
                     const field = input.dataset.abilityInput;
@@ -593,12 +755,21 @@
             const updateRules = () => {
                 clampCharacterNumbers();
 
+                syncDependentSelect(subraceSelect, raceSelect.value, 'raceId');
+                syncDependentSelect(subclassSelect, classSelect.value, 'classId');
+
                 const race = rules.races[raceSelect.value];
+                const subrace = activeSubrace();
                 const characterClass = rules.classes[classSelect.value];
+                const subclass = activeSubclass();
                 const background = rules.backgrounds[backgroundSelect.value];
 
                 if (race) {
                     speedInput.value = Math.min(100, Number(race.speed || 0));
+                }
+
+                if (subrace?.speed) {
+                    speedInput.value = Math.min(100, Number(subrace.speed || 0));
                 }
 
                 if (characterClass && Number(maxHpInput.value || 0) === 0) {
@@ -613,6 +784,10 @@
 
                 if (race) {
                     applyChecked('[data-language-input', race.languages ?? []);
+                }
+
+                if (subrace) {
+                    applyChecked('[data-language-input', subrace.languages ?? []);
                 }
 
                 if (background) {
@@ -631,7 +806,9 @@
 
                 const features = [
                     ...(race?.features ?? []),
+                    ...(subrace?.features ?? []),
                     ...(characterClass?.features ?? []),
+                    ...levelFeatures(subclass?.features_by_level),
                     ...(background?.features ?? []),
                 ];
 
@@ -643,6 +820,14 @@
                         languages: readable(race.languages),
                     })
                     : text.choose_race;
+                form.querySelector('[data-rule-subrace]').textContent = subrace
+                    ? formatText(text.subrace_summary, {
+                        name: subrace.name,
+                        speed: subrace.speed || race?.speed || '—',
+                        languages: readable(subrace.languages),
+                        features: readable(subrace.features),
+                    })
+                    : text.choose_subrace;
                 form.querySelector('[data-rule-class]').textContent = characterClass
                     ? formatText(text.class_summary, {
                         name: characterClass.name,
@@ -651,14 +836,27 @@
                         skills: classSkillChoiceSummary(characterClass),
                     })
                     : text.choose_class;
+                form.querySelector('[data-rule-subclass]').textContent = subclass
+                    ? formatText(text.subclass_summary, {
+                        name: subclass.name,
+                        features: readable(levelFeatures(subclass.features_by_level)),
+                    })
+                    : text.choose_subclass;
                 form.querySelector('[data-rule-background]').textContent = background
                     ? formatText(text.background_summary, {
                         name: background.name,
                         skills: readable(background.skill_proficiencies),
                         languages: readable(background.languages),
+                        tools: readable(background.tool_proficiencies),
                     })
                     : text.choose_background;
-                form.querySelector('[data-rule-features]').textContent = readable([...new Set(features)]);
+                form.querySelector('[data-rule-armor]').textContent = readableInContext(characterClass?.armor_proficiencies ?? [], 'armor');
+                form.querySelector('[data-rule-weapons]').textContent = readable(characterClass?.weapon_proficiencies ?? []);
+                form.querySelector('[data-rule-tools]').textContent = readable([
+                    ...(characterClass?.tool_proficiencies ?? []),
+                    ...(background?.tool_proficiencies ?? []),
+                ].filter((value, index, values) => values.indexOf(value) === index));
+                renderFeatureButtons(form.querySelector('[data-rule-features]'), features);
 
                 updateSkillHelp(characterClass, background);
                 updateMaxHpHelp(characterClass);
@@ -673,7 +871,7 @@
 
             form.addEventListener('submit', clampCharacterNumbers);
 
-            [raceSelect, classSelect, backgroundSelect, levelInput, constitutionInput].forEach((element) => {
+            [raceSelect, subraceSelect, classSelect, subclassSelect, backgroundSelect, levelInput, constitutionInput].forEach((element) => {
                 element?.addEventListener('change', updateRules);
                 element?.addEventListener('input', updateRules);
             });
@@ -708,16 +906,20 @@
                 helpOverlay?.setAttribute('hidden', '');
             };
 
-            document.querySelectorAll('[data-help-title][data-help-body]').forEach((trigger) => {
-                trigger.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    event.stopPropagation();
+            document.addEventListener('click', (event) => {
+                const trigger = event.target.closest('[data-help-title][data-help-body]');
 
-                    helpTitle.textContent = trigger.dataset.helpTitle;
-                    helpBody.textContent = trigger.dataset.helpBody;
-                    helpOverlay.removeAttribute('hidden');
-                    helpClose.focus();
-                });
+                if (!trigger) {
+                    return;
+                }
+
+                event.preventDefault();
+                event.stopPropagation();
+
+                helpTitle.textContent = trigger.dataset.helpTitle;
+                helpBody.textContent = trigger.dataset.helpBody;
+                helpOverlay.removeAttribute('hidden');
+                helpClose.focus();
             });
 
             helpClose?.addEventListener('click', closeHelp);

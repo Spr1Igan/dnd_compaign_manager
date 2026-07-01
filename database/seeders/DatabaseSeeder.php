@@ -19,7 +19,9 @@ class DatabaseSeeder extends Seeder
             SkillSeeder::class,
             LanguageSeeder::class,
             RaceSeeder::class,
+            RaceSubraceSeeder::class,
             CharacterClassSeeder::class,
+            CharacterSubclassSeeder::class,
             BackgroundSeeder::class,
         ]);
         User::query()->firstOrCreate([

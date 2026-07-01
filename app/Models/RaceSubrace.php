@@ -3,16 +3,17 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Race extends Model
+class RaceSubrace extends Model
 {
     protected $fillable = [
+        'race_id',
         'name',
         'slug',
         'description',
         'speed',
-        'size',
         'languages',
         'features',
         'ability_bonuses',
@@ -27,13 +28,13 @@ class Race extends Model
         ];
     }
 
-    public function characters(): HasMany
+    public function race(): BelongsTo
     {
-        return $this->hasMany(Character::class);
+        return $this->belongsTo(Race::class);
     }
 
-    public function subraces(): HasMany
+    public function characters(): HasMany
     {
-        return $this->hasMany(RaceSubrace::class);
+        return $this->hasMany(Character::class, 'subrace_id');
     }
 }

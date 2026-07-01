@@ -37,8 +37,14 @@
 
                 <p>
                     {{ $character->race ? \App\Models\Character::readableRuleLabel($character->race->slug) : __('ui.characters_page.no_race') }}
+                    @if ($character->subrace)
+                        / {{ \App\Models\Character::readableRuleLabel($character->subrace->slug) }}
+                    @endif
                     /
                     {{ $character->characterClass ? \App\Models\Character::readableRuleLabel($character->characterClass->slug) : __('ui.characters_page.no_class') }}
+                    @if ($character->characterSubclass)
+                        / {{ \App\Models\Character::readableRuleLabel($character->characterSubclass->slug) }}
+                    @endif
                 </p>
 
                 <div class="character-stats">

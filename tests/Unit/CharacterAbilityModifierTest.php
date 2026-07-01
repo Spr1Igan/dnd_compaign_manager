@@ -4,6 +4,7 @@ namespace Tests\Unit;
 
 use App\Models\Character;
 use App\Models\Race;
+use App\Models\RaceSubrace;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -39,5 +40,46 @@ class CharacterAbilityModifierTest extends TestCase
 
         $this->assertSame(30, $character->totalAbilityScore('intelligence'));
         $this->assertSame(10, $character->intelligence_modifier);
+    }
+
+    public function test_total_ability_score_uses_race_and_subrace_bonuses(): void
+    {
+        $user = User::create([
+            'name' => 'Tester',
+            'login' => 'subrace-tester',
+            'password' => 'password',
+        ]);
+
+        $race = Race::create([
+            'name' => 'Elf',
+            'slug' => 'elf',
+            'speed' => 30,
+            'size' => 'Medium',
+            'languages' => ['common', 'elvish'],
+            'features' => [],
+            'ability_bonuses' => ['dexterity' => 2],
+        ]);
+
+        $subrace = RaceSubrace::create([
+            'race_id' => $race->id,
+            'name' => 'Wood Elf',
+            'slug' => 'wood-elf',
+            'speed' => 35,
+            'languages' => [],
+            'features' => [],
+            'ability_bonuses' => ['wisdom' => 1],
+        ]);
+
+        $character = Character::create([
+            'user_id' => $user->id,
+            'race_id' => $race->id,
+            'subrace_id' => $subrace->id,
+            'name' => 'Subrace Hero',
+            'dexterity' => 14,
+            'wisdom' => 13,
+        ])->load(['race', 'subrace']);
+
+        $this->assertSame(16, $character->totalAbilityScore('dexterity'));
+        $this->assertSame(14, $character->totalAbilityScore('wisdom'));
     }
 }

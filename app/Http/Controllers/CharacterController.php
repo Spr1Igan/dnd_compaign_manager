@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Background;
 use App\Models\Character;
 use App\Models\CharacterClass;
+use App\Models\CharacterSubclass;
 use App\Models\Language;
 use App\Models\Race;
+use App\Models\RaceSubrace;
 use App\Models\Skill;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
@@ -20,7 +22,7 @@ class CharacterController extends Controller
         $characters = auth()
             ->user()
             ->characters()
-            ->with(['race', 'characterClass', 'background'])
+            ->with(['race', 'subrace', 'characterClass', 'characterSubclass', 'background'])
             ->latest()
             ->get();
 
@@ -48,7 +50,7 @@ class CharacterController extends Controller
     {
         $this->authorizeCharacter($character);
 
-        $character->load(['race', 'characterClass', 'background']);
+        $character->load(['race', 'subrace', 'characterClass', 'characterSubclass', 'background']);
 
         $skillsBySlug = Skill::orderBy('name')->get()->keyBy('slug');
         $languagesBySlug = Language::orderBy('name')->get()->keyBy('slug');
@@ -121,7 +123,9 @@ class CharacterController extends Controller
     /**
      * @return array{
      *     races: \Illuminate\Database\Eloquent\Collection<int, Race>,
+     *     subraces: \Illuminate\Database\Eloquent\Collection<int, RaceSubrace>,
      *     classes: \Illuminate\Database\Eloquent\Collection<int, CharacterClass>,
+     *     subclasses: \Illuminate\Database\Eloquent\Collection<int, CharacterSubclass>,
      *     backgrounds: \Illuminate\Database\Eloquent\Collection<int, Background>,
      *     skills: \Illuminate\Database\Eloquent\Collection<int, Skill>,
      *     languages: \Illuminate\Database\Eloquent\Collection<int, Language>
@@ -131,7 +135,9 @@ class CharacterController extends Controller
     {
         return [
             'races' => Race::orderBy('name')->get(),
+            'subraces' => RaceSubrace::orderBy('name')->get(),
             'classes' => CharacterClass::orderBy('name')->get(),
+            'subclasses' => CharacterSubclass::orderBy('name')->get(),
             'backgrounds' => Background::orderBy('name')->get(),
             'skills' => Skill::orderBy('name')->get(),
             'languages' => Language::orderBy('name')->get(),
@@ -145,7 +151,9 @@ class CharacterController extends Controller
     {
         $data = $request->validate([
             'race_id' => ['nullable', 'exists:races,id'],
+            'subrace_id' => ['nullable', 'exists:race_subraces,id'],
             'class_id' => ['nullable', 'exists:character_classes,id'],
+            'subclass_id' => ['nullable', 'exists:character_subclasses,id'],
             'background_id' => ['nullable', 'exists:backgrounds,id'],
 
             'name' => ['required', 'string', 'max:100'],
@@ -174,6 +182,9 @@ class CharacterController extends Controller
             'language_proficiencies' => ['nullable', 'array'],
             'language_proficiencies.*' => ['string', 'exists:languages,slug'],
 
+            'custom_armor_proficiencies_text' => ['nullable', 'string'],
+            'custom_weapon_proficiencies_text' => ['nullable', 'string'],
+            'custom_tool_proficiencies_text' => ['nullable', 'string'],
             'equipment_text' => ['nullable', 'string'],
 
             'personality_traits' => ['nullable', 'string'],
@@ -190,17 +201,36 @@ class CharacterController extends Controller
         $data['speed'] ??= 30;
         $data['skill_proficiencies'] ??= [];
         $data['language_proficiencies'] ??= [];
+        $data['custom_armor_proficiencies'] = $this->proficiencyLines($data['custom_armor_proficiencies_text'] ?? null);
+        $data['custom_weapon_proficiencies'] = $this->proficiencyLines($data['custom_weapon_proficiencies_text'] ?? null);
+        $data['custom_tool_proficiencies'] = $this->proficiencyLines($data['custom_tool_proficiencies_text'] ?? null);
 
         $race = isset($data['race_id']) ? Race::find($data['race_id']) : null;
+        $subrace = isset($data['subrace_id']) ? RaceSubrace::find($data['subrace_id']) : null;
         $class = isset($data['class_id']) ? CharacterClass::find($data['class_id']) : null;
+        $subclass = isset($data['subclass_id']) ? CharacterSubclass::find($data['subclass_id']) : null;
         $background = isset($data['background_id']) ? Background::find($data['background_id']) : null;
+
+        if (! $race || ! $subrace || (int) $subrace->race_id !== (int) $race->id) {
+            $data['subrace_id'] = null;
+            $subrace = null;
+        }
+
+        if (! $class || ! $subclass || (int) $subclass->class_id !== (int) $class->id) {
+            $data['subclass_id'] = null;
+            $subclass = null;
+        }
 
         if ($race) {
             $data['speed'] = min(100, max(0, (int) $race->speed));
         }
 
-        $constitutionScore = $this->totalAbilityScore((int) $data['constitution'], (int) ($race?->ability_bonuses['constitution'] ?? 0));
-        $dexterityScore = $this->totalAbilityScore((int) $data['dexterity'], (int) ($race?->ability_bonuses['dexterity'] ?? 0));
+        if ($subrace && $subrace->speed !== null) {
+            $data['speed'] = min(100, max(0, (int) $subrace->speed));
+        }
+
+        $constitutionScore = $this->totalAbilityScore((int) $data['constitution'], $this->abilityBonus($race, $subrace, 'constitution'));
+        $dexterityScore = $this->totalAbilityScore((int) $data['dexterity'], $this->abilityBonus($race, $subrace, 'dexterity'));
 
         if ($class && (int) $data['max_hp'] === 0) {
             $data['max_hp'] = $this->maxHitPoints($class->hit_die, (int) $data['level'], $constitutionScore);
@@ -227,6 +257,7 @@ class CharacterController extends Controller
 
         $data['language_proficiencies'] = collect($data['language_proficiencies'])
             ->merge($race?->languages ?? [])
+            ->merge($subrace?->languages ?? [])
             ->merge($background?->languages ?? [])
             ->filter(fn (string $slug): bool => ! str_starts_with($slug, 'choose:'))
             ->unique()
@@ -235,7 +266,9 @@ class CharacterController extends Controller
 
         $data['features'] = collect()
             ->merge($race?->features ?? [])
+            ->merge($subrace?->features ?? [])
             ->merge($class?->features ?? [])
+            ->merge($this->levelFeatures($subclass?->features_by_level ?? [], (int) $data['level']))
             ->merge($background?->features ?? [])
             ->unique()
             ->values()
@@ -248,6 +281,9 @@ class CharacterController extends Controller
             ->all();
 
         unset($data['equipment_text']);
+        unset($data['custom_armor_proficiencies_text']);
+        unset($data['custom_weapon_proficiencies_text']);
+        unset($data['custom_tool_proficiencies_text']);
         unset($data['armor_class_mode']);
 
         return $data;
@@ -268,6 +304,12 @@ class CharacterController extends Controller
         return min(30, max(1, $score + $bonus));
     }
 
+    private function abilityBonus(?Race $race, ?RaceSubrace $subrace, string $ability): int
+    {
+        return (int) ($race?->ability_bonuses[$ability] ?? 0)
+            + (int) ($subrace?->ability_bonuses[$ability] ?? 0);
+    }
+
     private function baseArmorClass(int $dexterityScore): int
     {
         return max(1, 10 + $this->abilityModifier($dexterityScore));
@@ -282,4 +324,29 @@ class CharacterController extends Controller
         return min(100, $firstLevelHp + max(0, $level - 1) * $nextLevelHp);
     }
 
+    /**
+     * @param  array<int|string, list<string>>  $featuresByLevel
+     * @return list<string>
+     */
+    private function levelFeatures(array $featuresByLevel, int $level): array
+    {
+        return collect($featuresByLevel)
+            ->filter(fn (array $features, int|string $requiredLevel): bool => (int) $requiredLevel <= $level)
+            ->flatten()
+            ->values()
+            ->all();
+    }
+
+    /**
+     * @return list<string>
+     */
+    private function proficiencyLines(?string $text): array
+    {
+        return collect(preg_split('/\r\n|\r|\n/', $text ?? ''))
+            ->map(fn (string $item): string => trim($item))
+            ->filter()
+            ->unique()
+            ->values()
+            ->all();
+    }
 }

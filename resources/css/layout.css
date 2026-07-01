@@ -742,7 +742,7 @@
 
 .sheet-banner {
     display: grid;
-    grid-template-columns: minmax(150px, 1fr) 92px minmax(220px, 1.5fr) minmax(150px, 1fr) minmax(150px, 1fr);
+    grid-template-columns: minmax(130px, 1fr) minmax(130px, 1fr) 92px minmax(220px, 1.6fr) minmax(140px, 1fr) minmax(140px, 1fr);
     gap: 12px;
     align-items: end;
     margin-bottom: 24px;
@@ -821,7 +821,7 @@
 
 .sheet-quick-row {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 14px;
     margin-bottom: 24px;
 }
@@ -1022,6 +1022,35 @@
 .rule-summary-grid span {
     min-width: 0;
     overflow-wrap: anywhere;
+}
+
+.feature-chip-list {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.feature-chip {
+    min-height: 28px;
+    padding: 4px 9px;
+    border: 2px solid #111;
+    background: #fffaf0;
+    color: #111;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.15;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 rgba(17, 17, 17, 0.14);
+}
+
+.feature-chip:hover,
+.feature-chip:focus-visible {
+    background: #f8ead1;
+    outline: 2px solid #7a1f13;
+    outline-offset: 2px;
 }
 
 .save-list label.is-proficient {
@@ -1382,6 +1411,40 @@
     color: rgba(17, 17, 17, 0.48);
 }
 
+.custom-proficiencies-panel {
+    margin-top: 24px;
+}
+
+.sheet-note {
+    margin: 0 0 16px;
+    color: rgba(17, 17, 17, 0.72);
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.custom-proficiency-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.custom-proficiency-grid label {
+    display: grid;
+    gap: 8px;
+}
+
+.custom-proficiency-grid span {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #7c1f0f;
+}
+
+.custom-proficiency-grid textarea {
+    width: 100%;
+    resize: vertical;
+}
+
 .readonly-sheet .sheet-panel p {
     line-height: 1.55;
 }
@@ -1406,6 +1469,10 @@
     .sheet-abilities-strip {
         grid-template-columns: repeat(3, minmax(120px, 1fr));
         row-gap: 26px;
+    }
+
+    .custom-proficiency-grid {
+        grid-template-columns: 1fr;
     }
 
     .combat-stat-grid {
