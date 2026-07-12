@@ -28,6 +28,12 @@
         <span>{{ __('ui.open') }} →</span>
     </a>
 
+    <a href="{{ route('data.index') }}" class="paper-card">
+        <h2>{{ __('ui.data') }}</h2>
+        <p>{{ __('ui.home.data_text') }}</p>
+        <span>{{ __('ui.open') }} →</span>
+    </a>
+
 </section>
 
 @endsection

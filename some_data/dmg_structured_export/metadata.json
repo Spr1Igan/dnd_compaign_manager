@@ -1,0 +1,15 @@
+{
+  "title": "Руководство Мастера",
+  "system": "Dungeons & Dragons",
+  "edition": "5e",
+  "language": "ru",
+  "source_file": "5e Dungeon Masters Guide - Руководство Мастера RUS.pdf",
+  "pdf_pages": 322,
+  "extraction": "PyMuPDF layout-aware heuristic export",
+  "sha256": "95b828ad64eaa192c67a19bcc0149d82204fcb3c992c5407a9091607a23baba8",
+  "notes": [
+    "Экспорт сохраняет полный извлечённый текст по страницам и блокам.",
+    "Таблицы распознаны эвристически по расположению строк; сложные многостолбцовые таблицы могут требовать ручной проверки.",
+    "Номера printed_page ориентировочные: после вводных страниц обычно PDF page = printed page + 1."
+  ]
+}

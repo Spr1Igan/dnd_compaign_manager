@@ -1,0 +1,107 @@
+[
+  {
+    "id": "introduction",
+    "title": "Введение",
+    "page_pdf_start": 5,
+    "page_pdf_end": 7,
+    "file": "chapters/introduction.json"
+  },
+  {
+    "id": "chapter_01",
+    "title": "Глава 1: Ваш собственный мир",
+    "page_pdf_start": 10,
+    "page_pdf_end": 43,
+    "file": "chapters/chapter_01.json"
+  },
+  {
+    "id": "chapter_02",
+    "title": "Глава 2: Создание мультивселенной",
+    "page_pdf_start": 44,
+    "page_pdf_end": 69,
+    "file": "chapters/chapter_02.json"
+  },
+  {
+    "id": "chapter_03",
+    "title": "Глава 3: Создание приключений",
+    "page_pdf_start": 72,
+    "page_pdf_end": 89,
+    "file": "chapters/chapter_03.json"
+  },
+  {
+    "id": "chapter_04",
+    "title": "Глава 4: Создание персонажей Мастера",
+    "page_pdf_start": 90,
+    "page_pdf_end": 99,
+    "file": "chapters/chapter_04.json"
+  },
+  {
+    "id": "chapter_05",
+    "title": "Глава 5: Окружающая среда",
+    "page_pdf_start": 100,
+    "page_pdf_end": 125,
+    "file": "chapters/chapter_05.json"
+  },
+  {
+    "id": "chapter_06",
+    "title": "Глава 6: Между приключениями",
+    "page_pdf_start": 126,
+    "page_pdf_end": 133,
+    "file": "chapters/chapter_06.json"
+  },
+  {
+    "id": "chapter_07",
+    "title": "Глава 7: Сокровища",
+    "page_pdf_start": 134,
+    "page_pdf_end": 233,
+    "file": "chapters/chapter_07.json"
+  },
+  {
+    "id": "chapter_08",
+    "title": "Глава 8: Проведение игр",
+    "page_pdf_start": 236,
+    "page_pdf_end": 263,
+    "file": "chapters/chapter_08.json"
+  },
+  {
+    "id": "chapter_09",
+    "title": "Глава 9: Мастерская Мастера",
+    "page_pdf_start": 264,
+    "page_pdf_end": 290,
+    "file": "chapters/chapter_09.json"
+  },
+  {
+    "id": "appendix_a",
+    "title": "Приложение А: Случайные подземелья",
+    "page_pdf_start": 291,
+    "page_pdf_end": 302,
+    "file": "chapters/appendix_a.json"
+  },
+  {
+    "id": "appendix_b",
+    "title": "Приложение Б: Списки чудовищ",
+    "page_pdf_start": 303,
+    "page_pdf_end": 310,
+    "file": "chapters/appendix_b.json"
+  },
+  {
+    "id": "appendix_c",
+    "title": "Приложение В: Карты",
+    "page_pdf_start": 311,
+    "page_pdf_end": 316,
+    "file": "chapters/appendix_c.json"
+  },
+  {
+    "id": "appendix_d",
+    "title": "Приложение Г: Вдохновение для Мастера",
+    "page_pdf_start": 317,
+    "page_pdf_end": 317,
+    "file": "chapters/appendix_d.json"
+  },
+  {
+    "id": "index",
+    "title": "Алфавитный указатель",
+    "page_pdf_start": 318,
+    "page_pdf_end": 322,
+    "file": "chapters/index.json"
+  }
+]

@@ -4,6 +4,7 @@ return [
     'app_name' => 'D&D Campaign Manager',
     'characters' => 'Characters',
     'campaigns' => 'Campaigns',
+    'data' => 'Data',
     'profile' => 'Profile',
     'logout' => 'Log out',
     'login' => 'Log in',
@@ -25,6 +26,7 @@ return [
         'lead' => 'Manage characters, campaigns, and adventures in one place.',
         'characters_text' => 'Create heroes and keep their stats, equipment, and story.',
         'campaigns_text' => 'Run sessions, notes, NPCs, and story arcs.',
+        'data_text' => 'Open the DM reference: items, traps, rules, chapters, and tables.',
     ],
 
     'auth' => [
