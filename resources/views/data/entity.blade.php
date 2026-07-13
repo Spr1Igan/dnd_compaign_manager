@@ -30,7 +30,7 @@
         @endif
     </div>
 
-    @if ($entry['type'] || $entry['price_gp'] || $entry['saving_throw'] || $entry['dc'])
+    @if ($entry['type'] || $entry['price_gp'] || $entry['saving_throw'] || $entry['dc'] || $entry['attack_bonus'])
         <div class="data-stat-grid">
             @if ($entry['type'])
                 <div>
@@ -57,6 +57,13 @@
                 <div>
                     <span>Сложность</span>
                     <strong>Сл {{ $entry['dc'] }}</strong>
+                </div>
+            @endif
+
+            @if ($entry['attack_bonus'])
+                <div>
+                    <span>Бонус атаки</span>
+                    <strong>+{{ $entry['attack_bonus'] }}</strong>
                 </div>
             @endif
         </div>

@@ -237,6 +237,7 @@ class DmgDataRepository
             'price_gp' => $item['price_gp'] ?? null,
             'saving_throw' => $this->flattenText($item['saving_throw'] ?? ''),
             'dc' => $item['dc'] ?? null,
+            'attack_bonus' => $item['attack_bonus'] ?? null,
             'page_pdf' => $source['page_pdf'] ?? $item['page_pdf'] ?? null,
             'description' => $description,
             'effect' => $effect,
@@ -251,6 +252,9 @@ class DmgDataRepository
     private function manualSections(array $item): array
     {
         $sections = [
+            'trigger' => 'Срабатывание',
+            'detection' => 'Обнаружение',
+            'disarming' => 'Обезвреживание',
             'infection' => 'Заражение',
             'incubation' => 'Инкубация',
             'symptoms' => 'Симптомы',
