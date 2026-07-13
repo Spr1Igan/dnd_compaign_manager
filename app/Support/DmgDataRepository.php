@@ -240,11 +240,40 @@ class DmgDataRepository
             'page_pdf' => $source['page_pdf'] ?? $item['page_pdf'] ?? null,
             'description' => $description,
             'effect' => $effect,
+            'sections' => $this->manualSections($item),
             'tags' => $this->normalizeTextList($item['tags'] ?? []),
             'status' => $this->flattenText($item['status'] ?? ($isManual ? 'verified' : 'raw')),
             'is_manual' => $isManual,
             'excerpt' => Str::limit($description, 260),
         ];
+    }
+
+    private function manualSections(array $item): array
+    {
+        $sections = [
+            'infection' => 'Заражение',
+            'incubation' => 'Инкубация',
+            'symptoms' => 'Симптомы',
+            'treatment' => 'Лечение',
+        ];
+
+        return collect($sections)
+            ->map(function (string $title, string $key) use ($item): ?array {
+                $content = $this->normalizeTextList($item[$key] ?? []);
+
+                if ($content === []) {
+                    return null;
+                }
+
+                return [
+                    'key' => $key,
+                    'title' => $title,
+                    'items' => $content,
+                ];
+            })
+            ->filter()
+            ->values()
+            ->all();
     }
 
     private function normalizeTextList(mixed $value): array

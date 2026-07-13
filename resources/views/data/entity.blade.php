@@ -62,6 +62,35 @@
         </div>
     @endif
 
+    @if ($entry['description'] !== '')
+        <div class="data-detail-text">
+            @foreach (preg_split('/(?<=[.!?])\s+/u', $entry['description']) as $paragraph)
+                @if (trim($paragraph) !== '')
+                    <p>{{ $paragraph }}</p>
+                @endif
+            @endforeach
+        </div>
+    @endif
+
+    @if (! empty($entry['sections']))
+        <div class="data-section-grid">
+            @foreach ($entry['sections'] as $section)
+                <section class="data-info-section">
+                    <h2>{{ $section['title'] }}</h2>
+                    @if (count($section['items']) === 1)
+                        <p>{{ $section['items'][0] }}</p>
+                    @else
+                        <ul>
+                            @foreach ($section['items'] as $item)
+                                <li>{{ $item }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
+                </section>
+            @endforeach
+        </div>
+    @endif
+
     @if (! empty($entry['effect']))
         <div class="data-effect-list">
             <h2>Эффект</h2>
@@ -71,15 +100,9 @@
                 @endforeach
             </ol>
         </div>
-    @elseif ($entry['description'] !== '')
-        <div class="data-detail-text">
-            @foreach (preg_split('/(?<=[.!?])\s+/u', $entry['description']) as $paragraph)
-                @if (trim($paragraph) !== '')
-                    <p>{{ $paragraph }}</p>
-                @endif
-            @endforeach
-        </div>
-    @else
+    @endif
+
+    @if ($entry['description'] === '' && empty($entry['sections']) && empty($entry['effect']))
         <div class="paper-panel">
             У этой записи нет отдельного описания в автоматическом экспорте. Проверь соседние записи или главу-источник.
         </div>

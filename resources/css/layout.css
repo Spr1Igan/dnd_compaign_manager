@@ -1756,6 +1756,7 @@
 .data-detail-text {
     display: grid;
     gap: 12px;
+    margin-bottom: 22px;
 }
 
 .data-detail-text p,
@@ -1792,6 +1793,44 @@
     display: block;
     color: #7a1f13;
     font-size: 22px;
+}
+
+.data-section-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.data-info-section {
+    padding: 18px;
+    border: 3px solid #111;
+    background: rgba(255, 255, 255, 0.84);
+}
+
+.data-info-section h2 {
+    margin: 0 0 12px;
+    padding-bottom: 7px;
+    border-bottom: 3px double #111;
+    color: #7a1f13;
+    font-size: 20px;
+}
+
+.data-info-section p,
+.data-info-section li {
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.data-info-section p {
+    margin: 0;
+}
+
+.data-info-section ul {
+    display: grid;
+    gap: 8px;
+    margin: 0;
+    padding-left: 20px;
 }
 
 .data-effect-list {
@@ -1948,7 +1987,8 @@
     .data-detail-nav,
     .data-page-nav,
     .data-table-card summary,
-    .data-table-row {
+    .data-table-row,
+    .data-section-grid {
         grid-template-columns: 1fr;
     }
 
