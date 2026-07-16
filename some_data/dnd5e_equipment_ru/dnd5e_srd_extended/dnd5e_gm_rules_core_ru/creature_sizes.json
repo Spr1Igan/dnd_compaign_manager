@@ -1,0 +1,39 @@
+[
+  {
+    "id": "tiny",
+    "name_ru": "Крошечный",
+    "space_ft": 2.5,
+    "typical_hit_die": "d4"
+  },
+  {
+    "id": "small",
+    "name_ru": "Маленький",
+    "space_ft": 5,
+    "typical_hit_die": "d6"
+  },
+  {
+    "id": "medium",
+    "name_ru": "Средний",
+    "space_ft": 5,
+    "typical_hit_die": "d8"
+  },
+  {
+    "id": "large",
+    "name_ru": "Большой",
+    "space_ft": 10,
+    "typical_hit_die": "d10"
+  },
+  {
+    "id": "huge",
+    "name_ru": "Огромный",
+    "space_ft": 15,
+    "typical_hit_die": "d12"
+  },
+  {
+    "id": "gargantuan",
+    "name_ru": "Громадный",
+    "space_ft": 20,
+    "typical_hit_die": "d20",
+    "notes": "Может занимать пространство больше 20 футов."
+  }
+]

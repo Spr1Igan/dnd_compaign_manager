@@ -1,0 +1,194 @@
+{
+  "individual": {
+    "cr_0_4": {
+      "coins": [
+        {
+          "roll": "5d6",
+          "unit": "cp"
+        },
+        {
+          "roll": "4d6",
+          "unit": "sp"
+        },
+        {
+          "roll": "3d6",
+          "unit": "gp"
+        }
+      ],
+      "extra_chance": 0.08
+    },
+    "cr_5_10": {
+      "coins": [
+        {
+          "roll": "4d6x10",
+          "unit": "sp"
+        },
+        {
+          "roll": "2d6x10",
+          "unit": "gp"
+        },
+        {
+          "roll": "1d6",
+          "unit": "pp"
+        }
+      ],
+      "extra_chance": 0.15
+    },
+    "cr_11_16": {
+      "coins": [
+        {
+          "roll": "4d6x10",
+          "unit": "gp"
+        },
+        {
+          "roll": "1d6x10",
+          "unit": "pp"
+        }
+      ],
+      "extra_chance": 0.25
+    },
+    "cr_17_plus": {
+      "coins": [
+        {
+          "roll": "12d6x10",
+          "unit": "gp"
+        },
+        {
+          "roll": "8d6x10",
+          "unit": "pp"
+        }
+      ],
+      "extra_chance": 0.35
+    }
+  },
+  "hoard": {
+    "tier_1": {
+      "coins": [
+        {
+          "roll": "6d6x100",
+          "unit": "cp"
+        },
+        {
+          "roll": "3d6x100",
+          "unit": "sp"
+        },
+        {
+          "roll": "2d6x10",
+          "unit": "gp"
+        }
+      ],
+      "valuables": [
+        {
+          "table": "gems",
+          "value_gp": [
+            10,
+            50
+          ],
+          "count": "2d6"
+        },
+        {
+          "table": "art_objects",
+          "value_gp": [
+            25
+          ],
+          "count": "1d4"
+        }
+      ]
+    },
+    "tier_2": {
+      "coins": [
+        {
+          "roll": "2d6x100",
+          "unit": "sp"
+        },
+        {
+          "roll": "6d6x100",
+          "unit": "gp"
+        },
+        {
+          "roll": "3d6x10",
+          "unit": "pp"
+        }
+      ],
+      "valuables": [
+        {
+          "table": "gems",
+          "value_gp": [
+            50,
+            100,
+            500
+          ],
+          "count": "3d6"
+        },
+        {
+          "table": "art_objects",
+          "value_gp": [
+            250,
+            750
+          ],
+          "count": "1d6"
+        }
+      ]
+    },
+    "tier_3": {
+      "coins": [
+        {
+          "roll": "4d6x1000",
+          "unit": "gp"
+        },
+        {
+          "roll": "5d6x100",
+          "unit": "pp"
+        }
+      ],
+      "valuables": [
+        {
+          "table": "gems",
+          "value_gp": [
+            500,
+            1000
+          ],
+          "count": "3d6"
+        },
+        {
+          "table": "art_objects",
+          "value_gp": [
+            750,
+            2500
+          ],
+          "count": "2d4"
+        }
+      ]
+    },
+    "tier_4": {
+      "coins": [
+        {
+          "roll": "12d6x1000",
+          "unit": "gp"
+        },
+        {
+          "roll": "8d6x1000",
+          "unit": "pp"
+        }
+      ],
+      "valuables": [
+        {
+          "table": "gems",
+          "value_gp": [
+            1000,
+            5000
+          ],
+          "count": "4d6"
+        },
+        {
+          "table": "art_objects",
+          "value_gp": [
+            2500,
+            7500
+          ],
+          "count": "2d6"
+        }
+      ]
+    }
+  }
+}

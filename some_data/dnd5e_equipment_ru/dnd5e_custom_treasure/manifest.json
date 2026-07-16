@@ -1,0 +1,17 @@
+{
+  "title": "Собственная расширенная база сокровищ для D&D 5e",
+  "language": "ru",
+  "license": "Свободная авторская подборка; не копирует закрытые таблицы Dungeon Master's Guide.",
+  "files": {
+    "coins.json": 5,
+    "gems.json": 48,
+    "art_objects.json": 40,
+    "jewelry.json": 96,
+    "relics.json": 10,
+    "books.json": 10,
+    "mundane_loot.json": 12,
+    "rare_goods.json": 10,
+    "treasure_tables.json": "таблицы генерации",
+    "generator_schema.json": "правила генератора"
+  }
+}

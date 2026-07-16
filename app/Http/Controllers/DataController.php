@@ -14,6 +14,7 @@ class DataController extends Controller
         return view('data.index', [
             'metadata' => $data->metadata(),
             'categories' => $data->categories(),
+            'groups' => $data->groups(),
             'chapters' => array_slice($data->chapters(), 0, 12),
             'query' => $query,
             'results' => $data->search($query),

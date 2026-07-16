@@ -10,8 +10,8 @@
         <h1>{{ $entry['name'] }}</h1>
         <p>
             Запись {{ $entry['index'] + 1 }} из {{ $total }}
-            @if($entry['page_pdf'])
-                · страница PDF {{ $entry['page_pdf'] }}
+            @if($entry['english_name'])
+                · {{ $entry['english_name'] }}
             @endif
         </p>
     </div>
@@ -22,56 +22,112 @@
 <article class="data-detail-card">
     <div class="data-detail-meta">
         <span>{{ $category['title'] }}</span>
-        @if($entry['page_pdf'])
-            <span>Страница PDF: {{ $entry['page_pdf'] }}</span>
-        @endif
-        @if($entry['is_manual'])
-            <span>Проверено вручную</span>
-        @endif
+        @if($entry['type'])<span>{{ $entry['type'] }}</span>@endif
+        @if($entry['is_manual'])<span>Сохранено из ручной структуры</span>@endif
     </div>
 
-    @if ($entry['type'] || $entry['price_gp'] || $entry['saving_throw'] || $entry['dc'] || $entry['attack_bonus'])
+    @if (! empty($entry['stats']))
         <div class="data-stat-grid">
-            @if ($entry['type'])
+            @foreach ($entry['stats'] as $stat)
                 <div>
-                    <span>Тип</span>
-                    <strong>{{ $entry['type'] }}</strong>
+                    <span>{{ $stat['label'] }}</span>
+                    <strong>{{ $stat['value'] }}</strong>
                 </div>
-            @endif
-
-            @if ($entry['price_gp'])
-                <div>
-                    <span>Цена</span>
-                    <strong>{{ $entry['price_gp'] }} зм</strong>
-                </div>
-            @endif
-
-            @if ($entry['saving_throw'])
-                <div>
-                    <span>Спасбросок</span>
-                    <strong>{{ $entry['saving_throw'] }}</strong>
-                </div>
-            @endif
-
-            @if ($entry['dc'])
-                <div>
-                    <span>Сложность</span>
-                    <strong>Сл {{ $entry['dc'] }}</strong>
-                </div>
-            @endif
-
-            @if ($entry['attack_bonus'])
-                <div>
-                    <span>Бонус атаки</span>
-                    <strong>+{{ $entry['attack_bonus'] }}</strong>
-                </div>
-            @endif
+            @endforeach
         </div>
     @endif
 
-    @if ($entry['description'] !== '')
+    @if (! empty($entry['properties']))
+        <div class="item-property-list">
+            <span>Свойства</span>
+            @foreach ($entry['properties'] as $property)
+                <strong>{{ $property }}</strong>
+            @endforeach
+        </div>
+    @endif
+
+    @if ($entry['category_view'] === 'monsters')
+        <section class="monster-stat-block">
+            @if (! empty($entry['abilities']))
+                <div class="monster-ability-grid">
+                    @foreach ($entry['abilities'] as $ability)
+                        <div>
+                            <span>{{ $ability['title'] }}</span>
+                            <strong>{{ $ability['value'] }}</strong>
+                        </div>
+                    @endforeach
+                </div>
+            @endif
+
+            <div class="monster-info-grid">
+                @if (! empty($entry['saves']))
+                    <section>
+                        <h2>Спасброски</h2>
+                        <p>
+                            @foreach ($entry['saves'] as $save)
+                                {{ $save['name'] }} +{{ $save['value'] }}@if (! $loop->last), @endif
+                            @endforeach
+                        </p>
+                    </section>
+                @endif
+
+                @if (! empty($entry['skills']))
+                    <section>
+                        <h2>Навыки</h2>
+                        <p>
+                            @foreach ($entry['skills'] as $skill)
+                                {{ $skill['name'] }} +{{ $skill['value'] }}@if (! $loop->last), @endif
+                            @endforeach
+                        </p>
+                    </section>
+                @endif
+
+                @if (! empty($entry['senses']))
+                    <section>
+                        <h2>Чувства</h2>
+                        <p>
+                            @foreach ($entry['senses'] as $sense)
+                                {{ $sense['name'] }} {{ $sense['value'] }}@if (! $loop->last), @endif
+                            @endforeach
+                        </p>
+                    </section>
+                @endif
+
+                <section>
+                    <h2>Языки</h2>
+                    <p>{{ ! empty($entry['languages']) ? implode(', ', $entry['languages']) : '—' }}</p>
+                </section>
+            </div>
+
+            @if (! empty($entry['traits']))
+                <section class="monster-text-section">
+                    <h2>Особенности</h2>
+                    @foreach ($entry['traits'] as $trait)
+                        <article>
+                            <strong>{{ $trait['name'] }}</strong>
+                            <p>{{ $trait['description'] }}</p>
+                        </article>
+                    @endforeach
+                </section>
+            @endif
+
+            @if (! empty($entry['actions']))
+                <section class="monster-text-section">
+                    <h2>Действия</h2>
+                    @foreach ($entry['actions'] as $action)
+                        <article>
+                            <strong>{{ $action['name'] }}</strong>
+                            <p>{{ $action['description'] }}</p>
+                        </article>
+                    @endforeach
+                </section>
+            @endif
+        </section>
+    @endif
+
+    @if ($entry['description'] !== '' && $entry['category_view'] !== 'monsters')
         <div class="data-detail-text">
-            @foreach (preg_split('/(?<=[.!?])\s+/u', $entry['description']) as $paragraph)
+            @foreach (preg_split('/\R+/u', $entry['description']) as $paragraph)
                 @if (trim($paragraph) !== '')
                     <p>{{ $paragraph }}</p>
                 @endif
@@ -84,15 +140,11 @@
             @foreach ($entry['sections'] as $section)
                 <section class="data-info-section">
                     <h2>{{ $section['title'] }}</h2>
-                    @if (count($section['items']) === 1)
-                        <p>{{ $section['items'][0] }}</p>
-                    @else
-                        <ul>
-                            @foreach ($section['items'] as $item)
-                                <li>{{ $item }}</li>
-                            @endforeach
-                        </ul>
-                    @endif
+                    @foreach (preg_split('/\R+/u', $section['text']) as $line)
+                        @if (trim($line) !== '')
+                            <p>{{ $line }}</p>
+                        @endif
+                    @endforeach
                 </section>
             @endforeach
         </div>
@@ -109,9 +161,9 @@
         </div>
     @endif
 
-    @if ($entry['description'] === '' && empty($entry['sections']) && empty($entry['effect']))
+    @if ($entry['description'] === '' && empty($entry['sections']) && empty($entry['effect']) && $entry['category_view'] !== 'monsters')
         <div class="paper-panel">
-            У этой записи нет отдельного описания в автоматическом экспорте. Проверь соседние записи или главу-источник.
+            У этой записи пока нет отдельного описания, но основные данные показаны в карточках выше.
         </div>
     @endif
 

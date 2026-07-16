@@ -1,0 +1,120 @@
+[
+  {
+    "id": "common",
+    "name_ru": "Общий",
+    "name_en": "Common",
+    "type": "стандартный",
+    "script": "Общий"
+  },
+  {
+    "id": "dwarvish",
+    "name_ru": "Дварфийский",
+    "name_en": "Dwarvish",
+    "type": "стандартный",
+    "script": "Дварфийский"
+  },
+  {
+    "id": "elvish",
+    "name_ru": "Эльфийский",
+    "name_en": "Elvish",
+    "type": "стандартный",
+    "script": "Эльфийский"
+  },
+  {
+    "id": "giant",
+    "name_ru": "Великаний",
+    "name_en": "Giant",
+    "type": "стандартный",
+    "script": "Дварфийский"
+  },
+  {
+    "id": "gnomish",
+    "name_ru": "Гномий",
+    "name_en": "Gnomish",
+    "type": "стандартный",
+    "script": "Дварфийский"
+  },
+  {
+    "id": "goblin",
+    "name_ru": "Гоблинский",
+    "name_en": "Goblin",
+    "type": "стандартный",
+    "script": "Дварфийский"
+  },
+  {
+    "id": "halfling",
+    "name_ru": "Полуросликов",
+    "name_en": "Halfling",
+    "type": "стандартный",
+    "script": "Общий"
+  },
+  {
+    "id": "orc",
+    "name_ru": "Орочий",
+    "name_en": "Orc",
+    "type": "стандартный",
+    "script": "Дварфийский"
+  },
+  {
+    "id": "abyssal",
+    "name_ru": "Бездны",
+    "name_en": "Abyssal",
+    "type": "экзотический",
+    "script": "Инфернальный"
+  },
+  {
+    "id": "celestial",
+    "name_ru": "Небесный",
+    "name_en": "Celestial",
+    "type": "экзотический",
+    "script": "Небесный"
+  },
+  {
+    "id": "draconic",
+    "name_ru": "Драконий",
+    "name_en": "Draconic",
+    "type": "экзотический",
+    "script": "Драконий"
+  },
+  {
+    "id": "deep-speech",
+    "name_ru": "Глубинная речь",
+    "name_en": "Deep Speech",
+    "type": "экзотический",
+    "script": null
+  },
+  {
+    "id": "infernal",
+    "name_ru": "Инфернальный",
+    "name_en": "Infernal",
+    "type": "экзотический",
+    "script": "Инфернальный"
+  },
+  {
+    "id": "primordial",
+    "name_ru": "Первичный",
+    "name_en": "Primordial",
+    "type": "экзотический",
+    "script": "Дварфийский",
+    "dialects": [
+      "Акван",
+      "Ауран",
+      "Игнан",
+      "Терран"
+    ]
+  },
+  {
+    "id": "sylvan",
+    "name_ru": "Сильван",
+    "name_en": "Sylvan",
+    "type": "экзотический",
+    "script": "Эльфийский"
+  },
+  {
+    "id": "undercommon",
+    "name_ru": "Подземный общий",
+    "name_en": "Undercommon",
+    "type": "экзотический",
+    "script": "Эльфийский"
+  }
+]

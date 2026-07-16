@@ -1,0 +1,409 @@
+[
+  {
+    "id": "alchemists-supplies",
+    "name_ru": "Инструменты алхимика",
+    "name_en": "Alchemist's Supplies",
+    "category": "ремесленные инструменты",
+    "cost": {
+      "amount": 50,
+      "unit": "gp"
+    },
+    "weight_lb": 8
+  },
+  {
+    "id": "brewers-supplies",
+    "name_ru": "Инструменты пивовара",
+    "name_en": "Brewer's Supplies",
+    "category": "ремесленные инструменты",
+    "cost": {
+      "amount": 20,
+      "unit": "gp"
+    },
+    "weight_lb": 9
+  },
+  {
+    "id": "calligraphers-supplies",
+    "name_ru": "Инструменты каллиграфа",
+    "name_en": "Calligrapher's Supplies",
+    "category": "ремесленные инструменты",
+    "cost": {
+      "amount": 10,
+      "unit": "gp"
+    },
+    "weight_lb": 5
+  },
+  {
+    "id": "carpenters-tools",
+    "name_ru": "Инструменты плотника",
+    "name_en": "Carpenter's Tools",
+    "category": "ремесленные инструменты",
+    "cost": {
+      "amount": 8,
+      "unit": "gp"
+    },
+    "weight_lb": 6
+  },
+  {
+    "id": "cartographers-tools",
+    "name_ru": "Инструменты картографа",
+    "name_en": "Cartographer's Tools",
+    "category": "ремесленные инструменты",
+    "cost": {
+      "amount": 15,
+      "unit": "gp"
+    },
+    "weight_lb": 6
+  },
+  {
+    "id": "cobblers-tools",
+    "name_ru": "Инструменты сапожника",
+    "name_en": "Cobbler's Tools",
+    "category": "ремесленные инструменты",
+    "cost": {
+      "amount": 5,
+      "unit": "gp"
+    },
+    "weight_lb": 5
+  },
+  {
+    "id": "cooks-utensils",
+    "name_ru": "Кухонная утварь",
+    "name_en": "Cook's Utensils",
+    "category": "ремесленные инструменты",
+    "cost": {
+      "amount": 1,
+      "unit": "gp"
+    },
+    "weight_lb": 8
+  },
+  {
+    "id": "glassblowers-tools",
+    "name_ru": "Инструменты стеклодува",
+    "name_en": "Glassblower's Tools",
+    "category": "ремесленные инструменты",
+    "cost": {
+      "amount": 30,
+      "unit": "gp"
+    },
+    "weight_lb": 5
+  },
+  {
+    "id": "jewelers-tools",
+    "name_ru": "Инструменты ювелира",
+    "name_en": "Jeweler's Tools",
+    "category": "ремесленные инструменты",
+    "cost": {
+      "amount": 25,
+      "unit": "gp"
+    },
+    "weight_lb": 2
+  },
+  {
+    "id": "leatherworkers-tools",
+    "name_ru": "Инструменты кожевника",
+    "name_en": "Leatherworker's Tools",
+    "category": "ремесленные инструменты",
+    "cost": {
+      "amount": 5,
+      "unit": "gp"
+    },
+    "weight_lb": 5
+  },
+  {
+    "id": "masons-tools",
+    "name_ru": "Инструменты каменщика",
+    "name_en": "Mason's Tools",
+    "category": "ремесленные инструменты",
+    "cost": {
+      "amount": 10,
+      "unit": "gp"
+    },
+    "weight_lb": 8
+  },
+  {
+    "id": "painters-supplies",
+    "name_ru": "Инструменты художника",
+    "name_en": "Painter's Supplies",
+    "category": "ремесленные инструменты",
+    "cost": {
+      "amount": 10,
+      "unit": "gp"
+    },
+    "weight_lb": 5
+  },
+  {
+    "id": "potters-tools",
+    "name_ru": "Инструменты гончара",
+    "name_en": "Potter's Tools",
+    "category": "ремесленные инструменты",
+    "cost": {
+      "amount": 10,
+      "unit": "gp"
+    },
+    "weight_lb": 3
+  },
+  {
+    "id": "smiths-tools",
+    "name_ru": "Инструменты кузнеца",
+    "name_en": "Smith's Tools",
+    "category": "ремесленные инструменты",
+    "cost": {
+      "amount": 20,
+      "unit": "gp"
+    },
+    "weight_lb": 8
+  },
+  {
+    "id": "tinkers-tools",
+    "name_ru": "Инструменты ремонтника",
+    "name_en": "Tinker's Tools",
+    "category": "ремесленные инструменты",
+    "cost": {
+      "amount": 50,
+      "unit": "gp"
+    },
+    "weight_lb": 10
+  },
+  {
+    "id": "weavers-tools",
+    "name_ru": "Инструменты ткача",
+    "name_en": "Weaver's Tools",
+    "category": "ремесленные инструменты",
+    "cost": {
+      "amount": 1,
+      "unit": "gp"
+    },
+    "weight_lb": 5
+  },
+  {
+    "id": "woodcarvers-tools",
+    "name_ru": "Инструменты резчика по дереву",
+    "name_en": "Woodcarver's Tools",
+    "category": "ремесленные инструменты",
+    "cost": {
+      "amount": 1,
+      "unit": "gp"
+    },
+    "weight_lb": 5
+  },
+  {
+    "id": "disguise-kit",
+    "name_ru": "Набор для грима",
+    "name_en": "Disguise Kit",
+    "category": "набор",
+    "cost": {
+      "amount": 25,
+      "unit": "gp"
+    },
+    "weight_lb": 3
+  },
+  {
+    "id": "forgery-kit",
+    "name_ru": "Набор для подделки документов",
+    "name_en": "Forgery Kit",
+    "category": "набор",
+    "cost": {
+      "amount": 15,
+      "unit": "gp"
+    },
+    "weight_lb": 5
+  },
+  {
+    "id": "herbalism-kit",
+    "name_ru": "Набор травника",
+    "name_en": "Herbalism Kit",
+    "category": "набор",
+    "cost": {
+      "amount": 5,
+      "unit": "gp"
+    },
+    "weight_lb": 3
+  },
+  {
+    "id": "navigators-tools",
+    "name_ru": "Инструменты навигатора",
+    "name_en": "Navigator's Tools",
+    "category": "набор",
+    "cost": {
+      "amount": 25,
+      "unit": "gp"
+    },
+    "weight_lb": 2
+  },
+  {
+    "id": "poisoners-kit",
+    "name_ru": "Инструменты отравителя",
+    "name_en": "Poisoner's Kit",
+    "category": "набор",
+    "cost": {
+      "amount": 50,
+      "unit": "gp"
+    },
+    "weight_lb": 2
+  },
+  {
+    "id": "thieves-tools",
+    "name_ru": "Воровские инструменты",
+    "name_en": "Thieves' Tools",
+    "category": "набор",
+    "cost": {
+      "amount": 25,
+      "unit": "gp"
+    },
+    "weight_lb": 1
+  },
+  {
+    "id": "dice-set",
+    "name_ru": "Набор игральных костей",
+    "name_en": "Dice Set",
+    "category": "игровой набор",
+    "cost": {
+      "amount": 1,
+      "unit": "sp"
+    },
+    "weight_lb": 0
+  },
+  {
+    "id": "dragonchess-set",
+    "name_ru": "Набор драконьих шахмат",
+    "name_en": "Dragonchess Set",
+    "category": "игровой набор",
+    "cost": {
+      "amount": 1,
+      "unit": "gp"
+    },
+    "weight_lb": 0.5
+  },
+  {
+    "id": "playing-card-set",
+    "name_ru": "Колода карт",
+    "name_en": "Playing Card Set",
+    "category": "игровой набор",
+    "cost": {
+      "amount": 5,
+      "unit": "sp"
+    },
+    "weight_lb": 0
+  },
+  {
+    "id": "three-dragon-ante-set",
+    "name_ru": "Набор «Три дракона»",
+    "name_en": "Three-Dragon Ante Set",
+    "category": "игровой набор",
+    "cost": {
+      "amount": 1,
+      "unit": "gp"
+    },
+    "weight_lb": 0
+  },
+  {
+    "id": "bagpipes",
+    "name_ru": "Волынка",
+    "name_en": "Bagpipes",
+    "category": "музыкальный инструмент",
+    "cost": {
+      "amount": 30,
+      "unit": "gp"
+    },
+    "weight_lb": 6
+  },
+  {
+    "id": "drum",
+    "name_ru": "Барабан",
+    "name_en": "Drum",
+    "category": "музыкальный инструмент",
+    "cost": {
+      "amount": 6,
+      "unit": "gp"
+    },
+    "weight_lb": 3
+  },
+  {
+    "id": "dulcimer",
+    "name_ru": "Цимбалы",
+    "name_en": "Dulcimer",
+    "category": "музыкальный инструмент",
+    "cost": {
+      "amount": 25,
+      "unit": "gp"
+    },
+    "weight_lb": 10
+  },
+  {
+    "id": "flute",
+    "name_ru": "Флейта",
+    "name_en": "Flute",
+    "category": "музыкальный инструмент",
+    "cost": {
+      "amount": 2,
+      "unit": "gp"
+    },
+    "weight_lb": 1
+  },
+  {
+    "id": "lute",
+    "name_ru": "Лютня",
+    "name_en": "Lute",
+    "category": "музыкальный инструмент",
+    "cost": {
+      "amount": 35,
+      "unit": "gp"
+    },
+    "weight_lb": 2
+  },
+  {
+    "id": "lyre",
+    "name_ru": "Лира",
+    "name_en": "Lyre",
+    "category": "музыкальный инструмент",
+    "cost": {
+      "amount": 30,
+      "unit": "gp"
+    },
+    "weight_lb": 2
+  },
+  {
+    "id": "horn",
+    "name_ru": "Рог",
+    "name_en": "Horn",
+    "category": "музыкальный инструмент",
+    "cost": {
+      "amount": 3,
+      "unit": "gp"
+    },
+    "weight_lb": 2
+  },
+  {
+    "id": "pan-flute",
+    "name_ru": "Свирель",
+    "name_en": "Pan Flute",
+    "category": "музыкальный инструмент",
+    "cost": {
+      "amount": 12,
+      "unit": "gp"
+    },
+    "weight_lb": 2
+  },
+  {
+    "id": "shawm",
+    "name_ru": "Шалмей",
+    "name_en": "Shawm",
+    "category": "музыкальный инструмент",
+    "cost": {
+      "amount": 2,
+      "unit": "gp"
+    },
+    "weight_lb": 1
+  },
+  {
+    "id": "viol",
+    "name_ru": "Виола",
+    "name_en": "Viol",
+    "category": "музыкальный инструмент",
+    "cost": {
+      "amount": 30,
+      "unit": "gp"
+    },
+    "weight_lb": 1
+  }
+]

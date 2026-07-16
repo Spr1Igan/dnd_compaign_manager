@@ -14,7 +14,7 @@
 
     <nav class="navigation">
         <a href="{{ route('characters.index') }}">{{ __('ui.characters') }}</a>
-        <a href="#">{{ __('ui.campaigns') }}</a>
+        <a href="{{ route('campaigns.index') }}">{{ __('ui.campaigns') }}</a>
         <a href="{{ route('data.index') }}">{{ __('ui.data') }}</a>
     </nav>
 

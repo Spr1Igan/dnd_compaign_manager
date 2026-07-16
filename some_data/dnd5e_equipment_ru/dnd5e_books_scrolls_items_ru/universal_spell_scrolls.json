@@ -1,0 +1,2900 @@
+[
+  {
+    "id": "scroll_001",
+    "name_ru": "Свиток огненная черта",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 215,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 60,
+    "area": {
+      "shape": "line",
+      "length_ft": 60,
+      "width_ft": 5
+    },
+    "duration": "Мгновенно",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "dex",
+      "dc": 13,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "4d6",
+      "type": "fire"
+    },
+    "description_ru": "Линия огня воспламеняет горючие предметы.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": false
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "необычный",
+      "fire"
+    ]
+  },
+  {
+    "id": "scroll_002",
+    "name_ru": "Свиток стеклянная тюрьма",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 1823,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 60,
+    "area": {
+      "shape": "cube",
+      "size_ft": 10
+    },
+    "duration": "1 минута",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "dex",
+      "dc": 15,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": null,
+    "description_ru": "При провале цель опутана прозрачной клеткой и повторяет спасбросок в конце хода.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "редкий"
+    ]
+  },
+  {
+    "id": "scroll_003",
+    "name_ru": "Свиток громовой шаг",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 4724,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 90,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 10
+    },
+    "duration": "Мгновенно",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "con",
+      "dc": 15,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "3d10",
+      "type": "thunder"
+    },
+    "description_ru": "Пользователь телепортируется; существа у стартовой точки получают урон.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": false
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "редкий",
+      "thunder"
+    ]
+  },
+  {
+    "id": "scroll_004",
+    "name_ru": "Свиток ледяной цветок",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 307,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 90,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 15
+    },
+    "duration": "1 раунд",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "con",
+      "dc": 13,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "3d8",
+      "type": "cold"
+    },
+    "description_ru": "Зона становится труднопроходимой.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "необычный",
+      "cold"
+    ]
+  },
+  {
+    "id": "scroll_005",
+    "name_ru": "Свиток теневые крюки",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 3279,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 60,
+    "area": {
+      "shape": "single_target"
+    },
+    "duration": "1 минута",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "str",
+      "dc": 15,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "4d8",
+      "type": "necrotic"
+    },
+    "description_ru": "При провале цель опутана тенями.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "редкий",
+      "necrotic"
+    ]
+  },
+  {
+    "id": "scroll_006",
+    "name_ru": "Свиток целительный дождь",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 2104,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 60,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 20
+    },
+    "duration": "Мгновенно",
+    "concentration": false,
+    "saving_throw": null,
+    "damage": {
+      "dice": "3d6+3",
+      "type": "healing"
+    },
+    "description_ru": "До шести существ восстанавливают хиты.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": false
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "редкий",
+      "healing"
+    ]
+  },
+  {
+    "id": "scroll_007",
+    "name_ru": "Свиток немая комната",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 283,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 60,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 20
+    },
+    "duration": "10 минут",
+    "concentration": false,
+    "saving_throw": null,
+    "damage": null,
+    "description_ru": "Внутри зоны не распространяется звук.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "необычный"
+    ]
+  },
+  {
+    "id": "scroll_008",
+    "name_ru": "Свиток колодец тяжести",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "очень редкий",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 11043,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 120,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 20
+    },
+    "duration": "1 минута",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "str",
+      "dc": 17,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "6d6",
+      "type": "force"
+    },
+    "description_ru": "Притягивает существ к центру на 15 футов.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "очень редкий",
+      "force"
+    ]
+  },
+  {
+    "id": "scroll_009",
+    "name_ru": "Свиток солнечное копьё",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 660,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 120,
+    "area": {
+      "shape": "single_target"
+    },
+    "duration": "Мгновенно",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "dex",
+      "dc": 15,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "6d8",
+      "type": "radiant"
+    },
+    "description_ru": "Нежить получает дополнительно 2d8 урона.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": false
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "редкий",
+      "radiant"
+    ]
+  },
+  {
+    "id": "scroll_010",
+    "name_ru": "Свиток ложная дверь",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "обычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 68,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 30,
+    "area": {
+      "shape": "surface",
+      "size_ft": 10
+    },
+    "duration": "1 час",
+    "concentration": false,
+    "saving_throw": null,
+    "damage": null,
+    "description_ru": "Создаёт убедительную иллюзию двери, стены или прохода.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "обычный"
+    ]
+  },
+  {
+    "id": "scroll_011",
+    "name_ru": "Свиток железная кожа",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 4109,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": "self",
+    "area": {
+      "shape": "self"
+    },
+    "duration": "10 минут",
+    "concentration": true,
+    "saving_throw": null,
+    "damage": null,
+    "description_ru": "КД пользователя не может быть ниже 16.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "редкий"
+    ]
+  },
+  {
+    "id": "scroll_012",
+    "name_ru": "Свиток заимствованные крылья",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 3649,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": "self",
+    "area": {
+      "shape": "self"
+    },
+    "duration": "10 минут",
+    "concentration": false,
+    "saving_throw": null,
+    "damage": null,
+    "description_ru": "Даёт скорость полёта 40 футов.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "редкий"
+    ]
+  },
+  {
+    "id": "scroll_013",
+    "name_ru": "Свиток эхо-двойник",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 365,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": "self",
+    "area": {
+      "shape": "self"
+    },
+    "duration": "1 минута",
+    "concentration": false,
+    "saving_throw": null,
+    "damage": null,
+    "description_ru": "Первая атака по пользователю каждый раунд совершается с помехой.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "необычный"
+    ]
+  },
+  {
+    "id": "scroll_014",
+    "name_ru": "Свиток прыгающая молния",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 4697,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 90,
+    "area": {
+      "shape": "targets",
+      "max_targets": 4
+    },
+    "duration": "Мгновенно",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "dex",
+      "dc": 15,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "4d8",
+      "type": "lightning"
+    },
+    "description_ru": "Молния перескакивает между целями.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": false
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "редкий",
+      "lightning"
+    ]
+  },
+  {
+    "id": "scroll_015",
+    "name_ru": "Свиток лунный сон",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 133,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 60,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 15
+    },
+    "duration": "1 минута",
+    "concentration": true,
+    "saving_throw": {
+      "ability": "wis",
+      "dc": 13,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": null,
+    "description_ru": "Существа с суммарно 8d8 хитов засыпают.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "необычный"
+    ]
+  },
+  {
+    "id": "scroll_016",
+    "name_ru": "Свиток костяной мост",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 218,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 30,
+    "area": {
+      "shape": "bridge",
+      "length_ft": 40,
+      "width_ft": 5
+    },
+    "duration": "1 час",
+    "concentration": true,
+    "saving_throw": null,
+    "damage": null,
+    "description_ru": "Создаёт прочный мост.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "необычный"
+    ]
+  },
+  {
+    "id": "scroll_017",
+    "name_ru": "Свиток замок памяти",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "очень редкий",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 10510,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 30,
+    "area": {
+      "shape": "single_target"
+    },
+    "duration": "24 часа",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "wis",
+      "dc": 17,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": null,
+    "description_ru": "Запирает одно воспоминание цели.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "очень редкий"
+    ]
+  },
+  {
+    "id": "scroll_018",
+    "name_ru": "Свиток алая метка",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 240,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 60,
+    "area": {
+      "shape": "single_target"
+    },
+    "duration": "1 минута",
+    "concentration": true,
+    "saving_throw": {
+      "ability": "wis",
+      "dc": 13,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": null,
+    "description_ru": "Первая атака каждого союзника по цели наносит +1d4 урона.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "необычный"
+    ]
+  },
+  {
+    "id": "scroll_019",
+    "name_ru": "Свиток пасть пустоты",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "очень редкий",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 16899,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 120,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 15
+    },
+    "duration": "Мгновенно",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "con",
+      "dc": 17,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "8d6",
+      "type": "necrotic"
+    },
+    "description_ru": "Цели при 0 хитов временно не могут лечиться.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": false
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "очень редкий",
+      "necrotic"
+    ]
+  },
+  {
+    "id": "scroll_020",
+    "name_ru": "Свиток остановленное мгновение",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "легендарный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 120896,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": "self",
+    "area": {
+      "shape": "self"
+    },
+    "duration": "1 раунд",
+    "concentration": false,
+    "saving_throw": null,
+    "damage": null,
+    "description_ru": "Пользователь получает дополнительный ход, затем 1 уровень истощения.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "легендарный"
+    ]
+  },
+  {
+    "id": "scroll_021",
+    "name_ru": "Свиток золотого знамения 1",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 2619,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 120,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 10
+    },
+    "duration": "1 минута",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "con",
+      "dc": 15,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "4d6",
+      "type": "necrotic"
+    },
+    "description_ru": "Тени высасывают жизненную силу.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "редкий",
+      "necrotic"
+    ]
+  },
+  {
+    "id": "scroll_022",
+    "name_ru": "Свиток алого знамения 2",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 2787,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 30,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 10
+    },
+    "duration": "1 раунд",
+    "concentration": false,
+    "saving_throw": null,
+    "damage": null,
+    "description_ru": "Телепортирует пользователя и одного союзника.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "редкий"
+    ]
+  },
+  {
+    "id": "scroll_023",
+    "name_ru": "Свиток алого знамения 3",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 425,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 30,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 15
+    },
+    "duration": "Мгновенно",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "con",
+      "dc": 13,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "3d8",
+      "type": "thunder"
+    },
+    "description_ru": "Волна звука отбрасывает цели на 10 футов.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "необычный",
+      "thunder"
+    ]
+  },
+  {
+    "id": "scroll_024",
+    "name_ru": "Свиток алого знамения 4",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "обычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 83,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 30,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 15
+    },
+    "duration": "1 минута",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "con",
+      "dc": 11,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "3d8",
+      "type": "radiant"
+    },
+    "description_ru": "Поток света ослепляет до конца следующего хода.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "обычный",
+      "radiant"
+    ]
+  },
+  {
+    "id": "scroll_025",
+    "name_ru": "Свиток ледяного знамения 5",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "очень редкий",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 45744,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 60,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 5
+    },
+    "duration": "1 минута",
+    "concentration": false,
+    "saving_throw": null,
+    "damage": {
+      "dice": "2d8+4",
+      "type": "healing"
+    },
+    "description_ru": "Союзники получают временные хиты.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "очень редкий",
+      "healing"
+    ]
+  },
+  {
+    "id": "scroll_026",
+    "name_ru": "Свиток лунного знамения 6",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "очень редкий",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 22164,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 30,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 10
+    },
+    "duration": "Мгновенно",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "con",
+      "dc": 17,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "3d8",
+      "type": "radiant"
+    },
+    "description_ru": "Поток света ослепляет до конца следующего хода.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "очень редкий",
+      "radiant"
+    ]
+  },
+  {
+    "id": "scroll_027",
+    "name_ru": "Свиток грозового знамения 7",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 2187,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 90,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 20
+    },
+    "duration": "1 минута",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "dex",
+      "dc": 15,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "3d6",
+      "type": "acid"
+    },
+    "description_ru": "Кислотный дождь снижает КД поражённой брони на 1 до ремонта.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "редкий",
+      "acid"
+    ]
+  },
+  {
+    "id": "scroll_028",
+    "name_ru": "Свиток алого знамения 8",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 229,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 30,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 5
+    },
+    "duration": "Мгновенно",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "con",
+      "dc": 13,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "4d6",
+      "type": "necrotic"
+    },
+    "description_ru": "Тени высасывают жизненную силу.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "необычный",
+      "necrotic"
+    ]
+  },
+  {
+    "id": "scroll_029",
+    "name_ru": "Свиток лунного знамения 9",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 329,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 30,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 20
+    },
+    "duration": "1 минута",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "con",
+      "dc": 13,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "3d8",
+      "type": "radiant"
+    },
+    "description_ru": "Поток света ослепляет до конца следующего хода.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "необычный",
+      "radiant"
+    ]
+  },
+  {
+    "id": "scroll_030",
+    "name_ru": "Свиток теневого знамения 10",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 360,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 90,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 10
+    },
+    "duration": "Мгновенно",
+    "concentration": false,
+    "saving_throw": null,
+    "damage": null,
+    "description_ru": "Телепортирует пользователя и одного союзника.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "необычный"
+    ]
+  },
+  {
+    "id": "scroll_031",
+    "name_ru": "Свиток золотого знамения 11",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 474,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 60,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 20
+    },
+    "duration": "1 раунд",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "str",
+      "dc": 13,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": null,
+    "description_ru": "Корни удерживают существ на месте.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "необычный"
+    ]
+  },
+  {
+    "id": "scroll_032",
+    "name_ru": "Свиток алого знамения 12",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 1080,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 90,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 20
+    },
+    "duration": "Мгновенно",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "dex",
+      "dc": 15,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "3d6",
+      "type": "cold"
+    },
+    "description_ru": "Осколки льда поражают существ в зоне.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "редкий",
+      "cold"
+    ]
+  },
+  {
+    "id": "scroll_033",
+    "name_ru": "Свиток теневого знамения 13",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "обычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 89,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 90,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 10
+    },
+    "duration": "1 минута",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "dex",
+      "dc": 11,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "3d6",
+      "type": "cold"
+    },
+    "description_ru": "Осколки льда поражают существ в зоне.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "обычный",
+      "cold"
+    ]
+  },
+  {
+    "id": "scroll_034",
+    "name_ru": "Свиток лунного знамения 14",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "обычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 45,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 90,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 20
+    },
+    "duration": "Мгновенно",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "dex",
+      "dc": 11,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "3d6",
+      "type": "acid"
+    },
+    "description_ru": "Кислотный дождь снижает КД поражённой брони на 1 до ремонта.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "обычный",
+      "acid"
+    ]
+  },
+  {
+    "id": "scroll_035",
+    "name_ru": "Свиток ледяного знамения 15",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 381,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 90,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 10
+    },
+    "duration": "Мгновенно",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "dex",
+      "dc": 13,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "3d6",
+      "type": "acid"
+    },
+    "description_ru": "Кислотный дождь снижает КД поражённой брони на 1 до ремонта.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "необычный",
+      "acid"
+    ]
+  },
+  {
+    "id": "scroll_036",
+    "name_ru": "Свиток лунного знамения 16",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 101,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 90,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 20
+    },
+    "duration": "Мгновенно",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "dex",
+      "dc": 13,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "3d6",
+      "type": "acid"
+    },
+    "description_ru": "Кислотный дождь снижает КД поражённой брони на 1 до ремонта.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "необычный",
+      "acid"
+    ]
+  },
+  {
+    "id": "scroll_037",
+    "name_ru": "Свиток золотого знамения 17",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 203,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 60,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 5
+    },
+    "duration": "Мгновенно",
+    "concentration": false,
+    "saving_throw": null,
+    "damage": null,
+    "description_ru": "Телепортирует пользователя и одного союзника.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "необычный"
+    ]
+  },
+  {
+    "id": "scroll_038",
+    "name_ru": "Свиток лунного знамения 18",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 3773,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 30,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 20
+    },
+    "duration": "Мгновенно",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "dex",
+      "dc": 15,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "3d6",
+      "type": "acid"
+    },
+    "description_ru": "Кислотный дождь снижает КД поражённой брони на 1 до ремонта.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "редкий",
+      "acid"
+    ]
+  },
+  {
+    "id": "scroll_039",
+    "name_ru": "Свиток лунного знамения 19",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 144,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 60,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 20
+    },
+    "duration": "1 раунд",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "dex",
+      "dc": 13,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "3d6",
+      "type": "acid"
+    },
+    "description_ru": "Кислотный дождь снижает КД поражённой брони на 1 до ремонта.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "необычный",
+      "acid"
+    ]
+  },
+  {
+    "id": "scroll_040",
+    "name_ru": "Свиток золотого знамения 20",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "обычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 43,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 30,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 20
+    },
+    "duration": "1 минута",
+    "concentration": false,
+    "saving_throw": null,
+    "damage": null,
+    "description_ru": "Телепортирует пользователя и одного союзника.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "обычный"
+    ]
+  },
+  {
+    "id": "scroll_041",
+    "name_ru": "Свиток грозового знамения 21",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 632,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 60,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 5
+    },
+    "duration": "Мгновенно",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "con",
+      "dc": 15,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "4d6",
+      "type": "necrotic"
+    },
+    "description_ru": "Тени высасывают жизненную силу.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "редкий",
+      "necrotic"
+    ]
+  },
+  {
+    "id": "scroll_042",
+    "name_ru": "Свиток ледяного знамения 22",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "обычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 38,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 120,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 20
+    },
+    "duration": "1 минута",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "dex",
+      "dc": 11,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "3d6",
+      "type": "cold"
+    },
+    "description_ru": "Осколки льда поражают существ в зоне.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "обычный",
+      "cold"
+    ]
+  },
+  {
+    "id": "scroll_043",
+    "name_ru": "Свиток золотого знамения 23",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 4854,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 60,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 20
+    },
+    "duration": "1 раунд",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "dex",
+      "dc": 15,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "3d6",
+      "type": "cold"
+    },
+    "description_ru": "Осколки льда поражают существ в зоне.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "редкий",
+      "cold"
+    ]
+  },
+  {
+    "id": "scroll_044",
+    "name_ru": "Свиток алого знамения 24",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 484,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 30,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 5
+    },
+    "duration": "1 минута",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "dex",
+      "dc": 13,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "3d6",
+      "type": "cold"
+    },
+    "description_ru": "Осколки льда поражают существ в зоне.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "необычный",
+      "cold"
+    ]
+  },
+  {
+    "id": "scroll_045",
+    "name_ru": "Свиток алого знамения 25",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 236,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 60,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 10
+    },
+    "duration": "Мгновенно",
+    "concentration": false,
+    "saving_throw": null,
+    "damage": null,
+    "description_ru": "Телепортирует пользователя и одного союзника.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "необычный"
+    ]
+  },
+  {
+    "id": "scroll_046",
+    "name_ru": "Свиток теневого знамения 26",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 140,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 120,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 15
+    },
+    "duration": "Мгновенно",
+    "concentration": false,
+    "saving_throw": null,
+    "damage": null,
+    "description_ru": "Телепортирует пользователя и одного союзника.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "необычный"
+    ]
+  },
+  {
+    "id": "scroll_047",
+    "name_ru": "Свиток лунного знамения 27",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "обычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 67,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 90,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 15
+    },
+    "duration": "1 минута",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "con",
+      "dc": 11,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "3d8",
+      "type": "radiant"
+    },
+    "description_ru": "Поток света ослепляет до конца следующего хода.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "обычный",
+      "radiant"
+    ]
+  },
+  {
+    "id": "scroll_048",
+    "name_ru": "Свиток алого знамения 28",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "обычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 87,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 90,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 5
+    },
+    "duration": "1 минута",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "con",
+      "dc": 11,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "4d6",
+      "type": "necrotic"
+    },
+    "description_ru": "Тени высасывают жизненную силу.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "обычный",
+      "necrotic"
+    ]
+  },
+  {
+    "id": "scroll_049",
+    "name_ru": "Свиток ледяного знамения 29",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 4732,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 90,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 20
+    },
+    "duration": "1 раунд",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "con",
+      "dc": 15,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "3d8",
+      "type": "radiant"
+    },
+    "description_ru": "Поток света ослепляет до конца следующего хода.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "редкий",
+      "radiant"
+    ]
+  },
+  {
+    "id": "scroll_050",
+    "name_ru": "Свиток грозового знамения 30",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 2133,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 90,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 5
+    },
+    "duration": "1 раунд",
+    "concentration": false,
+    "saving_throw": null,
+    "damage": null,
+    "description_ru": "Телепортирует пользователя и одного союзника.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "редкий"
+    ]
+  },
+  {
+    "id": "scroll_051",
+    "name_ru": "Свиток алого знамения 31",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 360,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 120,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 15
+    },
+    "duration": "1 раунд",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "dex",
+      "dc": 13,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "3d6",
+      "type": "cold"
+    },
+    "description_ru": "Осколки льда поражают существ в зоне.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "необычный",
+      "cold"
+    ]
+  },
+  {
+    "id": "scroll_052",
+    "name_ru": "Свиток лунного знамения 32",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 1112,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 30,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 10
+    },
+    "duration": "1 минута",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "con",
+      "dc": 15,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "3d8",
+      "type": "radiant"
+    },
+    "description_ru": "Поток света ослепляет до конца следующего хода.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "редкий",
+      "radiant"
+    ]
+  },
+  {
+    "id": "scroll_053",
+    "name_ru": "Свиток лунного знамения 33",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "очень редкий",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 44543,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 90,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 5
+    },
+    "duration": "1 минута",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "dex",
+      "dc": 17,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "3d6",
+      "type": "acid"
+    },
+    "description_ru": "Кислотный дождь снижает КД поражённой брони на 1 до ремонта.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "очень редкий",
+      "acid"
+    ]
+  },
+  {
+    "id": "scroll_054",
+    "name_ru": "Свиток теневого знамения 34",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 302,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 30,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 10
+    },
+    "duration": "Мгновенно",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "str",
+      "dc": 13,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": null,
+    "description_ru": "Корни удерживают существ на месте.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "необычный"
+    ]
+  },
+  {
+    "id": "scroll_055",
+    "name_ru": "Свиток теневого знамения 35",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 2974,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 60,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 20
+    },
+    "duration": "1 раунд",
+    "concentration": false,
+    "saving_throw": null,
+    "damage": null,
+    "description_ru": "Телепортирует пользователя и одного союзника.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "редкий"
+    ]
+  },
+  {
+    "id": "scroll_056",
+    "name_ru": "Свиток ледяного знамения 36",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 101,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 90,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 15
+    },
+    "duration": "1 раунд",
+    "concentration": false,
+    "saving_throw": null,
+    "damage": {
+      "dice": "2d8+4",
+      "type": "healing"
+    },
+    "description_ru": "Союзники получают временные хиты.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "необычный",
+      "healing"
+    ]
+  },
+  {
+    "id": "scroll_057",
+    "name_ru": "Свиток лунного знамения 37",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "очень редкий",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 5769,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 90,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 15
+    },
+    "duration": "1 раунд",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "con",
+      "dc": 17,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "3d8",
+      "type": "thunder"
+    },
+    "description_ru": "Волна звука отбрасывает цели на 10 футов.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "очень редкий",
+      "thunder"
+    ]
+  },
+  {
+    "id": "scroll_058",
+    "name_ru": "Свиток грозового знамения 38",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 140,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 90,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 20
+    },
+    "duration": "1 раунд",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "con",
+      "dc": 13,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "3d8",
+      "type": "thunder"
+    },
+    "description_ru": "Волна звука отбрасывает цели на 10 футов.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "необычный",
+      "thunder"
+    ]
+  },
+  {
+    "id": "scroll_059",
+    "name_ru": "Свиток алого знамения 39",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 439,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 90,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 10
+    },
+    "duration": "Мгновенно",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "dex",
+      "dc": 13,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "3d6",
+      "type": "cold"
+    },
+    "description_ru": "Осколки льда поражают существ в зоне.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "необычный",
+      "cold"
+    ]
+  },
+  {
+    "id": "scroll_060",
+    "name_ru": "Свиток ледяного знамения 40",
+    "item_type": "scroll",
+    "subtype": "universal_spell_scroll",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "weight_lb": 0,
+    "cost_gp": 198,
+    "consumable": true,
+    "charges": 1,
+    "destroyed_on_use": true,
+    "usable_by": "Любое существо, способное прочитать свиток",
+    "activation": {
+      "type": "action",
+      "components": [
+        "verbal",
+        "somatic"
+      ],
+      "material_components": false
+    },
+    "range_ft": 90,
+    "area": {
+      "shape": "sphere",
+      "radius_ft": 20
+    },
+    "duration": "Мгновенно",
+    "concentration": false,
+    "saving_throw": {
+      "ability": "dex",
+      "dc": 13,
+      "success": "половина урона или отсутствие состояния"
+    },
+    "damage": {
+      "dice": "3d6",
+      "type": "acid"
+    },
+    "description_ru": "Кислотный дождь снижает КД поражённой брони на 1 до ремонта.",
+    "properties": {
+      "one_use_spell": true,
+      "spellcasting_required": false,
+      "counterspell_interaction": true,
+      "dispel_magic_interaction": true
+    },
+    "tags": [
+      "свиток",
+      "одноразовый",
+      "необычный",
+      "acid"
+    ]
+  }
+]

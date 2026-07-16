@@ -1,0 +1,15 @@
+{
+  "ruleset": "D&D 5e SRD 2014",
+  "source_api": "https://www.dnd5eapi.co/api/2014",
+  "files": {
+    "monsters.json": 334,
+    "spells.json": 319,
+    "magic_items.json": 362,
+    "conditions_api.json": 15,
+    "languages_api.json": 16,
+    "skills_api.json": 18,
+    "proficiencies_api.json": 117,
+    "weapon_properties_api.json": 11
+  },
+  "artifacts_count": 1
+}

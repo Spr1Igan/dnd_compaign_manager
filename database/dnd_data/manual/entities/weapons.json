@@ -1,0 +1,755 @@
+[
+  {
+    "id": "club",
+    "name_ru": "Дубинка",
+    "name_en": "Club",
+    "category": "простое ближнее",
+    "cost": {
+      "amount": 1,
+      "unit": "sp"
+    },
+    "damage": {
+      "dice": "1d4",
+      "type": "дробящий"
+    },
+    "weight_lb": 2,
+    "properties": [
+      "лёгкое"
+    ]
+  },
+  {
+    "id": "dagger",
+    "name_ru": "Кинжал",
+    "name_en": "Dagger",
+    "category": "простое ближнее",
+    "cost": {
+      "amount": 2,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1d4",
+      "type": "колющий"
+    },
+    "weight_lb": 1,
+    "properties": [
+      "фехтовальное",
+      "лёгкое",
+      "метательное"
+    ],
+    "range_ft": {
+      "normal": 20,
+      "long": 60
+    }
+  },
+  {
+    "id": "greatclub",
+    "name_ru": "Большая дубина",
+    "name_en": "Greatclub",
+    "category": "простое ближнее",
+    "cost": {
+      "amount": 2,
+      "unit": "sp"
+    },
+    "damage": {
+      "dice": "1d8",
+      "type": "дробящий"
+    },
+    "weight_lb": 10,
+    "properties": [
+      "двуручное"
+    ]
+  },
+  {
+    "id": "handaxe",
+    "name_ru": "Ручной топор",
+    "name_en": "Handaxe",
+    "category": "простое ближнее",
+    "cost": {
+      "amount": 5,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1d6",
+      "type": "рубящий"
+    },
+    "weight_lb": 2,
+    "properties": [
+      "лёгкое",
+      "метательное"
+    ],
+    "range_ft": {
+      "normal": 20,
+      "long": 60
+    }
+  },
+  {
+    "id": "javelin",
+    "name_ru": "Метательное копьё",
+    "name_en": "Javelin",
+    "category": "простое ближнее",
+    "cost": {
+      "amount": 5,
+      "unit": "sp"
+    },
+    "damage": {
+      "dice": "1d6",
+      "type": "колющий"
+    },
+    "weight_lb": 2,
+    "properties": [
+      "метательное"
+    ],
+    "range_ft": {
+      "normal": 30,
+      "long": 120
+    }
+  },
+  {
+    "id": "light-hammer",
+    "name_ru": "Лёгкий молот",
+    "name_en": "Light Hammer",
+    "category": "простое ближнее",
+    "cost": {
+      "amount": 2,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1d4",
+      "type": "дробящий"
+    },
+    "weight_lb": 2,
+    "properties": [
+      "лёгкое",
+      "метательное"
+    ],
+    "range_ft": {
+      "normal": 20,
+      "long": 60
+    }
+  },
+  {
+    "id": "mace",
+    "name_ru": "Булава",
+    "name_en": "Mace",
+    "category": "простое ближнее",
+    "cost": {
+      "amount": 5,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1d6",
+      "type": "дробящий"
+    },
+    "weight_lb": 4,
+    "properties": []
+  },
+  {
+    "id": "quarterstaff",
+    "name_ru": "Боевой посох",
+    "name_en": "Quarterstaff",
+    "category": "простое ближнее",
+    "cost": {
+      "amount": 2,
+      "unit": "sp"
+    },
+    "damage": {
+      "dice": "1d6",
+      "type": "дробящий",
+      "versatile": "1d8"
+    },
+    "weight_lb": 4,
+    "properties": [
+      "универсальное"
+    ]
+  },
+  {
+    "id": "sickle",
+    "name_ru": "Серп",
+    "name_en": "Sickle",
+    "category": "простое ближнее",
+    "cost": {
+      "amount": 1,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1d4",
+      "type": "рубящий"
+    },
+    "weight_lb": 2,
+    "properties": [
+      "лёгкое"
+    ]
+  },
+  {
+    "id": "spear",
+    "name_ru": "Копьё",
+    "name_en": "Spear",
+    "category": "простое ближнее",
+    "cost": {
+      "amount": 1,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1d6",
+      "type": "колющий",
+      "versatile": "1d8"
+    },
+    "weight_lb": 3,
+    "properties": [
+      "метательное",
+      "универсальное"
+    ],
+    "range_ft": {
+      "normal": 20,
+      "long": 60
+    }
+  },
+  {
+    "id": "light-crossbow",
+    "name_ru": "Лёгкий арбалет",
+    "name_en": "Light Crossbow",
+    "category": "простое дальнобойное",
+    "cost": {
+      "amount": 25,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1d8",
+      "type": "колющий"
+    },
+    "weight_lb": 5,
+    "properties": [
+      "боеприпасы",
+      "перезарядка",
+      "двуручное"
+    ],
+    "range_ft": {
+      "normal": 80,
+      "long": 320
+    }
+  },
+  {
+    "id": "dart",
+    "name_ru": "Дротик",
+    "name_en": "Dart",
+    "category": "простое дальнобойное",
+    "cost": {
+      "amount": 5,
+      "unit": "cp"
+    },
+    "damage": {
+      "dice": "1d4",
+      "type": "колющий"
+    },
+    "weight_lb": 0.25,
+    "properties": [
+      "фехтовальное",
+      "метательное"
+    ],
+    "range_ft": {
+      "normal": 20,
+      "long": 60
+    }
+  },
+  {
+    "id": "shortbow",
+    "name_ru": "Короткий лук",
+    "name_en": "Shortbow",
+    "category": "простое дальнобойное",
+    "cost": {
+      "amount": 25,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1d6",
+      "type": "колющий"
+    },
+    "weight_lb": 2,
+    "properties": [
+      "боеприпасы",
+      "двуручное"
+    ],
+    "range_ft": {
+      "normal": 80,
+      "long": 320
+    }
+  },
+  {
+    "id": "sling",
+    "name_ru": "Праща",
+    "name_en": "Sling",
+    "category": "простое дальнобойное",
+    "cost": {
+      "amount": 1,
+      "unit": "sp"
+    },
+    "damage": {
+      "dice": "1d4",
+      "type": "дробящий"
+    },
+    "weight_lb": 0,
+    "properties": [
+      "боеприпасы"
+    ],
+    "range_ft": {
+      "normal": 30,
+      "long": 120
+    }
+  },
+  {
+    "id": "battleaxe",
+    "name_ru": "Боевой топор",
+    "name_en": "Battleaxe",
+    "category": "воинское ближнее",
+    "cost": {
+      "amount": 10,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1d8",
+      "type": "рубящий",
+      "versatile": "1d10"
+    },
+    "weight_lb": 4,
+    "properties": [
+      "универсальное"
+    ]
+  },
+  {
+    "id": "flail",
+    "name_ru": "Цеп",
+    "name_en": "Flail",
+    "category": "воинское ближнее",
+    "cost": {
+      "amount": 10,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1d8",
+      "type": "дробящий"
+    },
+    "weight_lb": 2,
+    "properties": []
+  },
+  {
+    "id": "glaive",
+    "name_ru": "Глефа",
+    "name_en": "Glaive",
+    "category": "воинское ближнее",
+    "cost": {
+      "amount": 20,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1d10",
+      "type": "рубящий"
+    },
+    "weight_lb": 6,
+    "properties": [
+      "тяжёлое",
+      "досягаемость",
+      "двуручное"
+    ]
+  },
+  {
+    "id": "greataxe",
+    "name_ru": "Секира",
+    "name_en": "Greataxe",
+    "category": "воинское ближнее",
+    "cost": {
+      "amount": 30,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1d12",
+      "type": "рубящий"
+    },
+    "weight_lb": 7,
+    "properties": [
+      "тяжёлое",
+      "двуручное"
+    ]
+  },
+  {
+    "id": "greatsword",
+    "name_ru": "Двуручный меч",
+    "name_en": "Greatsword",
+    "category": "воинское ближнее",
+    "cost": {
+      "amount": 50,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "2d6",
+      "type": "рубящий"
+    },
+    "weight_lb": 6,
+    "properties": [
+      "тяжёлое",
+      "двуручное"
+    ]
+  },
+  {
+    "id": "halberd",
+    "name_ru": "Алебарда",
+    "name_en": "Halberd",
+    "category": "воинское ближнее",
+    "cost": {
+      "amount": 20,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1d10",
+      "type": "рубящий"
+    },
+    "weight_lb": 6,
+    "properties": [
+      "тяжёлое",
+      "досягаемость",
+      "двуручное"
+    ]
+  },
+  {
+    "id": "lance",
+    "name_ru": "Копьё всадника",
+    "name_en": "Lance",
+    "category": "воинское ближнее",
+    "cost": {
+      "amount": 10,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1d12",
+      "type": "колющий"
+    },
+    "weight_lb": 6,
+    "properties": [
+      "досягаемость",
+      "особое"
+    ]
+  },
+  {
+    "id": "longsword",
+    "name_ru": "Длинный меч",
+    "name_en": "Longsword",
+    "category": "воинское ближнее",
+    "cost": {
+      "amount": 15,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1d8",
+      "type": "рубящий",
+      "versatile": "1d10"
+    },
+    "weight_lb": 3,
+    "properties": [
+      "универсальное"
+    ]
+  },
+  {
+    "id": "maul",
+    "name_ru": "Молот",
+    "name_en": "Maul",
+    "category": "воинское ближнее",
+    "cost": {
+      "amount": 10,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "2d6",
+      "type": "дробящий"
+    },
+    "weight_lb": 10,
+    "properties": [
+      "тяжёлое",
+      "двуручное"
+    ]
+  },
+  {
+    "id": "morningstar",
+    "name_ru": "Моргенштерн",
+    "name_en": "Morningstar",
+    "category": "воинское ближнее",
+    "cost": {
+      "amount": 15,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1d8",
+      "type": "колющий"
+    },
+    "weight_lb": 4,
+    "properties": []
+  },
+  {
+    "id": "pike",
+    "name_ru": "Пика",
+    "name_en": "Pike",
+    "category": "воинское ближнее",
+    "cost": {
+      "amount": 5,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1d10",
+      "type": "колющий"
+    },
+    "weight_lb": 18,
+    "properties": [
+      "тяжёлое",
+      "досягаемость",
+      "двуручное"
+    ]
+  },
+  {
+    "id": "rapier",
+    "name_ru": "Рапира",
+    "name_en": "Rapier",
+    "category": "воинское ближнее",
+    "cost": {
+      "amount": 25,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1d8",
+      "type": "колющий"
+    },
+    "weight_lb": 2,
+    "properties": [
+      "фехтовальное"
+    ]
+  },
+  {
+    "id": "scimitar",
+    "name_ru": "Скимитар",
+    "name_en": "Scimitar",
+    "category": "воинское ближнее",
+    "cost": {
+      "amount": 25,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1d6",
+      "type": "рубящий"
+    },
+    "weight_lb": 3,
+    "properties": [
+      "фехтовальное",
+      "лёгкое"
+    ]
+  },
+  {
+    "id": "shortsword",
+    "name_ru": "Короткий меч",
+    "name_en": "Shortsword",
+    "category": "воинское ближнее",
+    "cost": {
+      "amount": 10,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1d6",
+      "type": "колющий"
+    },
+    "weight_lb": 2,
+    "properties": [
+      "фехтовальное",
+      "лёгкое"
+    ]
+  },
+  {
+    "id": "trident",
+    "name_ru": "Трезубец",
+    "name_en": "Trident",
+    "category": "воинское ближнее",
+    "cost": {
+      "amount": 5,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1d6",
+      "type": "колющий",
+      "versatile": "1d8"
+    },
+    "weight_lb": 4,
+    "properties": [
+      "метательное",
+      "универсальное"
+    ],
+    "range_ft": {
+      "normal": 20,
+      "long": 60
+    }
+  },
+  {
+    "id": "war-pick",
+    "name_ru": "Боевая кирка",
+    "name_en": "War Pick",
+    "category": "воинское ближнее",
+    "cost": {
+      "amount": 5,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1d8",
+      "type": "колющий"
+    },
+    "weight_lb": 2,
+    "properties": []
+  },
+  {
+    "id": "warhammer",
+    "name_ru": "Боевой молот",
+    "name_en": "Warhammer",
+    "category": "воинское ближнее",
+    "cost": {
+      "amount": 15,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1d8",
+      "type": "дробящий",
+      "versatile": "1d10"
+    },
+    "weight_lb": 2,
+    "properties": [
+      "универсальное"
+    ]
+  },
+  {
+    "id": "whip",
+    "name_ru": "Кнут",
+    "name_en": "Whip",
+    "category": "воинское ближнее",
+    "cost": {
+      "amount": 2,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1d4",
+      "type": "рубящий"
+    },
+    "weight_lb": 3,
+    "properties": [
+      "фехтовальное",
+      "досягаемость"
+    ]
+  },
+  {
+    "id": "blowgun",
+    "name_ru": "Духовая трубка",
+    "name_en": "Blowgun",
+    "category": "воинское дальнобойное",
+    "cost": {
+      "amount": 10,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1",
+      "type": "колющий"
+    },
+    "weight_lb": 1,
+    "properties": [
+      "боеприпасы",
+      "перезарядка"
+    ],
+    "range_ft": {
+      "normal": 25,
+      "long": 100
+    }
+  },
+  {
+    "id": "hand-crossbow",
+    "name_ru": "Ручной арбалет",
+    "name_en": "Hand Crossbow",
+    "category": "воинское дальнобойное",
+    "cost": {
+      "amount": 75,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1d6",
+      "type": "колющий"
+    },
+    "weight_lb": 3,
+    "properties": [
+      "боеприпасы",
+      "лёгкое",
+      "перезарядка"
+    ],
+    "range_ft": {
+      "normal": 30,
+      "long": 120
+    }
+  },
+  {
+    "id": "heavy-crossbow",
+    "name_ru": "Тяжёлый арбалет",
+    "name_en": "Heavy Crossbow",
+    "category": "воинское дальнобойное",
+    "cost": {
+      "amount": 50,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1d10",
+      "type": "колющий"
+    },
+    "weight_lb": 18,
+    "properties": [
+      "боеприпасы",
+      "тяжёлое",
+      "перезарядка",
+      "двуручное"
+    ],
+    "range_ft": {
+      "normal": 100,
+      "long": 400
+    }
+  },
+  {
+    "id": "longbow",
+    "name_ru": "Длинный лук",
+    "name_en": "Longbow",
+    "category": "воинское дальнобойное",
+    "cost": {
+      "amount": 50,
+      "unit": "gp"
+    },
+    "damage": {
+      "dice": "1d8",
+      "type": "колющий"
+    },
+    "weight_lb": 2,
+    "properties": [
+      "боеприпасы",
+      "тяжёлое",
+      "двуручное"
+    ],
+    "range_ft": {
+      "normal": 150,
+      "long": 600
+    }
+  },
+  {
+    "id": "net",
+    "name_ru": "Сеть",
+    "name_en": "Net",
+    "category": "воинское дальнобойное",
+    "cost": {
+      "amount": 1,
+      "unit": "gp"
+    },
+    "damage": null,
+    "weight_lb": 3,
+    "properties": [
+      "особое",
+      "метательное"
+    ],
+    "range_ft": {
+      "normal": 5,
+      "long": 15
+    }
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "book-herbal",
+    "name_ru": "Травник северных болот",
+    "value_gp": 40,
+    "subject": "травничество"
+  },
+  {
+    "id": "book-stars",
+    "name_ru": "Атлас звёздных путей",
+    "value_gp": 120,
+    "subject": "астрономия"
+  },
+  {
+    "id": "book-noble-lines",
+    "name_ru": "Родословные старых домов",
+    "value_gp": 75,
+    "subject": "генеалогия"
+  },
+  {
+    "id": "book-forbidden-cults",
+    "name_ru": "Запретные культы западных земель",
+    "value_gp": 250,
+    "subject": "религия"
+  },
+  {
+    "id": "book-dwarven-forges",
+    "name_ru": "Секреты дварфийских кузниц",
+    "value_gp": 300,
+    "subject": "кузнечное дело"
+  },
+  {
+    "id": "book-sea-routes",
+    "name_ru": "Карты забытых морских путей",
+    "value_gp": 180,
+    "subject": "навигация"
+  },
+  {
+    "id": "book-monster-notes",
+    "name_ru": "Полевые заметки охотника на чудовищ",
+    "value_gp": 90,
+    "subject": "монстры"
+  },
+  {
+    "id": "book-dead-language",
+    "name_ru": "Словарь мёртвого языка",
+    "value_gp": 400,
+    "subject": "лингвистика"
+  },
+  {
+    "id": "book-court-poetry",
+    "name_ru": "Сборник придворной поэзии",
+    "value_gp": 30,
+    "subject": "литература"
+  },
+  {
+    "id": "book-siegecraft",
+    "name_ru": "Искусство осады",
+    "value_gp": 160,
+    "subject": "военное дело"
+  }
+]

@@ -1,0 +1,119 @@
+[
+  {
+    "id": "wheat",
+    "name_ru": "Пшеница",
+    "cost": {
+      "amount": 1,
+      "unit": "cp"
+    },
+    "unit": "1 фунт"
+  },
+  {
+    "id": "flour",
+    "name_ru": "Мука или одна курица",
+    "cost": {
+      "amount": 2,
+      "unit": "cp"
+    },
+    "unit": "1 фунт/1 шт."
+  },
+  {
+    "id": "salt",
+    "name_ru": "Соль",
+    "cost": {
+      "amount": 5,
+      "unit": "cp"
+    },
+    "unit": "1 фунт"
+  },
+  {
+    "id": "iron",
+    "name_ru": "Железо или холст",
+    "cost": {
+      "amount": 1,
+      "unit": "sp"
+    },
+    "unit": "1 фунт/1 ярд²"
+  },
+  {
+    "id": "copper",
+    "name_ru": "Медь или хлопок",
+    "cost": {
+      "amount": 5,
+      "unit": "sp"
+    },
+    "unit": "1 фунт/1 ярд²"
+  },
+  {
+    "id": "ginger",
+    "name_ru": "Имбирь или одна коза",
+    "cost": {
+      "amount": 1,
+      "unit": "gp"
+    },
+    "unit": "1 фунт/1 шт."
+  },
+  {
+    "id": "cinnamon",
+    "name_ru": "Корица или перец",
+    "cost": {
+      "amount": 2,
+      "unit": "gp"
+    },
+    "unit": "1 фунт"
+  },
+  {
+    "id": "cloves",
+    "name_ru": "Гвоздика",
+    "cost": {
+      "amount": 3,
+      "unit": "gp"
+    },
+    "unit": "1 фунт"
+  },
+  {
+    "id": "silver",
+    "name_ru": "Серебро или лён",
+    "cost": {
+      "amount": 5,
+      "unit": "gp"
+    },
+    "unit": "1 фунт/1 ярд²"
+  },
+  {
+    "id": "silk",
+    "name_ru": "Шёлк или одна корова",
+    "cost": {
+      "amount": 10,
+      "unit": "gp"
+    },
+    "unit": "1 ярд²/1 шт."
+  },
+  {
+    "id": "saffron",
+    "name_ru": "Шафран или один вол",
+    "cost": {
+      "amount": 15,
+      "unit": "gp"
+    },
+    "unit": "1 фунт/1 шт."
+  },
+  {
+    "id": "gold",
+    "name_ru": "Золото",
+    "cost": {
+      "amount": 50,
+      "unit": "gp"
+    },
+    "unit": "1 фунт"
+  },
+  {
+    "id": "platinum",
+    "name_ru": "Платина",
+    "cost": {
+      "amount": 500,
+      "unit": "gp"
+    },
+    "unit": "1 фунт"
+  }
+]

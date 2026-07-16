@@ -1,0 +1,61 @@
+{
+  "currency": {
+    "cp": {
+      "gp_value": 0.01
+    },
+    "sp": {
+      "gp_value": 0.1
+    },
+    "ep": {
+      "gp_value": 0.5
+    },
+    "gp": {
+      "gp_value": 1
+    },
+    "pp": {
+      "gp_value": 10
+    }
+  },
+  "lifestyle_expenses": [
+    {
+      "id": "wretched",
+      "name_ru": "Нищенский",
+      "cost_per_day_gp": 0
+    },
+    {
+      "id": "squalid",
+      "name_ru": "Убогий",
+      "cost_per_day_gp": 0.1
+    },
+    {
+      "id": "poor",
+      "name_ru": "Бедный",
+      "cost_per_day_gp": 0.2
+    },
+    {
+      "id": "modest",
+      "name_ru": "Скромный",
+      "cost_per_day_gp": 1
+    },
+    {
+      "id": "comfortable",
+      "name_ru": "Комфортный",
+      "cost_per_day_gp": 2
+    },
+    {
+      "id": "wealthy",
+      "name_ru": "Богатый",
+      "cost_per_day_gp": 4
+    },
+    {
+      "id": "aristocratic",
+      "name_ru": "Аристократический",
+      "cost_per_day_gp_min": 10
+    }
+  ],
+  "selling_guideline": {
+    "mundane_good_condition": "Обычно до 50% рыночной цены.",
+    "damaged_or_stolen": "Цена ниже и зависит от покупателя.",
+    "magic_items": "Не имеют гарантированного массового рынка; цена определяется кампанией."
+  }
+}

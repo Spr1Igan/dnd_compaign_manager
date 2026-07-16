@@ -1,0 +1,416 @@
+[
+  {
+    "id": "adamantine-armor",
+    "name_ru": "Адамантиновый доспех",
+    "name_en": "Adamantine Armor",
+    "type": "доспех",
+    "rarity": "необычный",
+    "attunement": false,
+    "effect": "Критические попадания по владельцу считаются обычными попаданиями."
+  },
+  {
+    "id": "armor-of-invulnerability",
+    "name_ru": "Доспех неуязвимости",
+    "name_en": "Armor of Invulnerability",
+    "type": "доспех",
+    "rarity": "легендарный",
+    "attunement": true,
+    "effect": "Сопротивление немагическому урону; временная иммунность активируемым свойством."
+  },
+  {
+    "id": "armor-of-resistance",
+    "name_ru": "Доспех сопротивления",
+    "name_en": "Armor of Resistance",
+    "type": "доспех",
+    "rarity": "редкий",
+    "attunement": true,
+    "effect": "Сопротивление одному указанному виду урона."
+  },
+  {
+    "id": "armor-plus-1",
+    "name_ru": "Доспех +1",
+    "name_en": "Armor +1",
+    "type": "доспех",
+    "rarity": "редкий",
+    "attunement": false,
+    "effect": "+1 к КД."
+  },
+  {
+    "id": "armor-plus-2",
+    "name_ru": "Доспех +2",
+    "name_en": "Armor +2",
+    "type": "доспех",
+    "rarity": "очень редкий",
+    "attunement": false,
+    "effect": "+2 к КД."
+  },
+  {
+    "id": "armor-plus-3",
+    "name_ru": "Доспех +3",
+    "name_en": "Armor +3",
+    "type": "доспех",
+    "rarity": "легендарный",
+    "attunement": false,
+    "effect": "+3 к КД."
+  },
+  {
+    "id": "demon-armor",
+    "name_ru": "Демонический доспех",
+    "name_en": "Demon Armor",
+    "type": "доспех",
+    "rarity": "очень редкий",
+    "attunement": true,
+    "effect": "+1 к КД; когти считаются магическим оружием, но предмет проклят."
+  },
+  {
+    "id": "dragon-scale-mail",
+    "name_ru": "Доспех из драконьей чешуи",
+    "name_en": "Dragon Scale Mail",
+    "type": "доспех",
+    "rarity": "очень редкий",
+    "attunement": true,
+    "effect": "+1 к КД, преимущество против устрашающего присутствия и дыхания драконов, сопротивление связанному виду урона."
+  },
+  {
+    "id": "elven-chain",
+    "name_ru": "Эльфийская кольчуга",
+    "name_en": "Elven Chain",
+    "type": "доспех",
+    "rarity": "редкий",
+    "attunement": false,
+    "effect": "+1 к КД; считается, что владелец владеет этим доспехом."
+  },
+  {
+    "id": "glamoured-studded-leather",
+    "name_ru": "Зачарованная проклёпанная кожа",
+    "name_en": "Glamoured Studded Leather",
+    "type": "доспех",
+    "rarity": "редкий",
+    "attunement": false,
+    "effect": "+1 к КД и изменение внешнего вида одежды."
+  },
+  {
+    "id": "mithral-armor",
+    "name_ru": "Мифрильный доспех",
+    "name_en": "Mithral Armor",
+    "type": "доспех",
+    "rarity": "необычный",
+    "attunement": false,
+    "effect": "Не требует минимальной Силы и не создаёт помеху Скрытности."
+  },
+  {
+    "id": "plate-of-etherealness",
+    "name_ru": "Латы эфирности",
+    "name_en": "Plate Armor of Etherealness",
+    "type": "доспех",
+    "rarity": "легендарный",
+    "attunement": true,
+    "effect": "Позволяет переходить на Эфирный план."
+  },
+  {
+    "id": "shield-plus-1",
+    "name_ru": "Щит +1",
+    "name_en": "Shield +1",
+    "type": "щит",
+    "rarity": "необычный",
+    "attunement": false,
+    "effect": "Дополнительный +1 к КД сверх обычного бонуса щита."
+  },
+  {
+    "id": "shield-plus-2",
+    "name_ru": "Щит +2",
+    "name_en": "Shield +2",
+    "type": "щит",
+    "rarity": "редкий",
+    "attunement": false,
+    "effect": "Дополнительный +2 к КД сверх обычного бонуса щита."
+  },
+  {
+    "id": "shield-plus-3",
+    "name_ru": "Щит +3",
+    "name_en": "Shield +3",
+    "type": "щит",
+    "rarity": "очень редкий",
+    "attunement": false,
+    "effect": "Дополнительный +3 к КД сверх обычного бонуса щита."
+  },
+  {
+    "id": "spellguard-shield",
+    "name_ru": "Щит защиты от заклинаний",
+    "name_en": "Spellguard Shield",
+    "type": "щит",
+    "rarity": "очень редкий",
+    "attunement": true,
+    "effect": "Преимущество на спасброски от заклинаний; атаки заклинаниями по владельцу совершаются с помехой."
+  },
+  {
+    "id": "animated-shield",
+    "name_ru": "Оживлённый щит",
+    "name_en": "Animated Shield",
+    "type": "щит",
+    "rarity": "очень редкий",
+    "attunement": true,
+    "effect": "Может парить и защищать владельца, оставляя руки свободными."
+  },
+  {
+    "id": "arrow-catching-shield",
+    "name_ru": "Щит притягивания стрел",
+    "name_en": "Arrow-Catching Shield",
+    "type": "щит",
+    "rarity": "редкий",
+    "attunement": true,
+    "effect": "+2 КД против дальнобойных атак и возможность перенаправлять их на себя."
+  },
+  {
+    "id": "sentinel-shield",
+    "name_ru": "Щит часового",
+    "name_en": "Sentinel Shield",
+    "type": "щит",
+    "rarity": "необычный",
+    "attunement": false,
+    "effect": "Преимущество на инициативу и проверки Мудрости (Восприятие)."
+  },
+  {
+    "id": "weapon-plus-1",
+    "name_ru": "Оружие +1",
+    "name_en": "Weapon +1",
+    "type": "оружие",
+    "rarity": "необычный",
+    "attunement": false,
+    "effect": "+1 к броскам атаки и урона."
+  },
+  {
+    "id": "weapon-plus-2",
+    "name_ru": "Оружие +2",
+    "name_en": "Weapon +2",
+    "type": "оружие",
+    "rarity": "редкий",
+    "attunement": false,
+    "effect": "+2 к броскам атаки и урона."
+  },
+  {
+    "id": "weapon-plus-3",
+    "name_ru": "Оружие +3",
+    "name_en": "Weapon +3",
+    "type": "оружие",
+    "rarity": "очень редкий",
+    "attunement": false,
+    "effect": "+3 к броскам атаки и урона."
+  },
+  {
+    "id": "berserker-axe",
+    "name_ru": "Секира берсерка",
+    "name_en": "Berserker Axe",
+    "type": "оружие",
+    "rarity": "редкий",
+    "attunement": true,
+    "effect": "+1 к атаке и урону, увеличивает максимум хитов; проклятие может вызвать ярость."
+  },
+  {
+    "id": "dagger-of-venom",
+    "name_ru": "Кинжал яда",
+    "name_en": "Dagger of Venom",
+    "type": "оружие",
+    "rarity": "редкий",
+    "attunement": false,
+    "effect": "+1 к атаке и урону; раз в день наносит дополнительный урон ядом."
+  },
+  {
+    "id": "dancing-sword",
+    "name_ru": "Танцующий меч",
+    "name_en": "Dancing Sword",
+    "type": "оружие",
+    "rarity": "очень редкий",
+    "attunement": true,
+    "effect": "Может летать и атаковать бонусным действием."
+  },
+  {
+    "id": "defender",
+    "name_ru": "Защитник",
+    "name_en": "Defender",
+    "type": "оружие",
+    "rarity": "легендарный",
+    "attunement": true,
+    "effect": "+3 к атаке и урону; бонус можно перераспределять в КД."
+  },
+  {
+    "id": "dragon-slayer",
+    "name_ru": "Драконоборец",
+    "name_en": "Dragon Slayer",
+    "type": "оружие",
+    "rarity": "редкий",
+    "attunement": false,
+    "effect": "+1 к атаке и урону; дополнительно 3d6 урона драконам."
+  },
+  {
+    "id": "dwarven-thrower",
+    "name_ru": "Дварфийский метатель",
+    "name_en": "Dwarven Thrower",
+    "type": "оружие",
+    "rarity": "очень редкий",
+    "attunement": true,
+    "effect": "+3 к атаке и урону; возвращается после броска и наносит дополнительный урон."
+  },
+  {
+    "id": "flame-tongue",
+    "name_ru": "Язык пламени",
+    "name_en": "Flame Tongue",
+    "type": "оружие",
+    "rarity": "редкий",
+    "attunement": true,
+    "effect": "После активации наносит дополнительно 2d6 урона огнём."
+  },
+  {
+    "id": "frost-brand",
+    "name_ru": "Морозная марка",
+    "name_en": "Frost Brand",
+    "type": "оружие",
+    "rarity": "очень редкий",
+    "attunement": true,
+    "effect": "Дополнительно 1d6 урона холодом, сопротивление огню и возможность гасить немагическое пламя."
+  },
+  {
+    "id": "giant-slayer",
+    "name_ru": "Убийца великанов",
+    "name_en": "Giant Slayer",
+    "type": "оружие",
+    "rarity": "редкий",
+    "attunement": false,
+    "effect": "+1 к атаке и урону; дополнительный урон и шанс сбить великана с ног."
+  },
+  {
+    "id": "holy-avenger",
+    "name_ru": "Святой мститель",
+    "name_en": "Holy Avenger",
+    "type": "оружие",
+    "rarity": "легендарный",
+    "attunement": "паладин",
+    "effect": "+3 к атаке и урону; дополнительный урон нежити и исчадиям, защитная аура."
+  },
+  {
+    "id": "javelin-of-lightning",
+    "name_ru": "Копьё молнии",
+    "name_en": "Javelin of Lightning",
+    "type": "оружие",
+    "rarity": "необычный",
+    "attunement": false,
+    "effect": "Раз в день превращается в линию молнии, наносящую 4d6 урона."
+  },
+  {
+    "id": "luck-blade",
+    "name_ru": "Клинок удачи",
+    "name_en": "Luck Blade",
+    "type": "оружие",
+    "rarity": "легендарный",
+    "attunement": true,
+    "effect": "+1 к атаке и урону, бонус к спасброскам; может содержать заряды желания."
+  },
+  {
+    "id": "mace-of-disruption",
+    "name_ru": "Булава разрушения",
+    "name_en": "Mace of Disruption",
+    "type": "оружие",
+    "rarity": "редкий",
+    "attunement": true,
+    "effect": "Дополнительный урон нежити и исчадиям; слабые цели могут быть уничтожены."
+  },
+  {
+    "id": "mace-of-smiting",
+    "name_ru": "Булава кары",
+    "name_en": "Mace of Smiting",
+    "type": "оружие",
+    "rarity": "редкий",
+    "attunement": false,
+    "effect": "+1 к атаке и урону; усиленные критические попадания по конструкциям."
+  },
+  {
+    "id": "mace-of-terror",
+    "name_ru": "Булава ужаса",
+    "name_en": "Mace of Terror",
+    "type": "оружие",
+    "rarity": "редкий",
+    "attunement": true,
+    "effect": "Заряды создают волну страха."
+  },
+  {
+    "id": "nine-lives-stealer",
+    "name_ru": "Похититель девяти жизней",
+    "name_en": "Nine Lives Stealer",
+    "type": "оружие",
+    "rarity": "очень редкий",
+    "attunement": true,
+    "effect": "+2 к атаке и урону; ограниченное число зарядов может мгновенно убить цель при критическом попадании."
+  },
+  {
+    "id": "oathbow",
+    "name_ru": "Лук клятвы",
+    "name_en": "Oathbow",
+    "type": "оружие",
+    "rarity": "очень редкий",
+    "attunement": true,
+    "effect": "Объявляет заклятого врага, игнорирует укрытие и наносит дополнительный урон."
+  },
+  {
+    "id": "scimitar-of-speed",
+    "name_ru": "Скимитар скорости",
+    "name_en": "Scimitar of Speed",
+    "type": "оружие",
+    "rarity": "очень редкий",
+    "attunement": true,
+    "effect": "+2 к атаке и урону; дополнительная атака бонусным действием."
+  },
+  {
+    "id": "sun-blade",
+    "name_ru": "Солнечный клинок",
+    "name_en": "Sun Blade",
+    "type": "оружие",
+    "rarity": "редкий",
+    "attunement": true,
+    "effect": "+2 к атаке и урону, излучает солнечный свет и наносит излучающий урон."
+  },
+  {
+    "id": "sword-of-life-stealing",
+    "name_ru": "Меч похищения жизни",
+    "name_en": "Sword of Life Stealing",
+    "type": "оружие",
+    "rarity": "редкий",
+    "attunement": true,
+    "effect": "При критическом попадании наносит дополнительный некротический урон и даёт временные хиты."
+  },
+  {
+    "id": "sword-of-sharpness",
+    "name_ru": "Меч остроты",
+    "name_en": "Sword of Sharpness",
+    "type": "оружие",
+    "rarity": "очень редкий",
+    "attunement": true,
+    "effect": "Максимизирует часть урона по объектам; критические попадания могут отсекать конечности."
+  },
+  {
+    "id": "sword-of-wounding",
+    "name_ru": "Меч ран",
+    "name_en": "Sword of Wounding",
+    "type": "оружие",
+    "rarity": "редкий",
+    "attunement": true,
+    "effect": "Наносит раны, причиняющие повторяющийся некротический урон."
+  },
+  {
+    "id": "vorpal-sword",
+    "name_ru": "Ворпальный меч",
+    "name_en": "Vorpal Sword",
+    "type": "оружие",
+    "rarity": "легендарный",
+    "attunement": true,
+    "effect": "+3 к атаке и урону; натуральная 20 может обезглавить цель."
+  },
+  {
+    "id": "hammer-of-thunderbolts",
+    "name_ru": "Молот громовых раскатов",
+    "name_en": "Hammer of Thunderbolts",
+    "type": "оружие",
+    "rarity": "легендарный",
+    "attunement": true,
+    "effect": "+1 к атаке и урону; в сочетании с особыми предметами значительно увеличивает Силу и даёт мощные эффекты."
+  }
+]

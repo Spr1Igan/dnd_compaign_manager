@@ -1,0 +1,90 @@
+{
+  "title": "Основные правила ведущего для D&D 5e",
+  "language": "ru",
+  "rules_basis": "D&D 5e 2014 / открытые базовые правила и авторские сводки",
+  "excluded_by_request": [
+    "генератор NPC",
+    "генератор квестов",
+    "генератор таверн",
+    "генератор городов",
+    "генератор подземелий",
+    "генератор случайных событий",
+    "генератор ловушек",
+    "генератор сокровищ",
+    "погода",
+    "освещение",
+    "укрытия",
+    "типы перемещения"
+  ],
+  "files": [
+    {
+      "name": "conditions.json",
+      "records": 14
+    },
+    {
+      "name": "damage_types.json",
+      "records": 13
+    },
+    {
+      "name": "senses.json",
+      "records": 5
+    },
+    {
+      "name": "creature_sizes.json",
+      "records": 6
+    },
+    {
+      "name": "alignments.json",
+      "records": 10
+    },
+    {
+      "name": "resting.json",
+      "records": null
+    },
+    {
+      "name": "exhaustion.json",
+      "records": null
+    },
+    {
+      "name": "travel.json",
+      "records": null
+    },
+    {
+      "name": "diseases.json",
+      "records": 4
+    },
+    {
+      "name": "poisons.json",
+      "records": 6
+    },
+    {
+      "name": "crafting.json",
+      "records": null
+    },
+    {
+      "name": "downtime.json",
+      "records": 5
+    },
+    {
+      "name": "hiring.json",
+      "records": null
+    },
+    {
+      "name": "economy.json",
+      "records": null
+    },
+    {
+      "name": "xp_thresholds.json",
+      "records": 20
+    },
+    {
+      "name": "encounters.json",
+      "records": null
+    },
+    {
+      "name": "challenge_rating.json",
+      "records": 34
+    }
+  ],
+  "copyright_note": "Набор не является копией Dungeon Master's Guide и не воспроизводит закрытые главы или таблицы целиком."
+}

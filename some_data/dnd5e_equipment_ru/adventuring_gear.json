@@ -1,0 +1,842 @@
+[
+  {
+    "id": "abacus",
+    "name_ru": "Счёты",
+    "name_en": "Abacus",
+    "cost": {
+      "amount": 2,
+      "unit": "gp"
+    },
+    "weight_lb": 2
+  },
+  {
+    "id": "acid-vial",
+    "name_ru": "Кислота, флакон",
+    "name_en": "Acid (vial)",
+    "cost": {
+      "amount": 25,
+      "unit": "gp"
+    },
+    "weight_lb": 1
+  },
+  {
+    "id": "alchemists-fire",
+    "name_ru": "Алхимический огонь, фляга",
+    "name_en": "Alchemist's Fire",
+    "cost": {
+      "amount": 50,
+      "unit": "gp"
+    },
+    "weight_lb": 1
+  },
+  {
+    "id": "arrows-20",
+    "name_ru": "Стрелы, 20 шт.",
+    "name_en": "Arrows (20)",
+    "cost": {
+      "amount": 1,
+      "unit": "gp"
+    },
+    "weight_lb": 1
+  },
+  {
+    "id": "blowgun-needles-50",
+    "name_ru": "Иглы для духовой трубки, 50 шт.",
+    "name_en": "Blowgun Needles (50)",
+    "cost": {
+      "amount": 1,
+      "unit": "gp"
+    },
+    "weight_lb": 1
+  },
+  {
+    "id": "crossbow-bolts-20",
+    "name_ru": "Арбалетные болты, 20 шт.",
+    "name_en": "Crossbow Bolts (20)",
+    "cost": {
+      "amount": 1,
+      "unit": "gp"
+    },
+    "weight_lb": 1.5
+  },
+  {
+    "id": "sling-bullets-20",
+    "name_ru": "Снаряды для пращи, 20 шт.",
+    "name_en": "Sling Bullets (20)",
+    "cost": {
+      "amount": 4,
+      "unit": "cp"
+    },
+    "weight_lb": 1.5
+  },
+  {
+    "id": "antitoxin",
+    "name_ru": "Противоядие, флакон",
+    "name_en": "Antitoxin",
+    "cost": {
+      "amount": 50,
+      "unit": "gp"
+    },
+    "weight_lb": 0
+  },
+  {
+    "id": "backpack",
+    "name_ru": "Рюкзак",
+    "name_en": "Backpack",
+    "cost": {
+      "amount": 2,
+      "unit": "gp"
+    },
+    "weight_lb": 5
+  },
+  {
+    "id": "ball-bearings",
+    "name_ru": "Металлические шарики, 1000 шт.",
+    "name_en": "Ball Bearings",
+    "cost": {
+      "amount": 1,
+      "unit": "gp"
+    },
+    "weight_lb": 2
+  },
+  {
+    "id": "barrel",
+    "name_ru": "Бочка",
+    "name_en": "Barrel",
+    "cost": {
+      "amount": 2,
+      "unit": "gp"
+    },
+    "weight_lb": 70
+  },
+  {
+    "id": "basket",
+    "name_ru": "Корзина",
+    "name_en": "Basket",
+    "cost": {
+      "amount": 4,
+      "unit": "sp"
+    },
+    "weight_lb": 2
+  },
+  {
+    "id": "bedroll",
+    "name_ru": "Спальник",
+    "name_en": "Bedroll",
+    "cost": {
+      "amount": 1,
+      "unit": "gp"
+    },
+    "weight_lb": 7
+  },
+  {
+    "id": "bell",
+    "name_ru": "Колокольчик",
+    "name_en": "Bell",
+    "cost": {
+      "amount": 1,
+      "unit": "gp"
+    },
+    "weight_lb": 0
+  },
+  {
+    "id": "blanket",
+    "name_ru": "Одеяло",
+    "name_en": "Blanket",
+    "cost": {
+      "amount": 5,
+      "unit": "sp"
+    },
+    "weight_lb": 3
+  },
+  {
+    "id": "block-and-tackle",
+    "name_ru": "Блок и лебёдка",
+    "name_en": "Block and Tackle",
+    "cost": {
+      "amount": 1,
+      "unit": "gp"
+    },
+    "weight_lb": 5
+  },
+  {
+    "id": "book",
+    "name_ru": "Книга",
+    "name_en": "Book",
+    "cost": {
+      "amount": 25,
+      "unit": "gp"
+    },
+    "weight_lb": 5
+  },
+  {
+    "id": "bottle-glass",
+    "name_ru": "Стеклянная бутылка",
+    "name_en": "Bottle, Glass",
+    "cost": {
+      "amount": 2,
+      "unit": "gp"
+    },
+    "weight_lb": 2
+  },
+  {
+    "id": "bucket",
+    "name_ru": "Ведро",
+    "name_en": "Bucket",
+    "cost": {
+      "amount": 5,
+      "unit": "cp"
+    },
+    "weight_lb": 2
+  },
+  {
+    "id": "caltrops",
+    "name_ru": "Калтропы, 20 шт.",
+    "name_en": "Caltrops",
+    "cost": {
+      "amount": 1,
+      "unit": "gp"
+    },
+    "weight_lb": 2
+  },
+  {
+    "id": "candle",
+    "name_ru": "Свеча",
+    "name_en": "Candle",
+    "cost": {
+      "amount": 1,
+      "unit": "cp"
+    },
+    "weight_lb": 0
+  },
+  {
+    "id": "case-crossbow-bolt",
+    "name_ru": "Футляр для арбалетных болтов",
+    "name_en": "Case, Crossbow Bolt",
+    "cost": {
+      "amount": 1,
+      "unit": "gp"
+    },
+    "weight_lb": 1
+  },
+  {
+    "id": "case-map-scroll",
+    "name_ru": "Футляр для карты или свитка",
+    "name_en": "Case, Map or Scroll",
+    "cost": {
+      "amount": 1,
+      "unit": "gp"
+    },
+    "weight_lb": 1
+  },
+  {
+    "id": "chain-10ft",
+    "name_ru": "Цепь, 10 футов",
+    "name_en": "Chain (10 feet)",
+    "cost": {
+      "amount": 5,
+      "unit": "gp"
+    },
+    "weight_lb": 10
+  },
+  {
+    "id": "chalk",
+    "name_ru": "Мел, кусок",
+    "name_en": "Chalk",
+    "cost": {
+      "amount": 1,
+      "unit": "cp"
+    },
+    "weight_lb": 0
+  },
+  {
+    "id": "chest",
+    "name_ru": "Сундук",
+    "name_en": "Chest",
+    "cost": {
+      "amount": 5,
+      "unit": "gp"
+    },
+    "weight_lb": 25
+  },
+  {
+    "id": "climbers-kit",
+    "name_ru": "Набор верхолаза",
+    "name_en": "Climber's Kit",
+    "cost": {
+      "amount": 25,
+      "unit": "gp"
+    },
+    "weight_lb": 12
+  },
+  {
+    "id": "clothes-common",
+    "name_ru": "Обычная одежда",
+    "name_en": "Clothes, Common",
+    "cost": {
+      "amount": 5,
+      "unit": "sp"
+    },
+    "weight_lb": 3
+  },
+  {
+    "id": "clothes-costume",
+    "name_ru": "Костюм",
+    "name_en": "Clothes, Costume",
+    "cost": {
+      "amount": 5,
+      "unit": "gp"
+    },
+    "weight_lb": 4
+  },
+  {
+    "id": "clothes-fine",
+    "name_ru": "Богатая одежда",
+    "name_en": "Clothes, Fine",
+    "cost": {
+      "amount": 15,
+      "unit": "gp"
+    },
+    "weight_lb": 6
+  },
+  {
+    "id": "clothes-travelers",
+    "name_ru": "Дорожная одежда",
+    "name_en": "Clothes, Traveler's",
+    "cost": {
+      "amount": 2,
+      "unit": "gp"
+    },
+    "weight_lb": 4
+  },
+  {
+    "id": "component-pouch",
+    "name_ru": "Мешочек с компонентами",
+    "name_en": "Component Pouch",
+    "cost": {
+      "amount": 25,
+      "unit": "gp"
+    },
+    "weight_lb": 2
+  },
+  {
+    "id": "crowbar",
+    "name_ru": "Лом",
+    "name_en": "Crowbar",
+    "cost": {
+      "amount": 2,
+      "unit": "gp"
+    },
+    "weight_lb": 5
+  },
+  {
+    "id": "fishing-tackle",
+    "name_ru": "Рыболовные снасти",
+    "name_en": "Fishing Tackle",
+    "cost": {
+      "amount": 1,
+      "unit": "gp"
+    },
+    "weight_lb": 4
+  },
+  {
+    "id": "flask",
+    "name_ru": "Фляга или кружка",
+    "name_en": "Flask or Tankard",
+    "cost": {
+      "amount": 2,
+      "unit": "cp"
+    },
+    "weight_lb": 1
+  },
+  {
+    "id": "grappling-hook",
+    "name_ru": "Крюк-кошка",
+    "name_en": "Grappling Hook",
+    "cost": {
+      "amount": 2,
+      "unit": "gp"
+    },
+    "weight_lb": 4
+  },
+  {
+    "id": "hammer",
+    "name_ru": "Молоток",
+    "name_en": "Hammer",
+    "cost": {
+      "amount": 1,
+      "unit": "gp"
+    },
+    "weight_lb": 3
+  },
+  {
+    "id": "hammer-sledge",
+    "name_ru": "Кувалда",
+    "name_en": "Hammer, Sledge",
+    "cost": {
+      "amount": 2,
+      "unit": "gp"
+    },
+    "weight_lb": 10
+  },
+  {
+    "id": "healers-kit",
+    "name_ru": "Набор лекаря",
+    "name_en": "Healer's Kit",
+    "cost": {
+      "amount": 5,
+      "unit": "gp"
+    },
+    "weight_lb": 3
+  },
+  {
+    "id": "holy-water",
+    "name_ru": "Святая вода, фляга",
+    "name_en": "Holy Water",
+    "cost": {
+      "amount": 25,
+      "unit": "gp"
+    },
+    "weight_lb": 1
+  },
+  {
+    "id": "hourglass",
+    "name_ru": "Песочные часы",
+    "name_en": "Hourglass",
+    "cost": {
+      "amount": 25,
+      "unit": "gp"
+    },
+    "weight_lb": 1
+  },
+  {
+    "id": "hunting-trap",
+    "name_ru": "Охотничий капкан",
+    "name_en": "Hunting Trap",
+    "cost": {
+      "amount": 5,
+      "unit": "gp"
+    },
+    "weight_lb": 25
+  },
+  {
+    "id": "ink",
+    "name_ru": "Чернила, флакон",
+    "name_en": "Ink",
+    "cost": {
+      "amount": 10,
+      "unit": "gp"
+    },
+    "weight_lb": 0
+  },
+  {
+    "id": "ink-pen",
+    "name_ru": "Перо",
+    "name_en": "Ink Pen",
+    "cost": {
+      "amount": 2,
+      "unit": "cp"
+    },
+    "weight_lb": 0
+  },
+  {
+    "id": "jug",
+    "name_ru": "Кувшин",
+    "name_en": "Jug or Pitcher",
+    "cost": {
+      "amount": 2,
+      "unit": "cp"
+    },
+    "weight_lb": 4
+  },
+  {
+    "id": "ladder-10ft",
+    "name_ru": "Лестница, 10 футов",
+    "name_en": "Ladder (10 feet)",
+    "cost": {
+      "amount": 1,
+      "unit": "sp"
+    },
+    "weight_lb": 25
+  },
+  {
+    "id": "lamp",
+    "name_ru": "Лампа",
+    "name_en": "Lamp",
+    "cost": {
+      "amount": 5,
+      "unit": "sp"
+    },
+    "weight_lb": 1
+  },
+  {
+    "id": "lantern-bullseye",
+    "name_ru": "Направленный фонарь",
+    "name_en": "Lantern, Bullseye",
+    "cost": {
+      "amount": 10,
+      "unit": "gp"
+    },
+    "weight_lb": 2
+  },
+  {
+    "id": "lantern-hooded",
+    "name_ru": "Закрытый фонарь",
+    "name_en": "Lantern, Hooded",
+    "cost": {
+      "amount": 5,
+      "unit": "gp"
+    },
+    "weight_lb": 2
+  },
+  {
+    "id": "lock",
+    "name_ru": "Замок",
+    "name_en": "Lock",
+    "cost": {
+      "amount": 10,
+      "unit": "gp"
+    },
+    "weight_lb": 1
+  },
+  {
+    "id": "magnifying-glass",
+    "name_ru": "Увеличительное стекло",
+    "name_en": "Magnifying Glass",
+    "cost": {
+      "amount": 100,
+      "unit": "gp"
+    },
+    "weight_lb": 0
+  },
+  {
+    "id": "manacles",
+    "name_ru": "Кандалы",
+    "name_en": "Manacles",
+    "cost": {
+      "amount": 2,
+      "unit": "gp"
+    },
+    "weight_lb": 6
+  },
+  {
+    "id": "mess-kit",
+    "name_ru": "Столовый набор",
+    "name_en": "Mess Kit",
+    "cost": {
+      "amount": 2,
+      "unit": "sp"
+    },
+    "weight_lb": 1
+  },
+  {
+    "id": "mirror-steel",
+    "name_ru": "Стальное зеркало",
+    "name_en": "Mirror, Steel",
+    "cost": {
+      "amount": 5,
+      "unit": "gp"
+    },
+    "weight_lb": 0.5
+  },
+  {
+    "id": "oil-flask",
+    "name_ru": "Масло, фляга",
+    "name_en": "Oil (flask)",
+    "cost": {
+      "amount": 1,
+      "unit": "sp"
+    },
+    "weight_lb": 1
+  },
+  {
+    "id": "paper-sheet",
+    "name_ru": "Бумага, лист",
+    "name_en": "Paper (one sheet)",
+    "cost": {
+      "amount": 2,
+      "unit": "sp"
+    },
+    "weight_lb": 0
+  },
+  {
+    "id": "parchment-sheet",
+    "name_ru": "Пергамент, лист",
+    "name_en": "Parchment (one sheet)",
+    "cost": {
+      "amount": 1,
+      "unit": "sp"
+    },
+    "weight_lb": 0
+  },
+  {
+    "id": "perfume",
+    "name_ru": "Духи, флакон",
+    "name_en": "Perfume",
+    "cost": {
+      "amount": 5,
+      "unit": "gp"
+    },
+    "weight_lb": 0
+  },
+  {
+    "id": "pick-miners",
+    "name_ru": "Кирка шахтёра",
+    "name_en": "Pick, Miner's",
+    "cost": {
+      "amount": 2,
+      "unit": "gp"
+    },
+    "weight_lb": 10
+  },
+  {
+    "id": "piton",
+    "name_ru": "Крюк, питон",
+    "name_en": "Piton",
+    "cost": {
+      "amount": 5,
+      "unit": "cp"
+    },
+    "weight_lb": 0.25
+  },
+  {
+    "id": "poison-basic",
+    "name_ru": "Простой яд, флакон",
+    "name_en": "Poison, Basic",
+    "cost": {
+      "amount": 100,
+      "unit": "gp"
+    },
+    "weight_lb": 0
+  },
+  {
+    "id": "pole-10ft",
+    "name_ru": "Шест, 10 футов",
+    "name_en": "Pole (10 feet)",
+    "cost": {
+      "amount": 5,
+      "unit": "cp"
+    },
+    "weight_lb": 7
+  },
+  {
+    "id": "pot-iron",
+    "name_ru": "Железный котелок",
+    "name_en": "Pot, Iron",
+    "cost": {
+      "amount": 2,
+      "unit": "gp"
+    },
+    "weight_lb": 10
+  },
+  {
+    "id": "pouch",
+    "name_ru": "Кошель",
+    "name_en": "Pouch",
+    "cost": {
+      "amount": 5,
+      "unit": "sp"
+    },
+    "weight_lb": 1
+  },
+  {
+    "id": "quiver",
+    "name_ru": "Колчан",
+    "name_en": "Quiver",
+    "cost": {
+      "amount": 1,
+      "unit": "gp"
+    },
+    "weight_lb": 1
+  },
+  {
+    "id": "ram-portable",
+    "name_ru": "Переносной таран",
+    "name_en": "Ram, Portable",
+    "cost": {
+      "amount": 4,
+      "unit": "gp"
+    },
+    "weight_lb": 35
+  },
+  {
+    "id": "rations-day",
+    "name_ru": "Сухой паёк, 1 день",
+    "name_en": "Rations (1 day)",
+    "cost": {
+      "amount": 5,
+      "unit": "sp"
+    },
+    "weight_lb": 2
+  },
+  {
+    "id": "robes",
+    "name_ru": "Мантия",
+    "name_en": "Robes",
+    "cost": {
+      "amount": 1,
+      "unit": "gp"
+    },
+    "weight_lb": 4
+  },
+  {
+    "id": "rope-hempen",
+    "name_ru": "Пеньковая верёвка, 50 футов",
+    "name_en": "Rope, Hempen",
+    "cost": {
+      "amount": 1,
+      "unit": "gp"
+    },
+    "weight_lb": 10
+  },
+  {
+    "id": "rope-silk",
+    "name_ru": "Шёлковая верёвка, 50 футов",
+    "name_en": "Rope, Silk",
+    "cost": {
+      "amount": 10,
+      "unit": "gp"
+    },
+    "weight_lb": 5
+  },
+  {
+    "id": "sack",
+    "name_ru": "Мешок",
+    "name_en": "Sack",
+    "cost": {
+      "amount": 1,
+      "unit": "cp"
+    },
+    "weight_lb": 0.5
+  },
+  {
+    "id": "sealing-wax",
+    "name_ru": "Сургуч",
+    "name_en": "Sealing Wax",
+    "cost": {
+      "amount": 5,
+      "unit": "sp"
+    },
+    "weight_lb": 0
+  },
+  {
+    "id": "shovel",
+    "name_ru": "Лопата",
+    "name_en": "Shovel",
+    "cost": {
+      "amount": 2,
+      "unit": "gp"
+    },
+    "weight_lb": 5
+  },
+  {
+    "id": "signal-whistle",
+    "name_ru": "Сигнальный свисток",
+    "name_en": "Signal Whistle",
+    "cost": {
+      "amount": 5,
+      "unit": "cp"
+    },
+    "weight_lb": 0
+  },
+  {
+    "id": "signet-ring",
+    "name_ru": "Печатка",
+    "name_en": "Signet Ring",
+    "cost": {
+      "amount": 5,
+      "unit": "gp"
+    },
+    "weight_lb": 0
+  },
+  {
+    "id": "soap",
+    "name_ru": "Мыло",
+    "name_en": "Soap",
+    "cost": {
+      "amount": 2,
+      "unit": "cp"
+    },
+    "weight_lb": 0
+  },
+  {
+    "id": "spikes-iron-10",
+    "name_ru": "Железные шипы, 10 шт.",
+    "name_en": "Spikes, Iron (10)",
+    "cost": {
+      "amount": 1,
+      "unit": "gp"
+    },
+    "weight_lb": 5
+  },
+  {
+    "id": "spyglass",
+    "name_ru": "Подзорная труба",
+    "name_en": "Spyglass",
+    "cost": {
+      "amount": 1000,
+      "unit": "gp"
+    },
+    "weight_lb": 1
+  },
+  {
+    "id": "tent-two-person",
+    "name_ru": "Двухместная палатка",
+    "name_en": "Tent, Two-Person",
+    "cost": {
+      "amount": 2,
+      "unit": "gp"
+    },
+    "weight_lb": 20
+  },
+  {
+    "id": "tinderbox",
+    "name_ru": "Огниво",
+    "name_en": "Tinderbox",
+    "cost": {
+      "amount": 5,
+      "unit": "sp"
+    },
+    "weight_lb": 1
+  },
+  {
+    "id": "torch",
+    "name_ru": "Факел",
+    "name_en": "Torch",
+    "cost": {
+      "amount": 1,
+      "unit": "cp"
+    },
+    "weight_lb": 1
+  },
+  {
+    "id": "vial",
+    "name_ru": "Флакон",
+    "name_en": "Vial",
+    "cost": {
+      "amount": 1,
+      "unit": "gp"
+    },
+    "weight_lb": 0
+  },
+  {
+    "id": "waterskin",
+    "name_ru": "Бурдюк",
+    "name_en": "Waterskin",
+    "cost": {
+      "amount": 2,
+      "unit": "sp"
+    },
+    "weight_lb": 5
+  },
+  {
+    "id": "whetstone",
+    "name_ru": "Точильный камень",
+    "name_en": "Whetstone",
+    "cost": {
+      "amount": 1,
+      "unit": "cp"
+    },
+    "weight_lb": 1
+  }
+]

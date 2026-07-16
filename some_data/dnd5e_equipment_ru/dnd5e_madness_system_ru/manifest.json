@@ -1,0 +1,21 @@
+{
+  "title": "Расширенная система безумия для D&D 5e",
+  "language": "ru",
+  "license": "Авторская система, не копирующая таблицы Dungeon Master's Guide.",
+  "counts": {
+    "minor": 30,
+    "major": 30,
+    "chronic": 40,
+    "total_effects": 100
+  },
+  "files": [
+    "rules.json",
+    "minor_madness.json",
+    "major_madness.json",
+    "chronic_madness.json",
+    "triggers.json",
+    "treatments.json",
+    "tables.json",
+    "tags.json"
+  ]
+}

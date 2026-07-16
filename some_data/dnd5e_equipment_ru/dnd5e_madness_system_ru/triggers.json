@@ -1,0 +1,92 @@
+[
+  {
+    "id": "eldritch-horror",
+    "name_ru": "Контакт с непостижимым ужасом",
+    "default_severity": "major",
+    "save": {
+      "ability": "wisdom",
+      "dc": 15
+    }
+  },
+  {
+    "id": "forbidden-knowledge",
+    "name_ru": "Изучение запретного знания",
+    "default_severity": "minor",
+    "save": {
+      "ability": "intelligence",
+      "dc": 14
+    }
+  },
+  {
+    "id": "mass-death",
+    "name_ru": "Свидетель массовой гибели",
+    "default_severity": "major",
+    "save": {
+      "ability": "wisdom",
+      "dc": 14
+    }
+  },
+  {
+    "id": "possession",
+    "name_ru": "Последствия одержимости",
+    "default_severity": "chronic",
+    "save": {
+      "ability": "charisma",
+      "dc": 17
+    }
+  },
+  {
+    "id": "planar-exposure",
+    "name_ru": "Долгое пребывание на чуждом плане",
+    "default_severity": "minor",
+    "save": {
+      "ability": "wisdom",
+      "dc": 13
+    }
+  },
+  {
+    "id": "necromantic-ritual",
+    "name_ru": "Участие в некромантическом ритуале",
+    "default_severity": "major",
+    "save": {
+      "ability": "wisdom",
+      "dc": 15
+    }
+  },
+  {
+    "id": "artifact-contact",
+    "name_ru": "Контакт с опасным артефактом",
+    "default_severity": "major",
+    "save": {
+      "ability": "charisma",
+      "dc": 16
+    }
+  },
+  {
+    "id": "isolation",
+    "name_ru": "Длительная полная изоляция",
+    "default_severity": "minor",
+    "save": {
+      "ability": "wisdom",
+      "dc": 12
+    }
+  },
+  {
+    "id": "repeated-trauma",
+    "name_ru": "Повторяющаяся тяжёлая травма",
+    "default_severity": "chronic",
+    "save": {
+      "ability": "wisdom",
+      "dc": 16
+    }
+  },
+  {
+    "id": "mind-magic",
+    "name_ru": "Разрушительное воздействие на разум",
+    "default_severity": "major",
+    "save": {
+      "ability": "intelligence",
+      "dc": 15
+    }
+  }
+]

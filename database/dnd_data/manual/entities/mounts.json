@@ -1,0 +1,90 @@
+[
+  {
+    "id": "camel",
+    "name_ru": "Верблюд",
+    "name_en": "Camel",
+    "cost": {
+      "amount": 50,
+      "unit": "gp"
+    },
+    "speed_ft": 50,
+    "carrying_capacity_lb": 480
+  },
+  {
+    "id": "donkey",
+    "name_ru": "Осёл или мул",
+    "name_en": "Donkey or Mule",
+    "cost": {
+      "amount": 8,
+      "unit": "gp"
+    },
+    "speed_ft": 40,
+    "carrying_capacity_lb": 420
+  },
+  {
+    "id": "elephant",
+    "name_ru": "Слон",
+    "name_en": "Elephant",
+    "cost": {
+      "amount": 200,
+      "unit": "gp"
+    },
+    "speed_ft": 40,
+    "carrying_capacity_lb": 1320
+  },
+  {
+    "id": "draft-horse",
+    "name_ru": "Тяжеловоз",
+    "name_en": "Draft Horse",
+    "cost": {
+      "amount": 50,
+      "unit": "gp"
+    },
+    "speed_ft": 40,
+    "carrying_capacity_lb": 540
+  },
+  {
+    "id": "riding-horse",
+    "name_ru": "Верховая лошадь",
+    "name_en": "Riding Horse",
+    "cost": {
+      "amount": 75,
+      "unit": "gp"
+    },
+    "speed_ft": 60,
+    "carrying_capacity_lb": 480
+  },
+  {
+    "id": "mastiff",
+    "name_ru": "Мастиф",
+    "name_en": "Mastiff",
+    "cost": {
+      "amount": 25,
+      "unit": "gp"
+    },
+    "speed_ft": 40,
+    "carrying_capacity_lb": 195
+  },
+  {
+    "id": "pony",
+    "name_ru": "Пони",
+    "name_en": "Pony",
+    "cost": {
+      "amount": 30,
+      "unit": "gp"
+    },
+    "speed_ft": 40,
+    "carrying_capacity_lb": 225
+  },
+  {
+    "id": "warhorse",
+    "name_ru": "Боевой конь",
+    "name_en": "Warhorse",
+    "cost": {
+      "amount": 400,
+      "unit": "gp"
+    },
+    "speed_ft": 60,
+    "carrying_capacity_lb": 540
+  }
+]

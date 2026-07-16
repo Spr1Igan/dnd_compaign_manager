@@ -1,0 +1,24 @@
+{
+  "title": "D&D 5e SRD extended JSON pack",
+  "ruleset": "2014 / SRD 5.1",
+  "included_ready_files": [
+    "conditions_ru.json",
+    "skills_ru.json",
+    "languages_ru.json",
+    "tools_ru.json",
+    "weapon_properties_ru.json",
+    "armor_properties_ru.json"
+  ],
+  "generated_by_script": [
+    "monsters.json",
+    "spells.json",
+    "magic_items.json",
+    "artifacts.json",
+    "conditions_api.json",
+    "languages_api.json",
+    "skills_api.json",
+    "proficiencies_api.json",
+    "weapon_properties_api.json"
+  ],
+  "note_ru": "Полные данные выгружаются только из открытого SRD API. Материалы из закрытых официальных книг не включаются."
+}

@@ -1,0 +1,110 @@
+[
+  {
+    "id": "acrobatics",
+    "name_ru": "Акробатика",
+    "name_en": "Acrobatics",
+    "ability": "dex"
+  },
+  {
+    "id": "animal-handling",
+    "name_ru": "Уход за животными",
+    "name_en": "Animal Handling",
+    "ability": "wis"
+  },
+  {
+    "id": "arcana",
+    "name_ru": "Магия",
+    "name_en": "Arcana",
+    "ability": "int"
+  },
+  {
+    "id": "athletics",
+    "name_ru": "Атлетика",
+    "name_en": "Athletics",
+    "ability": "str"
+  },
+  {
+    "id": "deception",
+    "name_ru": "Обман",
+    "name_en": "Deception",
+    "ability": "cha"
+  },
+  {
+    "id": "history",
+    "name_ru": "История",
+    "name_en": "History",
+    "ability": "int"
+  },
+  {
+    "id": "insight",
+    "name_ru": "Проницательность",
+    "name_en": "Insight",
+    "ability": "wis"
+  },
+  {
+    "id": "intimidation",
+    "name_ru": "Запугивание",
+    "name_en": "Intimidation",
+    "ability": "cha"
+  },
+  {
+    "id": "investigation",
+    "name_ru": "Расследование",
+    "name_en": "Investigation",
+    "ability": "int"
+  },
+  {
+    "id": "medicine",
+    "name_ru": "Медицина",
+    "name_en": "Medicine",
+    "ability": "wis"
+  },
+  {
+    "id": "nature",
+    "name_ru": "Природа",
+    "name_en": "Nature",
+    "ability": "int"
+  },
+  {
+    "id": "perception",
+    "name_ru": "Восприятие",
+    "name_en": "Perception",
+    "ability": "wis"
+  },
+  {
+    "id": "performance",
+    "name_ru": "Выступление",
+    "name_en": "Performance",
+    "ability": "cha"
+  },
+  {
+    "id": "persuasion",
+    "name_ru": "Убеждение",
+    "name_en": "Persuasion",
+    "ability": "cha"
+  },
+  {
+    "id": "religion",
+    "name_ru": "Религия",
+    "name_en": "Religion",
+    "ability": "int"
+  },
+  {
+    "id": "sleight-of-hand",
+    "name_ru": "Ловкость рук",
+    "name_en": "Sleight of Hand",
+    "ability": "dex"
+  },
+  {
+    "id": "stealth",
+    "name_ru": "Скрытность",
+    "name_en": "Stealth",
+    "ability": "dex"
+  },
+  {
+    "id": "survival",
+    "name_ru": "Выживание",
+    "name_en": "Survival",
+    "ability": "wis"
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "id": "acid",
+    "name_ru": "Кислота"
+  },
+  {
+    "id": "bludgeoning",
+    "name_ru": "Дробящий"
+  },
+  {
+    "id": "cold",
+    "name_ru": "Холод"
+  },
+  {
+    "id": "fire",
+    "name_ru": "Огонь"
+  },
+  {
+    "id": "force",
+    "name_ru": "Силовое поле"
+  },
+  {
+    "id": "lightning",
+    "name_ru": "Электричество"
+  },
+  {
+    "id": "necrotic",
+    "name_ru": "Некротический"
+  },
+  {
+    "id": "piercing",
+    "name_ru": "Колющий"
+  },
+  {
+    "id": "poison",
+    "name_ru": "Яд"
+  },
+  {
+    "id": "psychic",
+    "name_ru": "Психический"
+  },
+  {
+    "id": "radiant",
+    "name_ru": "Излучение"
+  },
+  {
+    "id": "slashing",
+    "name_ru": "Рубящий"
+  },
+  {
+    "id": "thunder",
+    "name_ru": "Звук"
+  }
+]

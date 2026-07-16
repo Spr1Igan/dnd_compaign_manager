@@ -8,20 +8,20 @@
     <div>
         <p class="eyebrow">Справочник мастера</p>
         <h1>Данные</h1>
-        <p>Быстрый доступ к сущностям, главам и таблицам из Руководства Мастера.</p>
+        <p>Проверенный набор D&D 5e из локальных JSON: правила, предметы, сокровища, заклинания и монстры без старого сырого экспорта.</p>
     </div>
 </div>
 
 @unless ($dataExists)
     <div class="paper-error">
-        Папка <strong>some_data/dmg_structured_export</strong> не найдена. Справочник пока не может прочитать данные.
+        Папка <strong>some_data/dnd5e_equipment_ru</strong> не найдена. Справочник пока не может прочитать данные.
     </div>
 @endunless
 
 <form class="data-search" method="GET" action="{{ route('data.index') }}">
     <label for="data-search">Поиск по справочнику</label>
     <div>
-        <input id="data-search" name="q" value="{{ $query }}" placeholder="Например: зелье, ловушка, безумие, артефакт">
+        <input id="data-search" name="q" value="{{ $query }}" placeholder="Например: меч, яд, отдых, blinded, fireball">
         <button class="paper-button" type="submit">Найти</button>
     </div>
 </form>
@@ -37,9 +37,9 @@
             <div class="data-result-list">
                 @foreach ($results as $entry)
                     <a class="data-result-card" href="{{ route('data.entity', [$entry['category_slug'], $entry['index']]) }}">
-                        <span>{{ $entry['category_title'] }} @if($entry['page_pdf']) · стр. {{ $entry['page_pdf'] }} @endif</span>
+                        <span>{{ $entry['category_title'] }}</span>
                         <strong>{{ $entry['name'] }}</strong>
-                        <p>{{ $entry['excerpt'] ?: 'Описание будет доступно в карточке.' }}</p>
+                        <p>{{ $entry['excerpt'] ?: 'Открой карточку, чтобы увидеть подробности.' }}</p>
                     </a>
                 @endforeach
             </div>
@@ -51,42 +51,42 @@
     </section>
 @endif
 
-<section class="data-section">
-    <div class="data-section-title">
-        <h2>Сущности</h2>
-        <span>{{ collect($categories)->sum('count') }}</span>
-    </div>
+<div class="data-group-tabs" aria-label="Группы данных">
+    @foreach ($groups as $group)
+        <a href="#data-group-{{ $group['slug'] }}">
+            <span>{{ $group['title'] }}</span>
+            <strong>{{ $group['count'] }}</strong>
+        </a>
+    @endforeach
+</div>
 
-    <div class="data-category-grid">
-        @foreach ($categories as $category)
-            <a class="data-category-card" href="{{ route('data.category', $category['slug']) }}">
-                <span>{{ $category['count'] }} записей</span>
-                <h2>{{ $category['title'] }}</h2>
-                <p>{{ $category['description'] }}</p>
-            </a>
-        @endforeach
-    </div>
-</section>
+@foreach ($groups as $group)
+    <section class="data-section data-group-section" id="data-group-{{ $group['slug'] }}">
+        <div class="data-section-title">
+            <div>
+                <h2>{{ $group['title'] }}</h2>
+                <p>{{ $group['description'] }}</p>
+            </div>
+            <span>{{ $group['count'] }}</span>
+        </div>
 
-<section class="data-lower-grid">
-    <a class="data-large-link" href="{{ route('data.chapters') }}">
-        <span>Текст и оглавление</span>
-        <h2>Главы книги</h2>
-        <p>Открывай разделы Руководства Мастера по страницам, если нужно свериться с контекстом.</p>
-    </a>
-
-    <a class="data-large-link" href="{{ route('data.tables') }}">
-        <span>Кандидаты таблиц</span>
-        <h2>Таблицы</h2>
-        <p>Собранные строки таблиц по главам. Часть сложных таблиц может требовать ручной проверки.</p>
-    </a>
-</section>
+        <div class="data-category-grid">
+            @foreach ($group['categories'] as $category)
+                <a class="data-category-card @if ($category['count'] === 0) is-empty @endif" href="{{ route('data.category', $category['slug']) }}">
+                    <span>{{ $category['count'] > 0 ? $category['count'].' записей' : 'нет данных' }}</span>
+                    <h2>{{ $category['title'] }}</h2>
+                    <p>{{ $category['description'] }}</p>
+                </a>
+            @endforeach
+        </div>
+    </section>
+@endforeach
 
 @if (! empty($metadata))
     <section class="data-source-note">
-        Источник: {{ $metadata['title'] ?? 'Руководство Мастера' }},
-        {{ $metadata['edition'] ?? '5e' }},
-        страниц PDF: {{ $metadata['pdf_pages'] ?? '—' }}.
+        Источник: {{ $metadata['title'] ?? 'dnd5e_equipment_ru' }},
+        {{ $metadata['rules_version'] ?? $metadata['edition'] ?? 'D&D 5e' }}.
+        {{ $metadata['completeness_note'] ?? '' }}
     </section>
 @endif
 

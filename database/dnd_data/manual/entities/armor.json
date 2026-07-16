@@ -1,0 +1,186 @@
+[
+  {
+    "id": "padded",
+    "name_ru": "Стёганый доспех",
+    "name_en": "Padded",
+    "category": "лёгкий",
+    "cost": {
+      "amount": 5,
+      "unit": "gp"
+    },
+    "base_ac": 11,
+    "dex_bonus": "полный",
+    "stealth_disadvantage": true,
+    "weight_lb": 8
+  },
+  {
+    "id": "leather",
+    "name_ru": "Кожаный доспех",
+    "name_en": "Leather",
+    "category": "лёгкий",
+    "cost": {
+      "amount": 10,
+      "unit": "gp"
+    },
+    "base_ac": 11,
+    "dex_bonus": "полный",
+    "stealth_disadvantage": false,
+    "weight_lb": 10
+  },
+  {
+    "id": "studded-leather",
+    "name_ru": "Проклёпанная кожа",
+    "name_en": "Studded Leather",
+    "category": "лёгкий",
+    "cost": {
+      "amount": 45,
+      "unit": "gp"
+    },
+    "base_ac": 12,
+    "dex_bonus": "полный",
+    "stealth_disadvantage": false,
+    "weight_lb": 13
+  },
+  {
+    "id": "hide",
+    "name_ru": "Шкурный доспех",
+    "name_en": "Hide",
+    "category": "средний",
+    "cost": {
+      "amount": 10,
+      "unit": "gp"
+    },
+    "base_ac": 12,
+    "dex_bonus": "максимум +2",
+    "stealth_disadvantage": false,
+    "weight_lb": 12
+  },
+  {
+    "id": "chain-shirt",
+    "name_ru": "Кольчужная рубаха",
+    "name_en": "Chain Shirt",
+    "category": "средний",
+    "cost": {
+      "amount": 50,
+      "unit": "gp"
+    },
+    "base_ac": 13,
+    "dex_bonus": "максимум +2",
+    "stealth_disadvantage": false,
+    "weight_lb": 20
+  },
+  {
+    "id": "scale-mail",
+    "name_ru": "Чешуйчатый доспех",
+    "name_en": "Scale Mail",
+    "category": "средний",
+    "cost": {
+      "amount": 50,
+      "unit": "gp"
+    },
+    "base_ac": 14,
+    "dex_bonus": "максимум +2",
+    "stealth_disadvantage": true,
+    "weight_lb": 45
+  },
+  {
+    "id": "breastplate",
+    "name_ru": "Кираса",
+    "name_en": "Breastplate",
+    "category": "средний",
+    "cost": {
+      "amount": 400,
+      "unit": "gp"
+    },
+    "base_ac": 14,
+    "dex_bonus": "максимум +2",
+    "stealth_disadvantage": false,
+    "weight_lb": 20
+  },
+  {
+    "id": "half-plate",
+    "name_ru": "Полулаты",
+    "name_en": "Half Plate",
+    "category": "средний",
+    "cost": {
+      "amount": 750,
+      "unit": "gp"
+    },
+    "base_ac": 15,
+    "dex_bonus": "максимум +2",
+    "stealth_disadvantage": true,
+    "weight_lb": 40
+  },
+  {
+    "id": "ring-mail",
+    "name_ru": "Кольчатый доспех",
+    "name_en": "Ring Mail",
+    "category": "тяжёлый",
+    "cost": {
+      "amount": 30,
+      "unit": "gp"
+    },
+    "base_ac": 14,
+    "dex_bonus": "нет",
+    "strength_requirement": null,
+    "stealth_disadvantage": true,
+    "weight_lb": 40
+  },
+  {
+    "id": "chain-mail",
+    "name_ru": "Кольчуга",
+    "name_en": "Chain Mail",
+    "category": "тяжёлый",
+    "cost": {
+      "amount": 75,
+      "unit": "gp"
+    },
+    "base_ac": 16,
+    "dex_bonus": "нет",
+    "strength_requirement": 13,
+    "stealth_disadvantage": true,
+    "weight_lb": 55
+  },
+  {
+    "id": "splint",
+    "name_ru": "Наборный доспех",
+    "name_en": "Splint",
+    "category": "тяжёлый",
+    "cost": {
+      "amount": 200,
+      "unit": "gp"
+    },
+    "base_ac": 17,
+    "dex_bonus": "нет",
+    "strength_requirement": 15,
+    "stealth_disadvantage": true,
+    "weight_lb": 60
+  },
+  {
+    "id": "plate",
+    "name_ru": "Латы",
+    "name_en": "Plate",
+    "category": "тяжёлый",
+    "cost": {
+      "amount": 1500,
+      "unit": "gp"
+    },
+    "base_ac": 18,
+    "dex_bonus": "нет",
+    "strength_requirement": 15,
+    "stealth_disadvantage": true,
+    "weight_lb": 65
+  },
+  {
+    "id": "shield",
+    "name_ru": "Щит",
+    "name_en": "Shield",
+    "category": "щит",
+    "cost": {
+      "amount": 10,
+      "unit": "gp"
+    },
+    "ac_bonus": 2,
+    "weight_lb": 6
+  }
+]

@@ -1,0 +1,1908 @@
+[
+  {
+    "id": "book_001",
+    "name_ru": "Бестиарий шепчущих зверей",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 3,
+    "cost_gp": 178,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 24
+    },
+    "description_ru": "Повадки, следы и слабости необычных хищников.",
+    "knowledge_gained": [
+      "После 8 часов изучения читатель узнаёт повадки 12 распространённых чудовищ.",
+      "Раз за продолжительный отдых получает преимущество на проверку Природы или Выживания против чудовища."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "природа",
+      "необычный"
+    ]
+  },
+  {
+    "id": "book_002",
+    "name_ru": "Словарь мёртвых наречий",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 8,
+    "cost_gp": 896,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 8
+    },
+    "description_ru": "Фонетические ключи к исчезнувшим языкам.",
+    "knowledge_gained": [
+      "После 40 часов изучения читатель распознаёт общий смысл надписей на одном древнем языке.",
+      "Раз в день получает преимущество на проверку Истории при расшифровке текста."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "языки",
+      "редкий"
+    ]
+  },
+  {
+    "id": "book_003",
+    "name_ru": "Хирургия под красной луной",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 5,
+    "cost_gp": 149,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 16
+    },
+    "description_ru": "Полевое руководство по остановке кровотечения.",
+    "knowledge_gained": [
+      "После 16 часов изучения набор лекаря восстанавливает дополнительно 1 хит.",
+      "Раз за продолжительный отдых можно стабилизировать существо бонусным действием."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "медицина",
+      "необычный"
+    ]
+  },
+  {
+    "id": "book_004",
+    "name_ru": "Планы безмолвных крепостей",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 5,
+    "cost_gp": 130,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 40
+    },
+    "description_ru": "Схемы тайных ходов, шахт и слабых мест укреплений.",
+    "knowledge_gained": [
+      "После 8 часов изучения читатель лучше определяет вероятные места скрытых дверей.",
+      "Раз за продолжительный отдых получает преимущество на одну проверку Расследования в здании."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "архитектура",
+      "необычный"
+    ]
+  },
+  {
+    "id": "book_005",
+    "name_ru": "Алхимия угасшего угля",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 2,
+    "cost_gp": 808,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 8
+    },
+    "description_ru": "Дымовые смеси и жаростойкие покрытия.",
+    "knowledge_gained": [
+      "После 24 часов изучения открывает рецепт дымовой смеси.",
+      "Обычные алхимические расходники создаются на 20% дешевле."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "алхимия",
+      "редкий"
+    ]
+  },
+  {
+    "id": "book_006",
+    "name_ru": "Тропы между снами",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "редкий",
+    "requires_attunement": true,
+    "attunement_requirement": "Требуется настройка",
+    "weight_lb": 4,
+    "cost_gp": 3926,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 8
+    },
+    "description_ru": "Техники осознанных сновидений и защиты от кошмаров.",
+    "knowledge_gained": [
+      "Даёт преимущество на спасброски против магического сна.",
+      "Раз за продолжительный отдых ведущий даёт символическую подсказку во сне."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "оккультизм",
+      "редкий"
+    ]
+  },
+  {
+    "id": "book_007",
+    "name_ru": "Железная память архивариуса",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "очень редкий",
+    "requires_attunement": true,
+    "attunement_requirement": "Требуется настройка",
+    "weight_lb": 2,
+    "cost_gp": 10945,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 40
+    },
+    "description_ru": "Страницы меняют порядок согласно мыслям владельца.",
+    "knowledge_gained": [
+      "Владелец идеально помнит прочитанное за последние 30 дней.",
+      "Раз за продолжительный отдых добавляет 1d6 к проверке Интеллекта."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "знания",
+      "очень редкий"
+    ]
+  },
+  {
+    "id": "book_008",
+    "name_ru": "Этикет дворов фей",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 4,
+    "cost_gp": 131,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 40
+    },
+    "description_ru": "Опасные правила подарков, обещаний и гостеприимства фей.",
+    "knowledge_gained": [
+      "После 8 часов изучения читатель знает основные запреты фейских дворов.",
+      "Раз за продолжительный отдых получает преимущество на проверку Харизмы против феи."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "общество",
+      "необычный"
+    ]
+  },
+  {
+    "id": "book_009",
+    "name_ru": "Родословные древних драконов",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 1,
+    "cost_gp": 2329,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 40
+    },
+    "description_ru": "Символы кланов, территории и древние вражды.",
+    "knowledge_gained": [
+      "Можно определить вид дракона по следам или описанию.",
+      "Раз за продолжительный отдых получает преимущество на связанную проверку Истории."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "драконы",
+      "редкий"
+    ]
+  },
+  {
+    "id": "book_010",
+    "name_ru": "Сады ядовитых цветов",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 1,
+    "cost_gp": 396,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 40
+    },
+    "description_ru": "Иллюстрированный справочник ядовитых и лечебных растений.",
+    "knowledge_gained": [
+      "Читатель распознаёт большинство обычных природных ядов.",
+      "Преимущество на проверки набора травника при создании противоядий."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "травничество",
+      "необычный"
+    ]
+  },
+  {
+    "id": "book_011",
+    "name_ru": "Души заводных машин",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 4,
+    "cost_gp": 907,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 12
+    },
+    "description_ru": "Технический и философский трактат о конструктах.",
+    "knowledge_gained": [
+      "Даёт преимущество на одну проверку ремонта конструкта за продолжительный отдых.",
+      "Позволяет узнавать типичные команды и протоколы механизмов."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "конструкты",
+      "редкий"
+    ]
+  },
+  {
+    "id": "book_012",
+    "name_ru": "Семь погребальных песен",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 1,
+    "cost_gp": 1591,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 16
+    },
+    "description_ru": "Ритуалы упокоения и защиты от нежити.",
+    "knowledge_gained": [
+      "Читатель узнаёт признаки беспокойной нежити.",
+      "Раз за продолжительный отдых добавляет 1d4 к спасброску против эффекта нежити."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "религия",
+      "редкий"
+    ]
+  },
+  {
+    "id": "book_013",
+    "name_ru": "Искусство зеркальной дуэли",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "очень редкий",
+    "requires_attunement": true,
+    "attunement_requirement": "Требуется настройка",
+    "weight_lb": 4,
+    "cost_gp": 14454,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 40
+    },
+    "description_ru": "Учебник фехтования с обманными движениями.",
+    "knowledge_gained": [
+      "Раз за продолжительный отдых реакцией получает +2 КД против одной рукопашной атаки.",
+      "Книга не даёт владения оружием."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "бой",
+      "очень редкий"
+    ]
+  },
+  {
+    "id": "book_014",
+    "name_ru": "Звёзды под землёй",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 1,
+    "cost_gp": 393,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 16
+    },
+    "description_ru": "Ориентирование в пещерах по воздуху, воде и минералам.",
+    "knowledge_gained": [
+      "Читатель не теряется в знакомой системе пещер.",
+      "Раз за продолжительный отдых получает преимущество на Выживание под землёй."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "навигация",
+      "необычный"
+    ]
+  },
+  {
+    "id": "book_015",
+    "name_ru": "Книга неполных истинных имён",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "легендарный",
+    "requires_attunement": true,
+    "attunement_requirement": "Требуется настройка",
+    "weight_lb": 5,
+    "cost_gp": 97377,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 8
+    },
+    "description_ru": "Повреждённый список имён могущественных сущностей.",
+    "knowledge_gained": [
+      "После настройки владелец узнаёт фрагмент имени одной сущности.",
+      "Раз в 7 дней получает преимущество на проверку или спасбросок против неё.",
+      "Каждое использование имеет 10% шанс привлечь её внимание."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "истинные имена",
+      "легендарный"
+    ]
+  },
+  {
+    "id": "book_016",
+    "name_ru": "Пепельный кодекс: том 1",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 5,
+    "cost_gp": 206,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 16
+    },
+    "description_ru": "Подробный труд по теме «дипломатия» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «дипломатия».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: Убеждение.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "дипломатия",
+      "необычный"
+    ]
+  },
+  {
+    "id": "book_017",
+    "name_ru": "Последний компендиум: том 2",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 3,
+    "cost_gp": 2956,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 8
+    },
+    "description_ru": "Подробный труд по теме «травничество» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «травничество».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: набор травника.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "травничество",
+      "редкий"
+    ]
+  },
+  {
+    "id": "book_018",
+    "name_ru": "Бронзовый атлас: том 3",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 5,
+    "cost_gp": 254,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 24
+    },
+    "description_ru": "Подробный труд по теме «руны» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «руны».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: Магия.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "руны",
+      "необычный"
+    ]
+  },
+  {
+    "id": "book_019",
+    "name_ru": "Последний манускрипт: том 4",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 5,
+    "cost_gp": 1100,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 4
+    },
+    "description_ru": "Подробный труд по теме «археология» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «археология».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: История.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "археология",
+      "редкий"
+    ]
+  },
+  {
+    "id": "book_020",
+    "name_ru": "Чёрный трактат: том 5",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "обычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 4,
+    "cost_gp": 78,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 4
+    },
+    "description_ru": "Подробный труд по теме «травничество» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «травничество».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: набор травника.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "травничество",
+      "обычный"
+    ]
+  },
+  {
+    "id": "book_021",
+    "name_ru": "Чёрный путеводитель: том 6",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 3,
+    "cost_gp": 4569,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 24
+    },
+    "description_ru": "Подробный труд по теме «демонология» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «демонология».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: Религия.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "демонология",
+      "редкий"
+    ]
+  },
+  {
+    "id": "book_022",
+    "name_ru": "Пепельный манускрипт: том 7",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "обычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 4,
+    "cost_gp": 33,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 4
+    },
+    "description_ru": "Подробный труд по теме «археология» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «археология».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: История.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "археология",
+      "обычный"
+    ]
+  },
+  {
+    "id": "book_023",
+    "name_ru": "Последний манускрипт: том 8",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 4,
+    "cost_gp": 443,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 12
+    },
+    "description_ru": "Подробный труд по теме «кузнечное дело» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «кузнечное дело».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: инструменты кузнеца.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "кузнечное дело",
+      "необычный"
+    ]
+  },
+  {
+    "id": "book_024",
+    "name_ru": "Чёрный трактат: том 9",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "очень редкий",
+    "requires_attunement": true,
+    "attunement_requirement": "Требуется настройка",
+    "weight_lb": 5,
+    "cost_gp": 12674,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 16
+    },
+    "description_ru": "Подробный труд по теме «мореплавание» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «мореплавание».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: Выживание.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "мореплавание",
+      "очень редкий"
+    ]
+  },
+  {
+    "id": "book_025",
+    "name_ru": "Тихий трактат: том 10",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "обычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 2,
+    "cost_gp": 75,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 16
+    },
+    "description_ru": "Подробный труд по теме «мореплавание» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «мореплавание».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: Выживание.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "мореплавание",
+      "обычный"
+    ]
+  },
+  {
+    "id": "book_026",
+    "name_ru": "Последний архив: том 11",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "обычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 5,
+    "cost_gp": 60,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 8
+    },
+    "description_ru": "Подробный труд по теме «археология» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «археология».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: История.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "археология",
+      "обычный"
+    ]
+  },
+  {
+    "id": "book_027",
+    "name_ru": "Тихий архив: том 12",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 3,
+    "cost_gp": 3617,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 8
+    },
+    "description_ru": "Подробный труд по теме «травничество» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «травничество».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: набор травника.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "травничество",
+      "редкий"
+    ]
+  },
+  {
+    "id": "book_028",
+    "name_ru": "Забытый сборник: том 13",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "обычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 2,
+    "cost_gp": 26,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 16
+    },
+    "description_ru": "Подробный труд по теме «руны» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «руны».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: Магия.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "руны",
+      "обычный"
+    ]
+  },
+  {
+    "id": "book_029",
+    "name_ru": "Лунный трактат: том 14",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "обычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 4,
+    "cost_gp": 93,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 12
+    },
+    "description_ru": "Подробный труд по теме «руны» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «руны».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: Магия.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "руны",
+      "обычный"
+    ]
+  },
+  {
+    "id": "book_030",
+    "name_ru": "Лунный компендиум: том 15",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "очень редкий",
+    "requires_attunement": true,
+    "attunement_requirement": "Требуется настройка",
+    "weight_lb": 5,
+    "cost_gp": 30715,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 16
+    },
+    "description_ru": "Подробный труд по теме «монстрология» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «монстрология».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: Природа.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "монстрология",
+      "очень редкий"
+    ]
+  },
+  {
+    "id": "book_031",
+    "name_ru": "Последний архив: том 16",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 1,
+    "cost_gp": 198,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 4
+    },
+    "description_ru": "Подробный труд по теме «травничество» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «травничество».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: набор травника.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "травничество",
+      "необычный"
+    ]
+  },
+  {
+    "id": "book_032",
+    "name_ru": "Пепельный путеводитель: том 17",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 5,
+    "cost_gp": 127,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 4
+    },
+    "description_ru": "Подробный труд по теме «дипломатия» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «дипломатия».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: Убеждение.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "дипломатия",
+      "необычный"
+    ]
+  },
+  {
+    "id": "book_033",
+    "name_ru": "Пепельный путеводитель: том 18",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 5,
+    "cost_gp": 114,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 4
+    },
+    "description_ru": "Подробный труд по теме «мореплавание» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «мореплавание».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: Выживание.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "мореплавание",
+      "необычный"
+    ]
+  },
+  {
+    "id": "book_034",
+    "name_ru": "Забытый манускрипт: том 19",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 3,
+    "cost_gp": 409,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 12
+    },
+    "description_ru": "Подробный труд по теме «дипломатия» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «дипломатия».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: Убеждение.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "дипломатия",
+      "необычный"
+    ]
+  },
+  {
+    "id": "book_035",
+    "name_ru": "Последний компендиум: том 20",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "обычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 4,
+    "cost_gp": 86,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 12
+    },
+    "description_ru": "Подробный труд по теме «археология» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «археология».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: История.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "археология",
+      "обычный"
+    ]
+  },
+  {
+    "id": "book_036",
+    "name_ru": "Чёрный манускрипт: том 21",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "обычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 4,
+    "cost_gp": 45,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 24
+    },
+    "description_ru": "Подробный труд по теме «демонология» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «демонология».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: Религия.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "демонология",
+      "обычный"
+    ]
+  },
+  {
+    "id": "book_037",
+    "name_ru": "Чёрный трактат: том 22",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "обычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 5,
+    "cost_gp": 28,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 24
+    },
+    "description_ru": "Подробный труд по теме «мореплавание» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «мореплавание».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: Выживание.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "мореплавание",
+      "обычный"
+    ]
+  },
+  {
+    "id": "book_038",
+    "name_ru": "Пепельный манускрипт: том 23",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "очень редкий",
+    "requires_attunement": true,
+    "attunement_requirement": "Требуется настройка",
+    "weight_lb": 5,
+    "cost_gp": 29033,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 8
+    },
+    "description_ru": "Подробный труд по теме «кузнечное дело» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «кузнечное дело».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: инструменты кузнеца.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "кузнечное дело",
+      "очень редкий"
+    ]
+  },
+  {
+    "id": "book_039",
+    "name_ru": "Чёрный сборник: том 24",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 5,
+    "cost_gp": 2099,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 8
+    },
+    "description_ru": "Подробный труд по теме «монстрология» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «монстрология».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: Природа.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "монстрология",
+      "редкий"
+    ]
+  },
+  {
+    "id": "book_040",
+    "name_ru": "Бронзовый сборник: том 25",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 5,
+    "cost_gp": 4537,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 12
+    },
+    "description_ru": "Подробный труд по теме «травничество» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «травничество».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: набор травника.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "травничество",
+      "редкий"
+    ]
+  },
+  {
+    "id": "book_041",
+    "name_ru": "Тихий компендиум: том 26",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "очень редкий",
+    "requires_attunement": true,
+    "attunement_requirement": "Требуется настройка",
+    "weight_lb": 3,
+    "cost_gp": 17691,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 40
+    },
+    "description_ru": "Подробный труд по теме «мореплавание» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «мореплавание».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: Выживание.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "мореплавание",
+      "очень редкий"
+    ]
+  },
+  {
+    "id": "book_042",
+    "name_ru": "Чёрный путеводитель: том 27",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 1,
+    "cost_gp": 213,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 4
+    },
+    "description_ru": "Подробный труд по теме «монстрология» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «монстрология».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: Природа.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "монстрология",
+      "необычный"
+    ]
+  },
+  {
+    "id": "book_043",
+    "name_ru": "Чёрный сборник: том 28",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 4,
+    "cost_gp": 420,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 24
+    },
+    "description_ru": "Подробный труд по теме «дипломатия» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «дипломатия».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: Убеждение.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "дипломатия",
+      "необычный"
+    ]
+  },
+  {
+    "id": "book_044",
+    "name_ru": "Чёрный атлас: том 29",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 1,
+    "cost_gp": 299,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 40
+    },
+    "description_ru": "Подробный труд по теме «мореплавание» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «мореплавание».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: Выживание.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "мореплавание",
+      "необычный"
+    ]
+  },
+  {
+    "id": "book_045",
+    "name_ru": "Забытый архив: том 30",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 3,
+    "cost_gp": 145,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 40
+    },
+    "description_ru": "Подробный труд по теме «дипломатия» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «дипломатия».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: Убеждение.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "дипломатия",
+      "необычный"
+    ]
+  },
+  {
+    "id": "book_046",
+    "name_ru": "Пепельный трактат: том 31",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 2,
+    "cost_gp": 166,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 4
+    },
+    "description_ru": "Подробный труд по теме «травничество» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «травничество».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: набор травника.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "травничество",
+      "необычный"
+    ]
+  },
+  {
+    "id": "book_047",
+    "name_ru": "Последний трактат: том 32",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 5,
+    "cost_gp": 406,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 16
+    },
+    "description_ru": "Подробный труд по теме «руны» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «руны».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: Магия.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "руны",
+      "необычный"
+    ]
+  },
+  {
+    "id": "book_048",
+    "name_ru": "Забытый кодекс: том 33",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "обычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 1,
+    "cost_gp": 38,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 24
+    },
+    "description_ru": "Подробный труд по теме «монстрология» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «монстрология».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: Природа.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "монстрология",
+      "обычный"
+    ]
+  },
+  {
+    "id": "book_049",
+    "name_ru": "Бронзовый сборник: том 34",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 1,
+    "cost_gp": 229,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 8
+    },
+    "description_ru": "Подробный труд по теме «руны» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «руны».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: Магия.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "руны",
+      "необычный"
+    ]
+  },
+  {
+    "id": "book_050",
+    "name_ru": "Чёрный манускрипт: том 35",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 5,
+    "cost_gp": 315,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 8
+    },
+    "description_ru": "Подробный труд по теме «кузнечное дело» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «кузнечное дело».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: инструменты кузнеца.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "кузнечное дело",
+      "необычный"
+    ]
+  },
+  {
+    "id": "book_051",
+    "name_ru": "Чёрный компендиум: том 36",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 5,
+    "cost_gp": 4734,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 16
+    },
+    "description_ru": "Подробный труд по теме «мореплавание» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «мореплавание».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: Выживание.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "мореплавание",
+      "редкий"
+    ]
+  },
+  {
+    "id": "book_052",
+    "name_ru": "Лунный компендиум: том 37",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 2,
+    "cost_gp": 412,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 4
+    },
+    "description_ru": "Подробный труд по теме «руны» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «руны».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: Магия.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "руны",
+      "необычный"
+    ]
+  },
+  {
+    "id": "book_053",
+    "name_ru": "Последний атлас: том 38",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "обычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 5,
+    "cost_gp": 32,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 12
+    },
+    "description_ru": "Подробный труд по теме «руны» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «руны».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: Магия.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "руны",
+      "обычный"
+    ]
+  },
+  {
+    "id": "book_054",
+    "name_ru": "Пепельный кодекс: том 39",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 2,
+    "cost_gp": 2068,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 12
+    },
+    "description_ru": "Подробный труд по теме «археология» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «археология».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: История.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "археология",
+      "редкий"
+    ]
+  },
+  {
+    "id": "book_055",
+    "name_ru": "Последний кодекс: том 40",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 1,
+    "cost_gp": 4132,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 12
+    },
+    "description_ru": "Подробный труд по теме «мореплавание» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «мореплавание».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: Выживание.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "мореплавание",
+      "редкий"
+    ]
+  },
+  {
+    "id": "book_056",
+    "name_ru": "Последний компендиум: том 41",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 5,
+    "cost_gp": 227,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 40
+    },
+    "description_ru": "Подробный труд по теме «дипломатия» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «дипломатия».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: Убеждение.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "дипломатия",
+      "необычный"
+    ]
+  },
+  {
+    "id": "book_057",
+    "name_ru": "Бронзовый компендиум: том 42",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 2,
+    "cost_gp": 3914,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 4
+    },
+    "description_ru": "Подробный труд по теме «кузнечное дело» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «кузнечное дело».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: инструменты кузнеца.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "кузнечное дело",
+      "редкий"
+    ]
+  },
+  {
+    "id": "book_058",
+    "name_ru": "Пепельный сборник: том 43",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "необычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 4,
+    "cost_gp": 138,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 8
+    },
+    "description_ru": "Подробный труд по теме «травничество» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «травничество».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: набор травника.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "травничество",
+      "необычный"
+    ]
+  },
+  {
+    "id": "book_059",
+    "name_ru": "Забытый путеводитель: том 44",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "редкий",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 2,
+    "cost_gp": 2574,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 8
+    },
+    "description_ru": "Подробный труд по теме «кузнечное дело» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «кузнечное дело».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: инструменты кузнеца.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "кузнечное дело",
+      "редкий"
+    ]
+  },
+  {
+    "id": "book_060",
+    "name_ru": "Пепельный архив: том 45",
+    "item_type": "wondrous_item",
+    "subtype": "book",
+    "rarity": "обычный",
+    "requires_attunement": false,
+    "attunement_requirement": null,
+    "weight_lb": 4,
+    "cost_gp": 45,
+    "consumable": false,
+    "charges": null,
+    "activation": {
+      "type": "study",
+      "study_time_hours": 40
+    },
+    "description_ru": "Подробный труд по теме «археология» со схемами и спорными заметками.",
+    "knowledge_gained": [
+      "Читатель узнаёт три редких факта по теме «археология».",
+      "Раз за продолжительный отдых получает преимущество на одну проверку: История.",
+      "Ведущий может открыть одну сюжетную зацепку, связанную с книгой."
+    ],
+    "properties": {
+      "learnable": true,
+      "dm_adjudication_required": true
+    },
+    "tags": [
+      "книга",
+      "археология",
+      "обычный"
+    ]
+  }
+]

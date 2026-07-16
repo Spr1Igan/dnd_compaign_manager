@@ -18,4 +18,5 @@ Route::post('/locale', function (Request $request) {
 require __DIR__ . '/auth.php';
 require __DIR__ . '/profile.php';
 require __DIR__ . '/characters.php';
+require __DIR__ . '/campaigns.php';
 require __DIR__ . '/data.php';

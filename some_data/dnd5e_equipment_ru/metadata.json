@@ -1,0 +1,54 @@
+{
+  "title": "Каталог снаряжения D&D 5e на русском языке",
+  "rules_version": "D&D 5e / SRD 5.1 (правила 2014 года)",
+  "language": "ru",
+  "generated": "2026-07-16",
+  "license_note": "Структура и подборка основаны на открытом содержимом SRD 5.1. Dungeons & Dragons и связанные обозначения принадлежат Wizards of the Coast.",
+  "completeness_note": "Практический каталог основных предметов и магического оружия/брони SRD. Это не выгрузка всех предметов из всех официальных книг.",
+  "files": [
+    {
+      "name": "weapons.json",
+      "records": 37
+    },
+    {
+      "name": "armor.json",
+      "records": 13
+    },
+    {
+      "name": "adventuring_gear.json",
+      "records": 84
+    },
+    {
+      "name": "tools.json",
+      "records": 37
+    },
+    {
+      "name": "mounts.json",
+      "records": 8
+    },
+    {
+      "name": "vehicles.json",
+      "records": 11
+    },
+    {
+      "name": "services.json",
+      "records": 18
+    },
+    {
+      "name": "trade_goods.json",
+      "records": 13
+    },
+    {
+      "name": "potions.json",
+      "records": 12
+    },
+    {
+      "name": "magic_weapons_and_armor.json",
+      "records": 46
+    },
+    {
+      "name": "properties_and_currency.json",
+      "records": null
+    }
+  ]
+}

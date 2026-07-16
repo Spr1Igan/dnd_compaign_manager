@@ -22,7 +22,7 @@
         <span>{{ __('ui.open') }} →</span>
     </a>
 
-    <a href="#" class="paper-card">
+    <a href="{{ route('campaigns.index') }}" class="paper-card">
         <h2>{{ __('ui.campaigns') }}</h2>
         <p>{{ __('ui.home.campaigns_text') }}</p>
         <span>{{ __('ui.open') }} →</span>

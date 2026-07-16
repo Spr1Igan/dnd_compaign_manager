@@ -1,0 +1,42 @@
+[
+  {
+    "id": "lawful-good",
+    "name_ru": "Законопослушный добрый"
+  },
+  {
+    "id": "neutral-good",
+    "name_ru": "Нейтральный добрый"
+  },
+  {
+    "id": "chaotic-good",
+    "name_ru": "Хаотичный добрый"
+  },
+  {
+    "id": "lawful-neutral",
+    "name_ru": "Законопослушный нейтральный"
+  },
+  {
+    "id": "true-neutral",
+    "name_ru": "Истинно нейтральный"
+  },
+  {
+    "id": "chaotic-neutral",
+    "name_ru": "Хаотичный нейтральный"
+  },
+  {
+    "id": "lawful-evil",
+    "name_ru": "Законопослушный злой"
+  },
+  {
+    "id": "neutral-evil",
+    "name_ru": "Нейтральный злой"
+  },
+  {
+    "id": "chaotic-evil",
+    "name_ru": "Хаотичный злой"
+  },
+  {
+    "id": "unaligned",
+    "name_ru": "Без мировоззрения"
+  }
+]

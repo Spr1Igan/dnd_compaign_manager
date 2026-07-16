@@ -1,0 +1,123 @@
+[
+  {
+    "id": "carriage",
+    "name_ru": "Карета",
+    "name_en": "Carriage",
+    "category": "сухопутный",
+    "cost": {
+      "amount": 100,
+      "unit": "gp"
+    },
+    "weight_lb": 600
+  },
+  {
+    "id": "cart",
+    "name_ru": "Телега",
+    "name_en": "Cart",
+    "category": "сухопутный",
+    "cost": {
+      "amount": 15,
+      "unit": "gp"
+    },
+    "weight_lb": 200
+  },
+  {
+    "id": "chariot",
+    "name_ru": "Колесница",
+    "name_en": "Chariot",
+    "category": "сухопутный",
+    "cost": {
+      "amount": 250,
+      "unit": "gp"
+    },
+    "weight_lb": 100
+  },
+  {
+    "id": "sled",
+    "name_ru": "Сани",
+    "name_en": "Sled",
+    "category": "сухопутный",
+    "cost": {
+      "amount": 20,
+      "unit": "gp"
+    },
+    "weight_lb": 300
+  },
+  {
+    "id": "wagon",
+    "name_ru": "Фургон",
+    "name_en": "Wagon",
+    "category": "сухопутный",
+    "cost": {
+      "amount": 35,
+      "unit": "gp"
+    },
+    "weight_lb": 400
+  },
+  {
+    "id": "galley",
+    "name_ru": "Галера",
+    "name_en": "Galley",
+    "category": "водный",
+    "cost": {
+      "amount": 30000,
+      "unit": "gp"
+    },
+    "speed": "4 мили/ч"
+  },
+  {
+    "id": "keelboat",
+    "name_ru": "Килевое судно",
+    "name_en": "Keelboat",
+    "category": "водный",
+    "cost": {
+      "amount": 3000,
+      "unit": "gp"
+    },
+    "speed": "1 миля/ч"
+  },
+  {
+    "id": "longship",
+    "name_ru": "Драккар",
+    "name_en": "Longship",
+    "category": "водный",
+    "cost": {
+      "amount": 10000,
+      "unit": "gp"
+    },
+    "speed": "3 мили/ч"
+  },
+  {
+    "id": "rowboat",
+    "name_ru": "Вёсельная лодка",
+    "name_en": "Rowboat",
+    "category": "водный",
+    "cost": {
+      "amount": 50,
+      "unit": "gp"
+    },
+    "speed": "1.5 мили/ч"
+  },
+  {
+    "id": "sailing-ship",
+    "name_ru": "Парусный корабль",
+    "name_en": "Sailing Ship",
+    "category": "водный",
+    "cost": {
+      "amount": 10000,
+      "unit": "gp"
+    },
+    "speed": "2 мили/ч"
+  },
+  {
+    "id": "warship",
+    "name_ru": "Военный корабль",
+    "name_en": "Warship",
+    "category": "водный",
+    "cost": {
+      "amount": 25000,
+      "unit": "gp"
+    },
+    "speed": "2.5 мили/ч"
+  }
+]

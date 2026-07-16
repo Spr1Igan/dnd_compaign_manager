@@ -1,0 +1,117 @@
+[
+  {
+    "id": "alchemists-supplies",
+    "name_ru": "Инструменты алхимика",
+    "category": "ремесленные"
+  },
+  {
+    "id": "brewers-supplies",
+    "name_ru": "Инструменты пивовара",
+    "category": "ремесленные"
+  },
+  {
+    "id": "calligraphers-supplies",
+    "name_ru": "Инструменты каллиграфа",
+    "category": "ремесленные"
+  },
+  {
+    "id": "carpenters-tools",
+    "name_ru": "Инструменты плотника",
+    "category": "ремесленные"
+  },
+  {
+    "id": "cartographers-tools",
+    "name_ru": "Инструменты картографа",
+    "category": "ремесленные"
+  },
+  {
+    "id": "cobblers-tools",
+    "name_ru": "Инструменты сапожника",
+    "category": "ремесленные"
+  },
+  {
+    "id": "cooks-utensils",
+    "name_ru": "Кухонная утварь",
+    "category": "ремесленные"
+  },
+  {
+    "id": "glassblowers-tools",
+    "name_ru": "Инструменты стеклодува",
+    "category": "ремесленные"
+  },
+  {
+    "id": "jewelers-tools",
+    "name_ru": "Инструменты ювелира",
+    "category": "ремесленные"
+  },
+  {
+    "id": "leatherworkers-tools",
+    "name_ru": "Инструменты кожевника",
+    "category": "ремесленные"
+  },
+  {
+    "id": "masons-tools",
+    "name_ru": "Инструменты каменщика",
+    "category": "ремесленные"
+  },
+  {
+    "id": "painters-supplies",
+    "name_ru": "Инструменты художника",
+    "category": "ремесленные"
+  },
+  {
+    "id": "potters-tools",
+    "name_ru": "Инструменты гончара",
+    "category": "ремесленные"
+  },
+  {
+    "id": "smiths-tools",
+    "name_ru": "Инструменты кузнеца",
+    "category": "ремесленные"
+  },
+  {
+    "id": "tinkers-tools",
+    "name_ru": "Инструменты ремонтника",
+    "category": "ремесленные"
+  },
+  {
+    "id": "weavers-tools",
+    "name_ru": "Инструменты ткача",
+    "category": "ремесленные"
+  },
+  {
+    "id": "woodcarvers-tools",
+    "name_ru": "Инструменты резчика по дереву",
+    "category": "ремесленные"
+  },
+  {
+    "id": "disguise-kit",
+    "name_ru": "Набор для грима",
+    "category": "набор"
+  },
+  {
+    "id": "forgery-kit",
+    "name_ru": "Набор для подделки документов",
+    "category": "набор"
+  },
+  {
+    "id": "herbalism-kit",
+    "name_ru": "Набор травника",
+    "category": "набор"
+  },
+  {
+    "id": "navigators-tools",
+    "name_ru": "Инструменты навигатора",
+    "category": "набор"
+  },
+  {
+    "id": "poisoners-kit",
+    "name_ru": "Инструменты отравителя",
+    "category": "набор"
+  },
+  {
+    "id": "thieves-tools",
+    "name_ru": "Воровские инструменты",
+    "category": "набор"
+  }
+]

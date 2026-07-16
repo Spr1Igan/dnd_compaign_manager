@@ -1,0 +1,164 @@
+[
+  {
+    "id": "coach-city",
+    "name_ru": "Проезд в экипаже по городу",
+    "cost": {
+      "amount": 1,
+      "unit": "cp"
+    },
+    "unit": "за милю"
+  },
+  {
+    "id": "coach-between-towns",
+    "name_ru": "Проезд в экипаже между городами",
+    "cost": {
+      "amount": 3,
+      "unit": "cp"
+    },
+    "unit": "за милю"
+  },
+  {
+    "id": "messenger",
+    "name_ru": "Посыльный",
+    "cost": {
+      "amount": 2,
+      "unit": "cp"
+    },
+    "unit": "за милю"
+  },
+  {
+    "id": "road-gate-toll",
+    "name_ru": "Дорожная или воротная пошлина",
+    "cost": {
+      "amount": 1,
+      "unit": "cp"
+    },
+    "unit": "за проход"
+  },
+  {
+    "id": "ship-passage",
+    "name_ru": "Проезд на корабле",
+    "cost": {
+      "amount": 1,
+      "unit": "sp"
+    },
+    "unit": "за милю"
+  },
+  {
+    "id": "skilled-hireling",
+    "name_ru": "Квалифицированный наёмник",
+    "cost": {
+      "amount": 2,
+      "unit": "gp"
+    },
+    "unit": "за день"
+  },
+  {
+    "id": "untrained-hireling",
+    "name_ru": "Неквалифицированный наёмник",
+    "cost": {
+      "amount": 2,
+      "unit": "sp"
+    },
+    "unit": "за день"
+  },
+  {
+    "id": "inn-poor",
+    "name_ru": "Комната в трактире, бедная",
+    "cost": {
+      "amount": 7,
+      "unit": "cp"
+    },
+    "unit": "за день"
+  },
+  {
+    "id": "inn-modest",
+    "name_ru": "Комната в трактире, скромная",
+    "cost": {
+      "amount": 5,
+      "unit": "sp"
+    },
+    "unit": "за день"
+  },
+  {
+    "id": "inn-comfortable",
+    "name_ru": "Комната в трактире, комфортная",
+    "cost": {
+      "amount": 8,
+      "unit": "sp"
+    },
+    "unit": "за день"
+  },
+  {
+    "id": "inn-wealthy",
+    "name_ru": "Комната в трактире, богатая",
+    "cost": {
+      "amount": 2,
+      "unit": "gp"
+    },
+    "unit": "за день"
+  },
+  {
+    "id": "inn-aristocratic",
+    "name_ru": "Комната в трактире, аристократическая",
+    "cost": {
+      "amount": 4,
+      "unit": "gp"
+    },
+    "unit": "за день"
+  },
+  {
+    "id": "meal-squalid",
+    "name_ru": "Еда, нищенская",
+    "cost": {
+      "amount": 3,
+      "unit": "cp"
+    },
+    "unit": "за день"
+  },
+  {
+    "id": "meal-poor",
+    "name_ru": "Еда, бедная",
+    "cost": {
+      "amount": 6,
+      "unit": "cp"
+    },
+    "unit": "за день"
+  },
+  {
+    "id": "meal-modest",
+    "name_ru": "Еда, скромная",
+    "cost": {
+      "amount": 3,
+      "unit": "sp"
+    },
+    "unit": "за день"
+  },
+  {
+    "id": "meal-comfortable",
+    "name_ru": "Еда, комфортная",
+    "cost": {
+      "amount": 5,
+      "unit": "sp"
+    },
+    "unit": "за день"
+  },
+  {
+    "id": "meal-wealthy",
+    "name_ru": "Еда, богатая",
+    "cost": {
+      "amount": 8,
+      "unit": "sp"
+    },
+    "unit": "за день"
+  },
+  {
+    "id": "meal-aristocratic",
+    "name_ru": "Еда, аристократическая",
+    "cost": {
+      "amount": 2,
+      "unit": "gp"
+    },
+    "unit": "за день"
+  }
+]

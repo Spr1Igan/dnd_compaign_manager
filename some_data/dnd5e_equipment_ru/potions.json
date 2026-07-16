@@ -1,0 +1,114 @@
+[
+  {
+    "id": "potion-healing",
+    "name_ru": "Зелье лечения",
+    "name_en": "Potion of Healing",
+    "rarity": "обычный",
+    "consumable": true,
+    "effect": "Восстанавливает 2d4 + 2 хитов.",
+    "suggested_price_gp": {
+      "min": 50,
+      "max": 100
+    }
+  },
+  {
+    "id": "potion-greater-healing",
+    "name_ru": "Зелье большого лечения",
+    "name_en": "Potion of Greater Healing",
+    "rarity": "необычный",
+    "consumable": true,
+    "effect": "Восстанавливает 4d4 + 4 хитов.",
+    "suggested_price_gp": {
+      "min": 101,
+      "max": 500
+    }
+  },
+  {
+    "id": "potion-superior-healing",
+    "name_ru": "Зелье отличного лечения",
+    "name_en": "Potion of Superior Healing",
+    "rarity": "редкий",
+    "consumable": true,
+    "effect": "Восстанавливает 8d4 + 8 хитов.",
+    "suggested_price_gp": {
+      "min": 501,
+      "max": 5000
+    }
+  },
+  {
+    "id": "potion-supreme-healing",
+    "name_ru": "Зелье превосходного лечения",
+    "name_en": "Potion of Supreme Healing",
+    "rarity": "очень редкий",
+    "consumable": true,
+    "effect": "Восстанавливает 10d4 + 20 хитов.",
+    "suggested_price_gp": {
+      "min": 5001,
+      "max": 50000
+    }
+  },
+  {
+    "id": "potion-climbing",
+    "name_ru": "Зелье лазания",
+    "name_en": "Potion of Climbing",
+    "rarity": "обычный",
+    "consumable": true,
+    "effect": "На 1 час даёт скорость лазания, равную скорости ходьбы, и преимущество на проверки Силы (Атлетика) для лазания."
+  },
+  {
+    "id": "potion-animal-friendship",
+    "name_ru": "Зелье дружбы с животными",
+    "name_en": "Potion of Animal Friendship",
+    "rarity": "необычный",
+    "consumable": true,
+    "effect": "Позволяет в течение 1 часа накладывать заклинание дружбы с животными."
+  },
+  {
+    "id": "potion-fire-breath",
+    "name_ru": "Зелье огненного дыхания",
+    "name_en": "Potion of Fire Breath",
+    "rarity": "необычный",
+    "consumable": true,
+    "effect": "До 1 часа или трёх использований позволяет бонусным действием выдыхать огонь."
+  },
+  {
+    "id": "potion-flying",
+    "name_ru": "Зелье полёта",
+    "name_en": "Potion of Flying",
+    "rarity": "очень редкий",
+    "consumable": true,
+    "effect": "На 1 час даёт скорость полёта, равную скорости ходьбы."
+  },
+  {
+    "id": "potion-invisibility",
+    "name_ru": "Зелье невидимости",
+    "name_en": "Potion of Invisibility",
+    "rarity": "очень редкий",
+    "consumable": true,
+    "effect": "Даёт невидимость на 1 час или до атаки/заклинания."
+  },
+  {
+    "id": "potion-speed",
+    "name_ru": "Зелье скорости",
+    "name_en": "Potion of Speed",
+    "rarity": "очень редкий",
+    "consumable": true,
+    "effect": "На 1 минуту даёт эффект заклинания ускорение без концентрации."
+  },
+  {
+    "id": "potion-water-breathing",
+    "name_ru": "Зелье подводного дыхания",
+    "name_en": "Potion of Water Breathing",
+    "rarity": "необычный",
+    "consumable": true,
+    "effect": "Позволяет дышать под водой 1 час."
+  },
+  {
+    "id": "oil-slipperiness",
+    "name_ru": "Масло скольжения",
+    "name_en": "Oil of Slipperiness",
+    "rarity": "необычный",
+    "consumable": true,
+    "effect": "Покрывает существо или поверхность эффектом, сходным со свободой передвижения либо смазкой."
+  }
+]

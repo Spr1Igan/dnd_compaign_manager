@@ -1,0 +1,42 @@
+{
+  "severity_roll": [
+    {
+      "roll": "1-60",
+      "severity": "minor"
+    },
+    {
+      "roll": "61-90",
+      "severity": "major"
+    },
+    {
+      "roll": "91-100",
+      "severity": "chronic"
+    }
+  ],
+  "minor_roll": {
+    "die": "1d30",
+    "file": "minor_madness.json"
+  },
+  "major_roll": {
+    "die": "1d30",
+    "file": "major_madness.json"
+  },
+  "chronic_roll": {
+    "die": "1d40",
+    "file": "chronic_madness.json"
+  },
+  "escalation": [
+    {
+      "condition": "провал спасброска на 5 и более",
+      "result": "увеличить длительность вдвое"
+    },
+    {
+      "condition": "натуральная 1",
+      "result": "повысить тяжесть на одну ступень"
+    },
+    {
+      "condition": "повторный эффект с тем же тегом",
+      "result": "дать помеху на следующий спасбросок против безумия"
+    }
+  ]
+}
