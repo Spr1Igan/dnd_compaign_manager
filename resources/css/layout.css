@@ -321,6 +321,26 @@
     margin: 0 0 10px;
 }
 
+.character-owner-badge,
+.readonly-owner-note {
+    display: inline-block;
+    border: 2px solid #111;
+    background: #fff4d8;
+    color: #245c6d;
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.character-owner-badge {
+    margin-bottom: 12px;
+    padding: 5px 8px;
+}
+
+.readonly-owner-note {
+    padding: 12px 14px;
+}
+
 .character-stats {
     display: flex;
     gap: 10px;

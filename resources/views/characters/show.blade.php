@@ -83,18 +83,24 @@
     </div>
 
     <div class="actions-row">
-        <a class="paper-button" href="{{ route('characters.edit', $character) }}">
-            {{ __('ui.edit') }}
-        </a>
+        @if ($canManageCharacter)
+            <a class="paper-button" href="{{ route('characters.edit', $character) }}">
+                {{ __('ui.edit') }}
+            </a>
 
-        <form method="POST" action="{{ route('characters.destroy', $character) }}">
-            @csrf
-            @method('DELETE')
+            <form method="POST" action="{{ route('characters.destroy', $character) }}">
+                @csrf
+                @method('DELETE')
 
-            <button class="paper-button danger" type="button" data-confirm-target="delete-character-confirm">
-                {{ __('ui.delete') }}
-            </button>
-        </form>
+                <button class="paper-button danger" type="button" data-confirm-target="delete-character-confirm">
+                    {{ __('ui.delete') }}
+                </button>
+            </form>
+        @elseif (auth()->user()?->isGameMaster())
+            <span class="readonly-owner-note">
+                Просмотр персонажа игрока {{ $character->user?->name ?? '—' }}
+            </span>
+        @endif
     </div>
 </div>
 
@@ -149,24 +155,28 @@
         <div class="experience-field readonly-experience" data-experience-panel>
             <span>{{ __('ui.form.experience') }}</span>
             <strong data-experience-value>{{ $character->experience }}</strong>
-            <button
-                class="sheet-arrow-button"
-                type="button"
-                data-experience-toggle
-                aria-expanded="false"
-                aria-label="{{ __('ui.show.change_experience') }}"
-            >&rsaquo;</button>
+            @if ($canManageCharacter)
+                <button
+                    class="sheet-arrow-button"
+                    type="button"
+                    data-experience-toggle
+                    aria-expanded="false"
+                    aria-label="{{ __('ui.show.change_experience') }}"
+                >&rsaquo;</button>
+            @endif
 
-            <section class="experience-popover" data-experience-popover hidden>
-                <label>
-                    <span>{{ __('ui.show.amount_experience') }}</span>
-                    <input type="number" min="0" step="1" value="0" data-experience-amount>
-                </label>
-                <div class="experience-actions">
-                    <button class="paper-button danger compact-button" type="button" data-experience-action="minus">-</button>
-                    <button class="paper-button compact-button" type="button" data-experience-action="plus">+</button>
-                </div>
-            </section>
+            @if ($canManageCharacter)
+                <section class="experience-popover" data-experience-popover hidden>
+                    <label>
+                        <span>{{ __('ui.show.amount_experience') }}</span>
+                        <input type="number" min="0" step="1" value="0" data-experience-amount>
+                    </label>
+                    <div class="experience-actions">
+                        <button class="paper-button danger compact-button" type="button" data-experience-action="minus">-</button>
+                        <button class="paper-button compact-button" type="button" data-experience-action="plus">+</button>
+                    </div>
+                </section>
+            @endif
         </div>
     </section>
 
@@ -255,13 +265,17 @@
                     <div class="hp-box readonly hit-points-box">
                         <span>HP</span>
                         <div class="hp-control">
-                            <button class="sheet-arrow-button" type="button" data-hp-step="-1" aria-label="{{ __('ui.show.decrease_hp') }}">-</button>
+                            @if ($canManageCharacter)
+                                <button class="sheet-arrow-button" type="button" data-hp-step="-1" aria-label="{{ __('ui.show.decrease_hp') }}">-</button>
+                            @endif
                             <strong class="hp-fraction">
                                 <span data-current-hp>{{ $character->current_hp }}</span>
                                 <span class="hp-divider" aria-hidden="true"></span>
                                 <span data-max-hp>{{ $character->max_hp }}</span>
                             </strong>
-                            <button class="sheet-arrow-button" type="button" data-hp-step="1" aria-label="{{ __('ui.show.increase_hp') }}">+</button>
+                            @if ($canManageCharacter)
+                                <button class="sheet-arrow-button" type="button" data-hp-step="1" aria-label="{{ __('ui.show.increase_hp') }}">+</button>
+                            @endif
                         </div>
                     </div>
                     <div class="hp-box readonly"><span>{{ __('ui.show.proficiency_bonus') }}</span><strong>+{{ $character->proficiency_bonus }}</strong></div>
@@ -516,11 +530,13 @@
 @endpush
 
 @push('modals')
-    @include('partials.confirm-dialog', [
-        'id' => 'delete-character-confirm',
-        'title' => __('ui.show.delete_title'),
-        'message' => __('ui.show.delete_message', ['name' => $character->name]),
-        'confirmText' => __('ui.show.delete_confirm'),
-        'cancelText' => __('ui.show.delete_cancel'),
-    ])
+    @if ($canManageCharacter)
+        @include('partials.confirm-dialog', [
+            'id' => 'delete-character-confirm',
+            'title' => __('ui.show.delete_title'),
+            'message' => __('ui.show.delete_message', ['name' => $character->name]),
+            'confirmText' => __('ui.show.delete_confirm'),
+            'cancelText' => __('ui.show.delete_cancel'),
+        ])
+    @endif
 @endpush

@@ -35,6 +35,12 @@
             <a class="character-card" href="{{ route('characters.show', $character) }}">
                 <h2>{{ $character->name }}</h2>
 
+                @if ($isGameMaster && $character->user)
+                    <span class="character-owner-badge">
+                        Игрок: {{ $character->user->name }}
+                    </span>
+                @endif
+
                 <p>
                     {{ $character->race ? \App\Models\Character::readableRuleLabel($character->race->slug) : __('ui.characters_page.no_race') }}
                     @if ($character->subrace)

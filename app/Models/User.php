@@ -10,6 +10,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
 {
+    public const ROLE_PLAYER = 'player';
+    public const ROLE_GAME_MASTER = 'game_master';
+
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
 
@@ -17,6 +20,7 @@ class User extends Authenticatable
         'name',
         'login',
         'password',
+        'role',
     ];
 
     protected $hidden = [
@@ -27,6 +31,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(Character::class);
     }
+
+    public function isGameMaster(): bool
+    {
+        return $this->role === self::ROLE_GAME_MASTER;
+    }
+
     protected function casts(): array
     {
         return [

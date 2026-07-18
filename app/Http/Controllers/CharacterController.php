@@ -19,14 +19,19 @@ class CharacterController extends Controller
 {
     public function index(): View
     {
-        $characters = auth()
-            ->user()
-            ->characters()
-            ->with(['race', 'subrace', 'characterClass', 'characterSubclass', 'background'])
+        $user = auth()->user();
+
+        $characters = ($user->isGameMaster()
+            ? Character::query()
+            : $user->characters())
+            ->with(['user', 'race', 'subrace', 'characterClass', 'characterSubclass', 'background'])
             ->latest()
             ->get();
 
-        return view('characters.index', compact('characters'));
+        return view('characters.index', [
+            'characters' => $characters,
+            'isGameMaster' => $user->isGameMaster(),
+        ]);
     }
 
     public function create(): View
@@ -48,19 +53,20 @@ class CharacterController extends Controller
 
     public function show(Character $character): View
     {
-        $this->authorizeCharacter($character);
+        $this->authorizeCharacterView($character);
 
-        $character->load(['race', 'subrace', 'characterClass', 'characterSubclass', 'background']);
+        $character->load(['user', 'race', 'subrace', 'characterClass', 'characterSubclass', 'background']);
 
         $skillsBySlug = Skill::orderBy('name')->get()->keyBy('slug');
         $languagesBySlug = Language::orderBy('name')->get()->keyBy('slug');
+        $canManageCharacter = $this->canManageCharacter($character);
 
-        return view('characters.show', compact('character', 'skillsBySlug', 'languagesBySlug'));
+        return view('characters.show', compact('character', 'skillsBySlug', 'languagesBySlug', 'canManageCharacter'));
     }
 
     public function edit(Character $character): View
     {
-        $this->authorizeCharacter($character);
+        $this->authorizeCharacterManage($character);
 
         return view('characters.edit', [
             'character' => $character,
@@ -70,7 +76,7 @@ class CharacterController extends Controller
 
     public function update(Request $request, Character $character): RedirectResponse
     {
-        $this->authorizeCharacter($character);
+        $this->authorizeCharacterManage($character);
 
         $character->update($this->validatedCharacterData($request));
 
@@ -81,7 +87,7 @@ class CharacterController extends Controller
 
     public function updateVitals(Request $request, Character $character): JsonResponse|RedirectResponse
     {
-        $this->authorizeCharacter($character);
+        $this->authorizeCharacterManage($character);
 
         $data = $request->validate([
             'current_hp' => ['required', 'integer', 'min:0', 'max:100'],
@@ -111,7 +117,7 @@ class CharacterController extends Controller
 
     public function destroy(Character $character): RedirectResponse
     {
-        $this->authorizeCharacter($character);
+        $this->authorizeCharacterManage($character);
 
         $character->delete();
 
@@ -143,7 +149,6 @@ class CharacterController extends Controller
             'languages' => Language::orderBy('name')->get(),
         ];
     }
-
     /**
      * @return array<string, mixed>
      */
@@ -289,9 +294,26 @@ class CharacterController extends Controller
         return $data;
     }
 
-    private function authorizeCharacter(Character $character): void
+    private function authorizeCharacterView(Character $character): void
     {
-        abort_if($character->user_id !== auth()->id(), 403);
+        abort_unless($this->canViewCharacter($character), 403);
+    }
+
+    private function authorizeCharacterManage(Character $character): void
+    {
+        abort_unless($this->canManageCharacter($character), 403);
+    }
+
+    private function canViewCharacter(Character $character): bool
+    {
+        $user = auth()->user();
+
+        return $this->canManageCharacter($character) || $user?->isGameMaster();
+    }
+
+    private function canManageCharacter(Character $character): bool
+    {
+        return (int) $character->user_id === (int) auth()->id();
     }
 
     private function abilityModifier(int $score): int
